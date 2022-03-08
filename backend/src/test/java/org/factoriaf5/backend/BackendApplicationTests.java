@@ -19,7 +19,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 class IntegrationTests {
 
     @Autowired
-    private AmigoRepository amigoRepository;
+    private FriendRepository amigoRepository;
 
     @Autowired
     private MockMvc api;
@@ -33,8 +33,8 @@ class IntegrationTests {
     void returnsExistingAmigos() throws Exception {
 
         amigoRepository.saveAll(
-                List.of(new Amigo("Sandra", "sandra@factoriaf5.org"),
-                        new Amigo("Candy", "candy@factoriaf5.org"))
+                List.of(new Friend("Sandra", "sandra@factoriaf5.org"),
+                        new Friend("Candy", "candy@factoriaf5.org"))
         );
 
         api.perform(get("/amigos"))

@@ -10,20 +10,20 @@ import java.util.List;
 public class SampleDataLoader {
 
     @Autowired
-    public SampleDataLoader(AmigoRepository amigoRepository) {
-        this.amigoRepository = amigoRepository;
+    public SampleDataLoader(FriendRepository friendRepository) {
+        this.friendRepository = friendRepository;
     }
 
-    private AmigoRepository amigoRepository;
+    private FriendRepository friendRepository;
 
     @PostConstruct
     public void loadSampleData() {
-        amigoRepository.saveAll(List.of(
-                new Amigo("Candy", "candy@factoriaf5.org"),
-                new Amigo("Sonia", "sonia@factoriaf5.org"),
-                new Amigo("Sandra", "sandra@factoriaf5.org"),
-                new Amigo("Faby", "faby@factoriaf5.org"),
-                new Amigo("Valentina", "valentina@factoriaf5.org")
+        friendRepository.saveAll(List.of(
+                new Friend("Candy", "candy@factoriaf5.org"),
+                new Friend("Sonia", "sonia@factoriaf5.org"),
+                new Friend("Sandra", "sandra@factoriaf5.org"),
+                new Friend("Faby", "faby@factoriaf5.org"),
+                new Friend("Valentina", "valentina@factoriaf5.org")
         ));
     }
 }
