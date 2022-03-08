@@ -4,8 +4,8 @@ package org.factoriaf5.backend;
 import javax.persistence.*;
 
 @Entity
-@Table(name="grupoAmigos")
-public class Amigo {
+@Table(name="Friend")
+public class Friend {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -14,12 +14,12 @@ public class Amigo {
     private String name;
     private String email;
 
-    public Amigo(String name, String email) {
+    public Friend(String name, String email) {
         this.name = name;
         this.email = email;
     }
 
-    public Amigo() {
+    public Friend() {
 
     }
 
