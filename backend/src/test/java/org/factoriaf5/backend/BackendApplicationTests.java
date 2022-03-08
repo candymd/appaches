@@ -9,8 +9,7 @@ import org.springframework.test.web.servlet.MockMvc;
 
 import java.util.List;
 
-import static org.hamcrest.Matchers.equalTo;
-import static org.hamcrest.Matchers.hasSize;
+import static org.hamcrest.Matchers.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
@@ -46,17 +45,29 @@ class IntegrationTests {
 
 
     }
+    @Test
+    void returnsTheExistingAmigos() throws Exception {
+        Amigo amigo = amigoRepository.save(new Amigo("Sandra","sandra@factoria5.org" ));
+
+        MockMvc.perform(get("/amigos"))
+                .andExpect(status().isOk())
+                .andExpect(view().name("amigos/all"))
+                .andExpect(model().attribute(  "amigos", hasItem(amigo)));
+    }
+
+
+
 
     @Test
     void returnsAddAmigo() throws Exception{
-        mockMvc.perform(get("/amigos/new"))
+        MockMvc.perform(get("/amigos/new"))
                 .andExpect(status().isOk())
                 .andExpect(view().name("amigos/edit"))
                 .andExpect(model().attributeExists("amigo"))
-                .andExpect(model().attribute("title", "Create new game"));
+                .andExpect(model().attribute("title", "Create new amigo"));
     }
 
 
 
+
     }
-}
