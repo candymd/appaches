@@ -20,16 +20,36 @@ public class RecordController {
         return recordRepository.findAll();
     }
 
-    @PostMapping ("/add")
-    public List<Record> addRecord() { return recordRepository.saveAll();}
+    @PostMapping("/add")
+    public Record createRecord(@RequestBody Record record) {
+        return recordRepository.save(record);
+    }
 
+    @GetMapping("/{id}")
+    public Record findRecord(@PathVariable Long id) {
+        return recordRepository.findById(id).orElseThrow(null);
+    }
 
+    @GetMapping("/edit/{id}")
+    public Record updateRecordById(@RequestBody Record record) {
+        recordRepository.findById(record.getId());
+        return recordRepository.save(record);
+    }
 
-    @PutMapping("/edit/{id}")
-    public List<Record> editRecord() { return recordRepository.saveAll();}
-
-    @DeleteMapping("/deleted/{id}")
-    public List<Record> deleteRecord() { return recordRepository.saveAll();}
-
+    @GetMapping("/delete/{id}")
+    public Record deleteRecordById(@PathVariable Long id) {
+        Record record = recordRepository.findById(id).get();
+        recordRepository.deleteById(id);
+        return record;
+    }
 }
+
+
+
+
+
+
+
+
+
 
