@@ -1,10 +1,6 @@
-import logo from './logo.svg';
 import './App.css';
-<<<<<<< HEAD
 
-=======
 import {useEffect, useState} from "react";
->>>>>>> 5d11d2eb5b8742c88c549f2fd7ba0269f1713757
 function App() {
 
     const [records, setRecords] = useState([]);
