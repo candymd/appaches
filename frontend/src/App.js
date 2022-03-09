@@ -1,23 +1,30 @@
 import logo from './logo.svg';
 import './App.css';
+<<<<<<< HEAD
 
+=======
+import {useEffect, useState} from "react";
+>>>>>>> 5d11d2eb5b8742c88c549f2fd7ba0269f1713757
 function App() {
-  return (
+
+    const [records, setRecords] = useState([]);
+  const [requiresUpdate, setRequiresUpdate] = useState(true);
+
+    useEffect(() => {
+        if (requiresUpdate) {
+            fetch("http://localhost:8080/record")
+                .then(r => r.json())
+                .then(setRecords)
+                .then(_ => setRequiresUpdate(false));
+        }
+    }, [requiresUpdate])
+
+
+
+    return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        {records.map(record =>
+            <p>{record.name}</p>)}
     </div>
   );
 }
