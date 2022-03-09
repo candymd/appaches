@@ -8,7 +8,7 @@ import java.util.List;
 
 @RestController
 public class FriendController {
-    private FriendRepository friendRepository;
+    private final FriendRepository friendRepository;
 
     @Autowired
     public FriendController(FriendRepository friendRepository) {

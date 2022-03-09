@@ -6,8 +6,10 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@CrossOrigin (origins = "http://localhost:3000", methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.OPTIONS})
 public class RecordController {
-    private RecordRepository recordRepository;
+
+    private final RecordRepository recordRepository;
 
     @Autowired
     public RecordController(RecordRepository recordRepository) {

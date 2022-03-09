@@ -42,8 +42,7 @@ class IntegrationTests {
                 .andExpect(jsonPath("$[0].email", equalTo("sandra@factoriaf5.org")))
                 .andExpect(jsonPath("$[1].name", equalTo("Candy")))
                 .andExpect(jsonPath("$[1].email", equalTo("candy@factoriaf5.org"))) ;
-
-
+        
     }
     //
   /*  @Test
