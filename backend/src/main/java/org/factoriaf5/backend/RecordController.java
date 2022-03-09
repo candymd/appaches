@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/record")
 public class RecordController {
     private RecordRepository recordRepository;
 
@@ -15,28 +14,28 @@ public class RecordController {
         this.recordRepository = recordRepository;
     }
 
-    @GetMapping("/")
+    @GetMapping("/record")
     public List<Record> allRecord() {
         return recordRepository.findAll();
     }
 
-    @PostMapping("/add")
+    @PostMapping("/record/add")
     public Record createRecord(@RequestBody Record record) {
         return recordRepository.save(record);
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/record/{id}")
     public Record findRecord(@PathVariable Long id) {
         return recordRepository.findById(id).orElseThrow(null);
     }
 
-    @GetMapping("/edit/{id}")
+    @GetMapping("/record/edit/{id}")
     public Record updateRecordById(@RequestBody Record record) {
         recordRepository.findById(record.getId());
         return recordRepository.save(record);
     }
 
-    @GetMapping("/delete/{id}")
+    @GetMapping("/record/delete/{id}")
     public Record deleteRecordById(@PathVariable Long id) {
         Record record = recordRepository.findById(id).get();
         recordRepository.deleteById(id);
