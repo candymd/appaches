@@ -12,14 +12,16 @@ public class Record {
     private String name;
     private String date;
     private Double amount;
-    private int numberfriends;
+    private int numberFriends;
+    private boolean paidByMe;
 
 
-    public Record(String name, String date, Double amount, int numberfriends) {
+    public Record(String name, String date, Double amount, int numberFriends, boolean paidByMe) {
         this.name = name;
         this.date = date;
         this.amount = amount;
-        this.numberfriends = numberfriends;
+        this.numberFriends = numberFriends;
+        this.paidByMe = paidByMe;
     }
 
     public Record() {
@@ -58,11 +60,19 @@ public class Record {
         this.amount = amount;
     }
 
-    public int getNumberfriends() {
-        return numberfriends;
+    public int getNumberFriends() {
+        return numberFriends;
     }
 
-    public void setNumberfriends(int numberfriends) {
-        this.numberfriends = numberfriends;
+    public void setNumberFriends(int numberFriends) {
+        this.numberFriends = numberFriends;
+    }
+
+    public boolean isPaidByMe() {
+        return paidByMe;
+    }
+
+    public void setPaidByMe(boolean paidByMe) {
+        this.paidByMe = paidByMe;
     }
 }

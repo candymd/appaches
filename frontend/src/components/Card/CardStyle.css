@@ -1,0 +1,54 @@
+.card > * {
+    display: flex;
+}
+
+.card {
+    border-bottom: 0.5px solid #0E7AC6;
+    flex-direction: column;
+    padding: 0 0.5rem 0.5rem;
+    background-color: #D6EADF;
+
+}
+
+.icon {
+    height: 20px;
+    font-size: 25px;
+    margin-right: 5px;
+    justify-content: flex-end;
+}
+
+
+.date-amount {
+    margin-top: -10px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.title {
+   font-size: 22px;
+    font-weight: 500;
+   justify-items: flex-end;
+}
+
+.title p {
+    margin: 0;
+    padding: 0;
+}
+
+.friends-paid {
+    margin-top: 3%;
+    font-size: 15px;
+    font-weight: 400;
+    justify-content: space-between ;
+}
+
+.amount {
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.date {
+    font-size: 15px;
+    font-style: italic;
+    color: rgba(38, 26, 12, 0.7);
+}

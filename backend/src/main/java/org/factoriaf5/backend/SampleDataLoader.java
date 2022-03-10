@@ -14,7 +14,7 @@ public class SampleDataLoader {
         this.friendRepository = friendRepository;
     }
 
-    private FriendRepository friendRepository;
+    private final FriendRepository friendRepository;
 
     @PostConstruct
     public void loadSampleData() {

@@ -14,14 +14,14 @@ public class SampleDataLoaderRecord {
         this.recordRepository = recordRepository;
     }
 
-    private RecordRepository recordRepository;
+    private final RecordRepository recordRepository;
 
     @PostConstruct
     public void loadSampleData() {
         recordRepository.saveAll(List.of(
-                new Record("Cena", "08/03/2022", 50.00,3),
-                new Record("Cine", "25/02/2022", 20.00,2 ),
-                new Record("Zoo", "10/01/2022", 60.00,4)
+                new Record("Cena", "08/03/2022", 50.00,3, true),
+                new Record("Cine", "25/02/2022", 20.00,2, true),
+                new Record("Zoo", "10/01/2022", 60.00,4, false)
 
         ));
     }

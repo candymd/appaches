@@ -1,8 +1,9 @@
 import './App.css';
 import {useEffect, useState} from "react";
+import CardList from "./components/CardList/CardList";
 function App() {
 
-    const [records, setRecords] = useState([]);
+  const [records, setRecords] = useState([]);
   const [requiresUpdate, setRequiresUpdate] = useState(true);
 
     useEffect(() => {
@@ -14,12 +15,9 @@ function App() {
         }
     }, [requiresUpdate])
 
-
-
     return (
     <div className="App">
-        {records.map(record =>
-            <p>{record.name}</p>)}
+        <CardList records={records}/>
     </div>
   );
 }
