@@ -1,7 +1,9 @@
 import './App.css';
+import './components/Footer/Footer'
 
 import {useEffect, useState} from "react";
 import CardList from "./components/CardList/CardList";
+import Footer from "./components/Footer/Footer";
 function App() {
 
   const [records, setRecords] = useState([]);
@@ -19,6 +21,7 @@ function App() {
     return (
     <div className="App">
         <CardList records={records}/>
+        <Footer />
     </div>
   );
 }
