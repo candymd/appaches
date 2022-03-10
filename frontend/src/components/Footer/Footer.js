@@ -1,10 +1,16 @@
 import React from 'react';
 import './Footer.css'
 
-function Footer() {
+
+
+const Footer = () => {
 
 return (
-    <h1>Hola</h1>
+
+    <div className="footer">
+        <h1>Hola</h1>
+        <span className="material-icons">face</span>
+    </div>
 )
 
 }
