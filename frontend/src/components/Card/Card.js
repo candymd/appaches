@@ -1,10 +1,28 @@
-import React from 'react';
-import './CardStyle.css'
+import React, {useState} from 'react';
+import './CardStyle.css';
+import Accordion from '@mui/material/Accordion';
+import AccordionSummary from '@mui/material/AccordionSummary';
+
 
 const Card = ({record}) => {
+
+
+    const [expanded, setExpanded] = useState(false);
+
+    const handleChange = (panel) => (event, isExpanded) => {
+        setExpanded(isExpanded ? panel : false);
+    };
+
+
+
     return (
-        <div className="card">
-            <i className="fa-solid fa-ellipsis icon"/>
+        <Accordion className="card" sx={{backgroundColor: "#D6EADF"}} expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
+            <AccordionSummary sx={{display: "flex"}}
+                expandIcon={ expanded ?  <i className="fa-solid fa-angle-up"/> :
+                    <i className="fa-solid fa-ellipsis icon"/> }
+                aria-controls="panel1bh-content"
+                id="panel1bh-header">
+
             <div className="title">
                 <p>{record.name}</p>
             </div>
@@ -16,7 +34,8 @@ const Card = ({record}) => {
                 <span>AMIGOS: 3</span>
                 <span>SALDADO: 1/3</span>
             </div>
-        </div>
+            </AccordionSummary>
+        </Accordion>
     );
 };
 
