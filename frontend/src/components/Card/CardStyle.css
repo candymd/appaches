@@ -1,28 +1,36 @@
-.card > * {
+.MuiAccordionSummary-content  > * {
     display: flex;
 }
 
+.MuiAccordionSummary-content {
+    display: flex;
+    flex-direction: column;
+}
 .card {
     border-bottom: 0.5px solid #0E7AC6;
-    flex-direction: column;
     padding: 0 0.5rem 0.5rem;
-    background-color: #D6EADF;
+}
+
+.MuiAccordionSummary-root {
+    position: relative;
+}
+
+.MuiAccordionSummary-expandIconWrapper {
+    position: absolute;
+    top: 10%;
+    right: 5%;
 
 }
 
-.icon {
-    height: 20px;
-    font-size: 25px;
-    margin-right: 5px;
-    justify-content: flex-end;
+.MuiAccordionSummary-expandIconWrapper > .fa-ellipsis {
+    color: black;
 }
 
 
-.date-amount {
+.css-o4b71y-MuiAccordionSummary-content > .date-amount{
     margin-top: -10px;
     align-items: center;
-    justify-content: space-between;
-}
+    justify-content: space-between;}
 
 .title {
    font-size: 22px;
