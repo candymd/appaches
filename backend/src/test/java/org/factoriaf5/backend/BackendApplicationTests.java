@@ -1,9 +1,11 @@
 package org.factoriaf5.backend;
 
 import org.factoriaf5.backend.model.Friend;
-import org.factoriaf5.backend.model.Record;
+import org.factoriaf5.backend.model.Logs;
+import org.factoriaf5.backend.model.Registry;
 import org.factoriaf5.backend.repositories.FriendRepository;
-import org.factoriaf5.backend.repositories.RecordRepository;
+import org.factoriaf5.backend.repositories.LogsRepository;
+import org.factoriaf5.backend.repositories.RegistryRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +14,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.web.servlet.MockMvc;
 
 import java.util.List;
-import java.util.Set;
 
 import static org.hamcrest.Matchers.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -26,7 +27,9 @@ class IntegrationTests {
     @Autowired
     private FriendRepository friendRepository;
     @Autowired
-    private RecordRepository recordRepository;
+    private RegistryRepository registryRepository;
+    @Autowired
+    private LogsRepository logsRepository;
 
 
     @Autowired
@@ -34,7 +37,7 @@ class IntegrationTests {
 
   @BeforeEach
     void setUp() {
-        recordRepository.deleteAll();
+        registryRepository.deleteAll();
         friendRepository.deleteAll();
     }
 
@@ -54,20 +57,25 @@ class IntegrationTests {
                 .andExpect(jsonPath("$[1].email", equalTo("candy@factoriaf5.org"))) ;
 
     }
-/*
-    @Test
-    void aRecordIncludesAListOfFriends() throws Exception {
 
-        recordRepository.saveAll(
-                List.of(new Record("Cena", "08/03/2022", 50.00,3, true,  ))
+    @Test
+    void aRegistryIncludesAListOfFriends() throws Exception {
+
+        Friend candy = new Friend("Candy", "candy@factoriaf5.org");
+        Friend sonia = new Friend("Sonia", "candy@factoriaf5.org");
+        Registry cena = new Registry("Cena", "08/03/2022", 50.00, 3, true);
+
+        logsRepository.saveAll( List.of(
+                        new Logs(candy, cena),
+                        new Logs(sonia, cena))
         );
 
-        api.perform(get("/record"))
-                .andExpect(jsonPath("$[*]", hasSize(1)))
-                .andExpect(jsonPath("$[0].name", equalTo("Cena")))
-                .andExpect(jsonPath("$[0].friends", equalTo("[sandra]")));
+        api.perform(get("/registries/1/friends"))
+                .andExpect(jsonPath("$[*]", hasSize(2)))
+                .andExpect(jsonPath("$[0].name", equalTo("Candy")))
+                .andExpect(jsonPath("$[1].name", equalTo("Sonia")));
 
-    }*/
+    }
     //
   /*  @Test
     void returnsTheExistingFriends() throws Exception {

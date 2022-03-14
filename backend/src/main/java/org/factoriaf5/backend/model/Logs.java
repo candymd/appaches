@@ -3,10 +3,10 @@ package org.factoriaf5.backend.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name="registrations")
-public class Registration {
+@Table(name="logs")
+public class Logs {
 
-    public Registration() {
+    public Logs() {
 
     }
 
@@ -27,19 +27,19 @@ public class Registration {
     Friend friend;
 
     @ManyToOne
-    @JoinColumn(name = "record_id")
-    Record record;
+    @JoinColumn(name = "registry_id")
+    Registry registry;
 
-    public Registration(Friend friend, Record record) {
+    public Logs(Friend friend, Registry registry) {
         this.friend = friend;
-        this.record = record;
+        this.registry = registry;
     }
 
     public Friend getFriend() {
         return friend;
     }
 
-    public Record getRecord() {
-        return record;
+    public Registry getRegistry() {
+        return registry;
     }
 }
