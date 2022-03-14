@@ -6,6 +6,8 @@ import {useEffect, useState} from "react";
 import CardList from "./components/CardList/CardList";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
+import Form from "./components/Form/Form";
+import {Routes, Route} from "react-router-dom";
 function App() {
 
   const [records, setRecords] = useState([]);
@@ -25,6 +27,9 @@ function App() {
         <Header/>
         <CardList records={records}/>
         <Footer />
+        <Routes>
+            <Route path="form" element={ Form }/>
+        </Routes>
 
     </div>
   );

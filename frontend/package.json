@@ -39,6 +39,7 @@
     ]
   },
   "devDependencies": {
-    "@mui/material": "^5.5.0"
+    "@mui/material": "^5.5.0",
+    "react-router-dom": "^6.2.2"
   }
 }
