@@ -1,0 +1,37 @@
+*{
+    padding: 0;
+    margin: 0;
+
+}
+.TextoBienvenida{
+    text-align: left;
+    font-size: 10px;
+    margin-top: 40px;
+    padding: 10px;
+    color:#2C5725;
+}
+
+.Button{
+display: flex;
+    justify-content: space-evenly;
+    margin: 20px;
+
+
+}
+
+.green{
+    background-color: #86EE75;;
+    height: 100px ;
+    width: 100px;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 15%;
+}
+
+.red{
+    background-color: white;;
+    height: 100px ;
+    width: 100px;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 15%;
+
+}

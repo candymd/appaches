@@ -1,9 +1,11 @@
 import './App.css';
 import './components/Footer/Footer'
+import './components/Header/Header'
 
 import {useEffect, useState} from "react";
 import CardList from "./components/CardList/CardList";
 import Footer from "./components/Footer/Footer";
+import Header from "./components/Header/Header";
 function App() {
 
   const [records, setRecords] = useState([]);
@@ -20,8 +22,10 @@ function App() {
 
     return (
     <div className="App">
+        <Header/>
         <CardList records={records}/>
         <Footer />
+
     </div>
   );
 }
