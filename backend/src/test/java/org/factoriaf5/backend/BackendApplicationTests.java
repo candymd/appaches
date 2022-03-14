@@ -1,5 +1,9 @@
 package org.factoriaf5.backend;
 
+import org.factoriaf5.backend.model.Friend;
+import org.factoriaf5.backend.model.Record;
+import org.factoriaf5.backend.repositories.FriendRepository;
+import org.factoriaf5.backend.repositories.RecordRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,30 +12,36 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.web.servlet.MockMvc;
 
 import java.util.List;
+import java.util.Set;
 
 import static org.hamcrest.Matchers.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+
 
 @SpringBootTest
 @AutoConfigureMockMvc
 class IntegrationTests {
 
     @Autowired
-    private FriendRepository amigoRepository;
+    private FriendRepository friendRepository;
+    @Autowired
+    private RecordRepository recordRepository;
+
 
     @Autowired
     private MockMvc api;
 
-    @BeforeEach
+  @BeforeEach
     void setUp() {
-        amigoRepository.deleteAll();
+        recordRepository.deleteAll();
+        friendRepository.deleteAll();
     }
 
     @Test
     void returnsExistingFriends() throws Exception {
 
-        amigoRepository.saveAll(
+        friendRepository.saveAll(
                 List.of(new Friend("Sandra", "sandra@factoriaf5.org"),
                         new Friend("Candy", "candy@factoriaf5.org"))
         );
@@ -42,8 +52,22 @@ class IntegrationTests {
                 .andExpect(jsonPath("$[0].email", equalTo("sandra@factoriaf5.org")))
                 .andExpect(jsonPath("$[1].name", equalTo("Candy")))
                 .andExpect(jsonPath("$[1].email", equalTo("candy@factoriaf5.org"))) ;
-        
+
     }
+/*
+    @Test
+    void aRecordIncludesAListOfFriends() throws Exception {
+
+        recordRepository.saveAll(
+                List.of(new Record("Cena", "08/03/2022", 50.00,3, true,  ))
+        );
+
+        api.perform(get("/record"))
+                .andExpect(jsonPath("$[*]", hasSize(1)))
+                .andExpect(jsonPath("$[0].name", equalTo("Cena")))
+                .andExpect(jsonPath("$[0].friends", equalTo("[sandra]")));
+
+    }*/
     //
   /*  @Test
     void returnsTheExistingFriends() throws Exception {
