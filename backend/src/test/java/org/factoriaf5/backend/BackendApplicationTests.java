@@ -1,5 +1,11 @@
 package org.factoriaf5.backend;
 
+import org.factoriaf5.backend.model.Friend;
+import org.factoriaf5.backend.model.Logs;
+import org.factoriaf5.backend.model.Registry;
+import org.factoriaf5.backend.repositories.FriendRepository;
+import org.factoriaf5.backend.repositories.LogsRepository;
+import org.factoriaf5.backend.repositories.RegistryRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,25 +19,32 @@ import static org.hamcrest.Matchers.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
+
 @SpringBootTest
 @AutoConfigureMockMvc
 class IntegrationTests {
 
     @Autowired
-    private FriendRepository amigoRepository;
+    private FriendRepository friendRepository;
+    @Autowired
+    private RegistryRepository registryRepository;
+    @Autowired
+    private LogsRepository logsRepository;
+
 
     @Autowired
     private MockMvc api;
 
-    @BeforeEach
+  @BeforeEach
     void setUp() {
-        amigoRepository.deleteAll();
+        registryRepository.deleteAll();
+        friendRepository.deleteAll();
     }
 
     @Test
     void returnsExistingFriends() throws Exception {
 
-        amigoRepository.saveAll(
+        friendRepository.saveAll(
                 List.of(new Friend("Sandra", "sandra@factoriaf5.org"),
                         new Friend("Candy", "candy@factoriaf5.org"))
         );
@@ -42,7 +55,26 @@ class IntegrationTests {
                 .andExpect(jsonPath("$[0].email", equalTo("sandra@factoriaf5.org")))
                 .andExpect(jsonPath("$[1].name", equalTo("Candy")))
                 .andExpect(jsonPath("$[1].email", equalTo("candy@factoriaf5.org"))) ;
-        
+
+    }
+
+    @Test
+    void aRegistryIncludesAListOfFriends() throws Exception {
+
+        Friend candy = new Friend("Candy", "candy@factoriaf5.org");
+        Friend sonia = new Friend("Sonia", "candy@factoriaf5.org");
+        Registry cena = new Registry("Cena", "08/03/2022", 50.00, 3, true);
+
+        logsRepository.saveAll( List.of(
+                        new Logs(candy, cena),
+                        new Logs(sonia, cena))
+        );
+
+        api.perform(get("/registries/1/friends"))
+                .andExpect(jsonPath("$[*]", hasSize(2)))
+                .andExpect(jsonPath("$[0].name", equalTo("Candy")))
+                .andExpect(jsonPath("$[1].name", equalTo("Sonia")));
+
     }
     //
   /*  @Test
