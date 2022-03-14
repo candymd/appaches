@@ -2,10 +2,12 @@
     position: fixed ;
     bottom: 0 ;
     width: 100vw ;
-    min-height: 10vh;
+    min-height: 5vh;
     background: #96B8D0;
 }
 
-.boton{
-    background: #D6EADF;
+.fa-circle-plus {
+    color: blue;
+    font-size: 40px;
+    padding: 5px;
 }
