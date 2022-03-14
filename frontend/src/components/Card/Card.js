@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import './CardStyle.css';
 import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
@@ -8,7 +8,13 @@ import {AccordionDetails} from "@mui/material";
 const Card = ({record}) => {
 
     const registry = record.registry;
-    const friend = record.friend;
+    const [friends, setFriends] = useState([]);
+
+    useEffect(() => {
+        fetch(`http://localhost:8080/registries/${registry.id}/friends`)
+            .then(r => r.json())
+            .then(setFriends)
+    },[])
 
     const [expanded, setExpanded] = useState(false);
 
@@ -40,8 +46,8 @@ const Card = ({record}) => {
             </AccordionSummary>
 
             <AccordionDetails>
-                <ul>
-                    <li>{friend.name}</li>
+                <ul className="friends">
+                    { friends.map( friend => <li><span>{friend.name}</span><span>5€</span></li>) }
                 </ul>
             </AccordionDetails>
         </Accordion>
