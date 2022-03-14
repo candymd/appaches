@@ -26,10 +26,6 @@ public class Registration {
     @JoinColumn(name = "friend_id")
     Friend friend;
 
-    public Record getRecord() {
-        return record;
-    }
-
     @ManyToOne
     @JoinColumn(name = "record_id")
     Record record;
@@ -39,5 +35,11 @@ public class Registration {
         this.record = record;
     }
 
+    public Friend getFriend() {
+        return friend;
+    }
 
+    public Record getRecord() {
+        return record;
+    }
 }
