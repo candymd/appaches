@@ -9,7 +9,8 @@ const Header = () => {
 
         <div className="Container">
             <div className="TextoBienvenida">
-            <h1>Hola, María</h1>
+                <i className="fa-solid fa-user-astronaut"></i>
+                <h1>Hola, María</h1>
             <p>Bienvenida a Appaches</p>
                 <div className="Button">
                     <button className="green">A Cobrar</button>
