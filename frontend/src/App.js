@@ -28,7 +28,7 @@ function App() {
         <CardList records={records}/>
         <Footer />
         <Routes>
-            <Route path="form" element={<Form/>}/>
+            <Route path="form" element={ Form }/>
         </Routes>
 
     </div>

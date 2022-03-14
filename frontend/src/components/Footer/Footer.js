@@ -1,6 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Footer.css'
-
 
 
 const Footer = () => {
@@ -8,7 +8,8 @@ const Footer = () => {
 return (
 
     <div className="footer">
-        <i className="fa-solid fa-circle-plus" ><link to="/form"/></i>
+
+        <Link to="/form"><i className="fa-solid fa-circle-plus" ></i></Link>
         <h6>Añadir Evento</h6>
 
 
