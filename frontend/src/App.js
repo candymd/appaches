@@ -15,20 +15,21 @@ function App() {
 
     useEffect(() => {
         if (requiresUpdate) {
-            fetch("http://localhost:8080/record")
+            fetch("http://localhost:8080/logs")
                 .then(r => r.json())
                 .then(setRecords)
                 .then(_ => setRequiresUpdate(false));
+            console.log(records);
         }
     }, [requiresUpdate])
 
     return (
     <div className="App">
         <Header/>
-        <CardList records={records}/>
+        <CardList  records={records}/>
         <Footer />
         <Routes>
-            <Route path="form" element={ Form }/>
+            <Route path="/form" element={ <Form /> }/>
         </Routes>
 
     </div>
