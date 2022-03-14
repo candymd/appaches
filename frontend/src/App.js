@@ -1,13 +1,11 @@
 import './App.css';
 import './components/Footer/Footer'
 import './components/Header/Header'
-
 import {useEffect, useState} from "react";
-import CardList from "./components/CardList/CardList";
-import Footer from "./components/Footer/Footer";
-import Header from "./components/Header/Header";
 import Form from "./components/Form/Form";
-import {Routes, Route} from "react-router-dom";
+import {Route, Routes,} from "react-router-dom";
+import {MainPage} from "./components/MainPage/MainPage";
+
 function App() {
 
   const [records, setRecords] = useState([]);
@@ -25,13 +23,10 @@ function App() {
 
     return (
     <div className="App">
-        <Header/>
-        <CardList  records={records}/>
-        <Footer />
         <Routes>
-            <Route path="/form" element={ <Form /> }/>
+            <Route path="/" exact element={<MainPage  records={records}/>}/>
+            <Route path="/form" element={<Form/>}/>
         </Routes>
-
     </div>
   );
 }
