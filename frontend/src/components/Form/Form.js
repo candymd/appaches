@@ -38,7 +38,7 @@ return (
                     <input type="text" name="username" className="input"/>
                 </div>
                 <div>
-                    <p>TOTAL APACHAS= 5e/cada participante</p>
+                    <p className="input">TOTAL APACHAS= 5e/cada participante</p>
                 </div>
             </div>
         </div>
