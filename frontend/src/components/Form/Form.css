@@ -37,11 +37,43 @@ h1{
      color: #000000;
  }
 
-.input-group-row-3{
+.form{
     font-size: 13px;
     position: fixed;
     width: 20px;
     height: 16px;
     left: 48px;
-    top: 214px;
+    top: 100px;
+}
+.input{
+    width: 328px;
+    height: 25px;
+    left: 47px;
+    top: 170px;
+    padding: 5px;
+    background: #FFFFFF;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.34);
+    border-radius: 6px;
+}
+.text{
+    width: 300px;
+    left: 47px;
+    margin-top: 5px;
+    padding: 20px;
+    background: #FFFFFF;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.34);
+    border-radius: 6px;
+}
+.button-select {
+    display: flex;
+    flex-wrap:;
+    justify-content: space-evenly;
+    width: 161px;
+    height: 25px;
+    left: 49px;
+    top: 300px;
+
+    background: #FFFFFF;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.34);
+    border-radius: 6px;
 }
