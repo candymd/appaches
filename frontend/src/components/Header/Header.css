@@ -12,11 +12,9 @@
 }
 
 .Button{
-display: flex;
+    display: flex;
     justify-content: space-evenly;
     margin: 20px;
-
-
 }
 
 
@@ -24,14 +22,25 @@ display: flex;
     background-color: white;
     height: 100px ;
     width: 100px;
-    box-shadow: 1px 1px 6px 0px rgb(13 14 13);
+    box-shadow: 1px 1px 6px 0 rgb(13 14 13);
     border-radius: 20%;
     border: none;
-
+    cursor: pointer;
 }
+
 
 button.red.active{
     background-color: #FE7373;
+}
+
+button.red.active:hover {
+    background-color: #e66767;
+}
+
+
+button.green.active:hover {
+    background-color: #73cc65;
+
 }
 
 button.green.active{

@@ -32,29 +32,37 @@ public class SampleDataLoader {
         Friend candy = new Friend("Candy", "candy@factoriaf5.org");
         Friend sonia = new Friend("Sonia", "sonia@factoriaf5.org");
         Friend faby = new Friend("Faby", "faby@factoriaf5.org");
+        Friend valentina = new Friend("Valentina", "valentina@factoriaf5.org");
+        Friend sandra = new Friend("Sandra", "sandra@factoriaf5.org");
 
 
         Set<Friend> friends = Set.of(
                 candy,
                 sonia,
-                faby
+                faby,
+                valentina,
+                sandra
         );
 
         friendRepository.saveAll(friends);
 
         Registry cena = new Registry("Cena", "08/03/2022", 50.00, 3, true);
         Registry cervezas = new Registry("Cervezas", "09/03/2022", 40.00, 3, true);
+
+
         registryRepository.saveAll(List.of(
                 cena,
                 cervezas
         ));
 
 
-       logsRepository.saveAll( List.of(
+        logsRepository.saveAll( List.of(
                new Logs(sonia, cena),
                new Logs(faby, cena),
                new Logs(sonia, cervezas),
-               new Logs(candy, cervezas)
+               new Logs(candy, cervezas),
+               new Logs(valentina, cervezas),
+               new Logs(sandra, cervezas)
                )
        );
 

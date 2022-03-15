@@ -1,6 +1,9 @@
 package org.factoriaf5.backend.model;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
 
 @Entity
 @Table(name="registries")
@@ -8,13 +11,18 @@ public class Registry {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "registry_id")
     private Long id;
     private String name;
     private String date;
     private Double amount;
     private int numberFriends;
     private boolean paidByMe;
-
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "logs",
+            joinColumns = { @JoinColumn(name = "registry_id") },
+            inverseJoinColumns = { @JoinColumn(name = "friend_id") })
+    private final List<Friend> friends = new ArrayList<Friend>();
 
     public Registry(String name, String date, Double amount, int numberFriends, boolean paidByMe) {
         this.name = name;
@@ -74,5 +82,35 @@ public class Registry {
 
     public void setPaidByMe(boolean paidByMe) {
         this.paidByMe = paidByMe;
+    }
+
+    public List<Friend> getFriends() {
+        return friends;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Registry registry = (Registry) o;
+        return numberFriends == registry.numberFriends && paidByMe == registry.paidByMe && Objects.equals(id, registry.id) && Objects.equals(name, registry.name) && Objects.equals(date, registry.date) && Objects.equals(amount, registry.amount) && Objects.equals(friends, registry.friends);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, date, amount, numberFriends, paidByMe, friends);
+    }
+
+    @Override
+    public String toString() {
+        return "Registry{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", date='" + date + '\'' +
+                ", amount=" + amount +
+                ", numberFriends=" + numberFriends +
+                ", paidByMe=" + paidByMe +
+                ", friends=" + friends +
+                '}';
     }
 }

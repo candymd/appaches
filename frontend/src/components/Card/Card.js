@@ -7,14 +7,14 @@ import {AccordionDetails} from "@mui/material";
 
 const Card = ({record}) => {
 
-    const registry = record.registry;
+    // const registry = record.registry;
     const [friends, setFriends] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:8080/registries/${registry.id}/friends`)
+        fetch(`http://localhost:8080/registries/${record.id}/friends`)
             .then(r => r.json())
             .then(setFriends)
-    },[])
+    },[record.id])
 
     const [expanded, setExpanded] = useState(false);
 
@@ -33,21 +33,21 @@ const Card = ({record}) => {
                 id="panel1bh-header">
 
             <div className="title">
-                <p>{registry.name}</p>
+                <p>{record.name}</p>
             </div>
             <div className="date-amount">
-                <span className="date">{registry.date}</span>
-                <span className="amount">{registry.amount + '€'}</span>
+                <span className="date">{record.date}</span>
+                <span className="amount">{record.amount + '€'}</span>
             </div>
             <div className="friends-paid">
-                <span>Participantes: {registry.numberFriends}</span>
+                <span>Participantes: {friends.length}</span>
                 <span>SALDADO: 1/3</span>
             </div>
             </AccordionSummary>
 
             <AccordionDetails>
                 <ul className="friends">
-                    { friends.map( friend => <li><span>{friend.name}</span><span>5€</span></li>) }
+                    { friends.map( friend => <li key={friend.id}><span>{friend.name}</span><span>5€</span></li>) }
                 </ul>
             </AccordionDetails>
         </Accordion>
