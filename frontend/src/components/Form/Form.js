@@ -1,24 +1,52 @@
 import React from 'react';
 import './Form.css'
+import {Link, useNavigate} from "react-router-dom";
 
-function Form() {
-return (
+function Form(props) {
+    /*const navigate = useNavigate();
+
+
+    const [registryData, setRegistryData] = useState(props.registryData || {
+        date: '',
+        name: '',
+        amount: '',
+        friends: '',
+        numberFriends: '',
+    })
+
+    const handleInputChange = (event) => {
+        console.log(event.target.value)
+        setRegistryDataData({
+            ...registryData,
+            [event.target.name]: event.target.value
+        })
+    }
+
+    const enviarDatos = (event) => {
+        event.preventDefault()
+        props.onSubmit(registryData)
+        props.onClose()
+        navigate("/")
+
+    } */
+
+    return (
     <>
         <div className="container">
-            <button className="button-icon"><i className="fa-solid fa-circle-check"></i></button>
+            <button className="button-icon"><Link to="/"><i className="fa-solid fa-circle-check"></i></Link></button>
             <h1>AÑADIR</h1>
-            <div className="form">
+            {/*<div className="form">
                 <div>
                     <label htmlFor="">FECHA</label>
-                    <input type="date" id="date" name="experience_date" className="input"/>
+                    <input value={registryData.date} onChange={handleInputChange}type="date"  name="registry_date" className="input"/>
                 </div>
                 <div>
                     <label htmlFor="">NOMBRE DEL GASTO</label>
-                    <input id="ticket-name" required name="user_name" className="input"/>
+                    <input value={registryData.name} onChange={handleInputChange} type="text" className="input"/>
                 </div>
                 <div>
                     <label htmlFor="price">IMPORTE</label>
-                    <input type="number" id="import" name="import" className="input"/>
+                    <input value={registryData.amount} onChange={handleInputChange} type="text" name="import" className="input"/>
                 </div>
                 <div>
                     <label htmlFor="">PAGADO POR</label>
@@ -27,17 +55,17 @@ return (
                 </div>
                 <div>
                     <label htmlFor="">NOMBRE</label>
-                    <input id="friend-name" required name="user_name" className="input"/>
+                    <input value={registryData.friends} onChange={handleInputChange}type="text" required name="user_name" className="input"/>
                 </div>
                 <div>
                     <label htmlFor="">LISTA</label>
                     <textarea  className="text"></textarea>
                 </div>
                 <div>
-                    <p className="input">AMIGOS:3</p>
+                    <p className="input">AMIGOS: ${registryData.numberFriends}</p>
                     <p className="input">TOTAL APACHAS= 5 €/cada participante</p>
                 </div>
-            </div>
+            </div>*/}
         </div>
     </>
 )
