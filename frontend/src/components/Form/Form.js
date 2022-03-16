@@ -22,8 +22,8 @@ return (
                 </div>
                 <div>
                     <label htmlFor="">PAGADO POR</label>
-                    <button className="button-select">Por ti</button>
-                    <button className="button-select">Por otro</button>
+                    <button  className="button-select">Por ti</button>
+                    <button  className="button-select">Por otro</button>
                 </div>
                 <div>
                     <label htmlFor="">NOMBRE</label>
@@ -38,7 +38,7 @@ return (
                     <input type="text" name="username" className="input"/>
                 </div>
                 <div>
-                    <p className="input">TOTAL APACHAS= 5e/cada participante</p>
+                    <p className="input">TOTAL APACHAS= 5 €/cada participante</p>
                 </div>
             </div>
         </div>
