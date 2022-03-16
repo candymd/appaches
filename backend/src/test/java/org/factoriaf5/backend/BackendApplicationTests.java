@@ -1,3 +1,4 @@
+/*
 package org.factoriaf5.backend;
 
 import org.factoriaf5.backend.model.Friend;
@@ -77,7 +78,8 @@ class IntegrationTests {
 
     }
     //
-  /*  @Test
+  */
+/*  @Test
     void returnsTheExistingFriends() throws Exception {
         Friend friend = FriendRepository.save(new Friend("Sandra","sandra@factoria5.org" ));
 
@@ -98,8 +100,10 @@ class IntegrationTests {
                 .andExpect(model().attributeExists("friend"))
                 .andExpect(model().attribute("title", "Create new friend"));
     }
-*/
+*//*
+
 
 
 
     }
+*/

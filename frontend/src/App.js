@@ -1,6 +1,7 @@
 import './App.css';
 import './components/Footer/Footer'
 import './components/Header/Header'
+
 import {useEffect, useState} from "react";
 import Form from "./components/Form/Form";
 import {Route, Routes,} from "react-router-dom";
@@ -13,11 +14,10 @@ function App() {
 
     useEffect(() => {
         if (requiresUpdate) {
-            fetch("http://localhost:8080/logs")
+            fetch("http://localhost:8080/registries")
                 .then(r => r.json())
                 .then(setRecords)
                 .then(_ => setRequiresUpdate(false));
-            console.log(records);
         }
     }, [requiresUpdate])
 
