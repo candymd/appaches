@@ -1,11 +1,17 @@
 import React from 'react';
-import '../Card/Card'
-import Card from "../Card/Card";
+import '../ACobrarCard/ACobrarCard'
+import ACobrarCard from "../ACobrarCard/ACobrarCard";
+import APagarCard from "../APagarCard/APagarCard";
 
-const CardList = ({records}) => {
+const CardList = ({registrosACobrar, registrosAPagar, vistaACobrar}) => {
+
+
+
     return (
-        <div className="cardList">
-            {records.map(record => <Card key={record.id} record={record} /> )}
+
+          <div className="cardList">
+              {vistaACobrar ? registrosACobrar.map(registry => <ACobrarCard key={registry.id} registry={registry}/>)
+              : registrosAPagar.map(registry => <APagarCard key={registry.id} registry={registry}/>)}
         </div>
     );
 };

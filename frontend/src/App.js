@@ -3,35 +3,35 @@ import './components/Footer/Footer'
 import './components/Header/Header'
 
 import {useEffect, useState} from "react";
-import CardList from "./components/CardList/CardList";
-import CardList2 from "./components/CardList2/CardList2";
-import Footer from "./components/Footer/Footer";
-import Header from "./components/Header/Header";
 import Form from "./components/Form/Form";
-import {Route, Routes,} from "react-router-dom";
+import {Route, Routes} from "react-router-dom";
 import {MainPage} from "./components/MainPage/MainPage";
-import {MainPage2} from "./components/MainPage2/MainPage2";
+
 
 function App() {
 
-  const [records, setRecords] = useState([]);
-  const [requiresUpdate, setRequiresUpdate] = useState(true);
+    const [registries, setRegistries] = useState([]);
+    const [requiresUpdate, setRequiresUpdate] = useState(true);
+    const [vistaACobrar, setVistaACobrar] = useState(true);
+    const registrosACobrar = registries.filter((n) => n.paidByMe);
+    const registrosAPagar = registries.filter((n) => !n.paidByMe);
 
     useEffect(() => {
         if (requiresUpdate) {
             fetch("http://localhost:8080/registries")
                 .then(r => r.json())
-                .then(setRecords)
+                .then(setRegistries)
                 .then(_ => setRequiresUpdate(false));
         }
     }, [requiresUpdate])
 
+
     return (
     <div className="App">
         <Routes>
-            <Route path="/" exact element={<MainPage  records={records}/>}/>
+            <Route path="/" exact element={<MainPage registrosACobrar={registrosACobrar} registrosAPagar={registrosAPagar} vistaACobrar={vistaACobrar} setVistaACobrar={setVistaACobrar}/>}/>
             <Route path="/form" element={<Form/>}/>
-        </Routes>
+            </Routes>
     </div>
   );
 }

@@ -3,24 +3,32 @@ import './Header.css'
 
 
 
-const Header = () => {
+
+const Header = ({setVistaACobrar}) => {
 
     const [isGreenActive, setIsGreenActive] = useState(true);
 
+    const irACobrar = () => {
+        setIsGreenActive(true);
+        setVistaACobrar(true)
+    }
+
+    const irAPagar = () => {
+        setIsGreenActive(false);
+        setVistaACobrar(false)
+    }
 
     return (
 
         <div className="Container">
             <div className="TextoBienvenida">
                 <i className="fa-solid fa-user-astronaut"/>
-                <h1>Hola, María</h1>
+                <h1 className="hola">Hola, María</h1>
             <p>Bienvenida a Appaches</p>
                 <div className="Button">
 
-                    <button onClick={() => setIsGreenActive(true)}
-                            className={isGreenActive ? 'green active': 'green' }>A Cobrar</button>
-                    <button onClick={() => setIsGreenActive(false)}
-                            className= {!isGreenActive ? 'red active': 'red' } >A Pagar</button>
+                 <button  onClick={irACobrar} className={isGreenActive ? 'green active': 'green' }>A COBRAR</button>
+                   <button onClick={irAPagar} className= {!isGreenActive ? 'red active': 'red' } >A PAGAR</button>
                 </div>
             </div>
 

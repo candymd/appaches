@@ -11,8 +11,15 @@
     color:#2C5725;
 
 }
+h1.hola {
+    font-weight: 600;
+    font-size: 26px;
+    text-align: left;
+    color: #000000;
+    margin: 0;
+}
 
-.Button{
+.Button {
     display: flex;
     justify-content: space-evenly;
     margin: 20px;
