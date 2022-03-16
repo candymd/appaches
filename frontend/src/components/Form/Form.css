@@ -1,0 +1,85 @@
+.container{
+    background: #FFFFFF;
+    margin: 0px;
+}
+.button-icon{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    left: 320px;
+    top: 30px;
+    background: #FFFFFF;
+    border: 0.5px solid #000000;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 11px;
+}
+
+.fa-circle-check{
+    position: absolute;
+    left: 10%;
+    right: 9%;
+    top: 20%;
+    bottom: 90%;
+    font-size: 25px;
+    background: #000000;
+}
+
+h1{
+     width: 15em;
+     height: 30px;
+     margin: 50px 5px;
+     font-style: normal;
+     font-weight: 600;
+     font-size: 26px;
+     line-height: 31px;
+     text-align: center;
+     color: #000000;
+ }
+
+.form{
+    font-size: 13px;
+    position: fixed;
+    width: 140px;
+    height: 16px;
+    left: 30px;
+    top: 100px;
+
+}
+.input{
+    margin: 5px;
+    width: 230%;
+    height: 25px;
+    left: 47px;
+    top: 170px;
+    padding: 5px;
+    background: #FFFFFF;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.34);
+    border-radius: 6px;
+
+}
+.text{
+    width: 300px;
+    left: 47px;
+    margin-top: 5px;
+    padding: 20px;
+    background: #FFFFFF;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.34);
+    border-radius: 6px;
+
+}
+.button-select {
+    margin: 5px;
+    width: 60px;
+    height: 40px;
+    left: 50px;
+    top: 100px;
+    background: #FFFFFF;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.34);
+    border-radius: 6px;
+
+}
+
+label {
+    float: left;
+}
