@@ -12,8 +12,6 @@ return (
         <Link to="/form"><i className="fa-solid fa-circle-plus" ></i></Link>
         <h6>Añadir Evento</h6>
 
-
-
     </div>
 )
 
