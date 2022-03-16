@@ -17,8 +17,10 @@ const Header = () => {
             <p>Bienvenida a Appaches</p>
                 <div className="Button">
 
-                    <button onClick={() => setIsGreenActive(true)} className={isGreenActive ? 'green active': 'green' }>A COBRAR</button>
-                    <button onClick={() => setIsGreenActive(false)} className= {!isGreenActive ? 'red active': 'red' } >A PAGAR</button>
+                    <button onClick={() => setIsGreenActive(true)}
+                            className={isGreenActive ? 'green active': 'green' }>A Cobrar</button>
+                    <button onClick={() => setIsGreenActive(false)}
+                            className= {!isGreenActive ? 'red active': 'red' } >A Pagar</button>
                 </div>
             </div>
 
