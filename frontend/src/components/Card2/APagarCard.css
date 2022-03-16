@@ -1,0 +1,73 @@
+.MuiAccordionSummary-content  > * {
+    display: flex;
+}
+
+.MuiAccordionSummary-content {
+    display: flex;
+    flex-direction: column;
+}
+.card {
+    border-bottom: 0.5px solid #0E7AC6;
+    padding: 0 0.5rem 0.5rem;
+}
+
+.MuiAccordionSummary-root {
+    position: relative;
+}
+
+.MuiAccordionSummary-expandIconWrapper {
+    position: absolute;
+    top: 10%;
+    right: 5%;
+
+}
+
+.MuiAccordionSummary-expandIconWrapper > .fa-ellipsis {
+    color: black;
+}
+
+
+.css-o4b71y-MuiAccordionSummary-content > .date-amount{
+    margin-top: -10px;
+    align-items: center;
+    justify-content: space-between;}
+
+.title {
+    font-size: 22px;
+    font-weight: 500;
+    justify-items: flex-end;
+}
+
+.title p {
+    margin: 0;
+    padding: 0;
+}
+
+.friends-paid {
+    margin-top: 3%;
+    font-size: 15px;
+    font-weight: 400;
+    justify-content: space-between ;
+}
+
+.amount {
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.date {
+    font-size: 15px;
+    font-style: italic;
+    color: rgba(38, 26, 12, 0.7);
+}
+
+.card ul > li{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-top: 2px solid white;
+    padding: 5px;
+    font-size:20px;
+    font-weight: 600;
+}
