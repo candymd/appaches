@@ -34,10 +34,7 @@ return (
                     <textarea  className="text"></textarea>
                 </div>
                 <div>
-                    <label htmlFor="">AMIGOS</label>
-                    <input type="text" name="username" className="input"/>
-                </div>
-                <div>
+                    <p className="input">AMIGOS:3</p>
                     <p className="input">TOTAL APACHAS= 5 €/cada participante</p>
                 </div>
             </div>
