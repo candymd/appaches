@@ -34,6 +34,7 @@ const ACobrarCard = ({registry, deleteRegistry}) => {
         deleteRegistry(registry.id);
     }
 
+    const amountPerParticipant = (registry.amount / (registry.friends.length + 1)).toFixed(2)
 
     return (
         <Accordion className="card" sx={{backgroundColor: "#D6EADF"}} expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
@@ -66,7 +67,7 @@ const ACobrarCard = ({registry, deleteRegistry}) => {
 
             <AccordionDetails>
                 <ul className="friends">
-                    { friends.map( friend => <li key={friend.id}><span>{friend.name}</span><span>5€</span></li>) }
+                    { friends.map( friend => <li key={friend.id}><span>{friend.name}</span><span>{amountPerParticipant + '€'}</span></li>) }
                 </ul>
             </AccordionDetails>
         </Accordion>
