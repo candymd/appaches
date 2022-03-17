@@ -26,7 +26,7 @@ function Form(props) {
         event.preventDefault()
         props.onSubmit(registryData)
         props.onClose()
-        navigate("/")
+        navigate("/") /* que me envie datos a cobrar o a pagar ( que no siempre me lleve a la home*/
 
     }
 
