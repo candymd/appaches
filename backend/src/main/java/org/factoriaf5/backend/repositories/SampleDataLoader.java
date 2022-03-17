@@ -34,6 +34,8 @@ public class SampleDataLoader {
         Friend faby = new Friend("Faby", "faby@factoriaf5.org");
         Friend valentina = new Friend("Valentina", "valentina@factoriaf5.org");
         Friend sandra = new Friend("Sandra", "sandra@factoriaf5.org");
+        Friend joseManuel = new Friend("Jose Manuel", "josemanuel@factoriaf5.org");
+        Friend evaMaria = new Friend("Eva Maria", "evamaria@factoriaf5.org");
 
 
         Set<Friend> friends = Set.of(
@@ -41,18 +43,26 @@ public class SampleDataLoader {
                 sonia,
                 faby,
                 valentina,
-                sandra
+                sandra,
+                joseManuel,
+                evaMaria
         );
 
         friendRepository.saveAll(friends);
 
         Registry cena = new Registry("Cena", "08/03/2022", 50.00, 3, true);
         Registry cervezas = new Registry("Cervezas", "09/03/2022", 40.00, 3, true);
+        Registry mariscada = new Registry("Mariscada", "16/03/2022", 100.00, 3, false);
+        Registry cine = new Registry("Entradas al cine", "10/03/2022", 40.00, 2, false);
+        Registry concierto = new Registry("Entradas a concierto Alejandro Sanz", "09/03/2022", 150.00, 3, false);
 
 
         registryRepository.saveAll(List.of(
                 cena,
-                cervezas
+                cervezas,
+                cine,
+                concierto,
+                mariscada
         ));
 
 
@@ -62,7 +72,13 @@ public class SampleDataLoader {
                new Logs(sonia, cervezas),
                new Logs(candy, cervezas),
                new Logs(valentina, cervezas),
-               new Logs(sandra, cervezas)
+                new Logs(sandra, cervezas),
+               new Logs(evaMaria, mariscada),
+               new Logs(joseManuel, mariscada),
+               new Logs(candy, concierto),
+               new Logs(joseManuel, concierto),
+               new Logs(sonia, cine)
+
                )
        );
 
