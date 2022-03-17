@@ -50,8 +50,8 @@ function Form(props) {
                 </div>
                 <div>
                     <label htmlFor="">PAGADO POR</label>
-                    <button  className="button-select">Por ti</button>
-                    <button  className="button-select">Por otro</button>
+                    <button  className="button-select">Por ti</button> link a cobrar
+                    <button  className="button-select">Por otro</button> link a pagar
                 </div>
                 <div>
                     <label htmlFor="">NOMBRE</label>
