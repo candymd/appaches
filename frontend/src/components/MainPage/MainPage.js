@@ -5,7 +5,7 @@ import Footer from "../Footer/Footer";
 export const MainPage = (props) =>
     <div>
         <Header setVistaACobrar={props.setVistaACobrar}/>
-        <CardList registrosACobrar={props.registrosACobrar} registrosAPagar={props.registrosAPagar}
+        <CardList deleteRegistry={props.deleteRegistry} registrosACobrar={props.registrosACobrar} registrosAPagar={props.registrosAPagar}
                   vistaACobrar={props.vistaACobrar} setVistaACobrar={props.setVistaACobrar}/>
         <Footer/>
     </div>

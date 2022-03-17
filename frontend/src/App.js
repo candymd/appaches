@@ -25,11 +25,19 @@ function App() {
         }
     }, [requiresUpdate])
 
+    const deleteRegistry = (id) => {
+        fetch(`http://localhost:8080/registries/delete/${id}`,
+            {
+                method: 'GET'
+            }
+        ).then(_ => setRequiresUpdate(true))
+
+    }
 
     return (
     <div className="App">
         <Routes>
-            <Route path="/" exact element={<MainPage registrosACobrar={registrosACobrar} registrosAPagar={registrosAPagar} vistaACobrar={vistaACobrar} setVistaACobrar={setVistaACobrar}/>}/>
+            <Route path="/" exact element={<MainPage deleteRegistry={deleteRegistry} registrosACobrar={registrosACobrar} registrosAPagar={registrosAPagar} vistaACobrar={vistaACobrar} setVistaACobrar={setVistaACobrar}/>}/>
             <Route path="/form" element={<Form/>}/>
             </Routes>
     </div>
