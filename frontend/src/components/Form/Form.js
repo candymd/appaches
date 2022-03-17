@@ -23,6 +23,10 @@ function Form  (props) {
         setVistaACobrar(false)
     }
 
+function Form(props) {
+    const navigate = useNavigate();
+
+
 
     const [registryData, setRegistryData] = useState(props.registryData || {
         date: '',
@@ -51,9 +55,11 @@ function Form  (props) {
     return (
     <>
         <div className="container">
-            <button className="button-icon"><Link to="/"><i className="fa-solid fa-circle-check"></i></Link></button>
-            <h1>AÑADIR</h1>
+
             <div className="form">
+            <button type="submit" className="button-icon" data-toggle="" data-target=""><Link to="/" >{props.registryData ? 'Guardar cambios' : <i className="fa-solid fa-circle-check"></i>}</Link></button>
+            <h1>AÑADIR </h1>
+            <div className="form" onSubmit={enviarDatos} action="">
                 <div>
                     <label htmlFor="">FECHA</label>
                     <input value={registryData.date} onChange={handleInputChange}type="date"  name="registry_date" className="input"/>
