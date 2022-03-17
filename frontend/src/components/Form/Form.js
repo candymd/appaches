@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import './Form.css'
 import {Link, useNavigate} from "react-router-dom";
 
-function Form(props) {
+const Form = (props) => {
 
 
     const navigate = useNavigate();
@@ -28,8 +28,6 @@ function Form(props) {
         setVistaACobrar(false)
     }
 
-    function Form(props) {
-        const navigate = useNavigate();
 
 
         const [registryData, setRegistryData] = useState(props.registryData || {
@@ -107,6 +105,5 @@ function Form(props) {
         )
     }
 
-    export default Form
-
+export default Form
 
