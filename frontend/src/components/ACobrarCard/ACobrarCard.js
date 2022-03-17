@@ -26,9 +26,6 @@ const ACobrarCard = ({registry, deleteRegistry}) => {
         menuIsOpen ? setMenuIsOpen(false) : setMenuIsOpen(true)
     }
 
-    const closeMenu = () => {
-        setMenuIsOpen(false)
-    }
     const onDeleteRegistry = () => {
         setMenuIsOpen(false)
         deleteRegistry(registry.id);
@@ -45,7 +42,7 @@ const ACobrarCard = ({registry, deleteRegistry}) => {
                               id="panel1bh-header">
                 {menuIsOpen && <div className="menu">
                     <ul>
-                        <li onClick={closeMenu}>Editar</li>
+                        <li onClick={toggleMenu}>Editar</li>
                         <li onClick={onDeleteRegistry}>Borrar</li>
                     </ul>
                 </div>}
