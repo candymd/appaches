@@ -30,7 +30,7 @@ function App() {
     <div className="App">
         <Routes>
             <Route path="/" exact element={<MainPage registrosACobrar={registrosACobrar} registrosAPagar={registrosAPagar} vistaACobrar={vistaACobrar} setVistaACobrar={setVistaACobrar}/>}/>
-            <Route path="/form" element={<Form/>}/>
+            <Route path="/form" element={<Form registrosACobrar={registrosACobrar} registrosAPagar={registrosAPagar}/>}/>
             </Routes>
     </div>
   );
