@@ -1,9 +1,9 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './Form.css'
 import {Link, useNavigate} from "react-router-dom";
 
 function Form(props) {
-    /*const navigate = useNavigate();
+    const navigate = useNavigate();
 
 
     const [registryData, setRegistryData] = useState(props.registryData || {
@@ -16,7 +16,7 @@ function Form(props) {
 
     const handleInputChange = (event) => {
         console.log(event.target.value)
-        setRegistryDataData({
+        setRegistryData({
             ...registryData,
             [event.target.name]: event.target.value
         })
@@ -28,14 +28,14 @@ function Form(props) {
         props.onClose()
         navigate("/")
 
-    } */
+    }
 
     return (
     <>
         <div className="container">
-            <button className="button-icon"><Link to="/"><i className="fa-solid fa-circle-check"></i></Link></button>
-            <h1>AÑADIR</h1>
-            {/*<div className="form">
+            <button type="submit" className="button-icon" data-toggle="" data-target=""><Link to="/" >{props.registryData ? 'Guardar cambios' : <i className="fa-solid fa-circle-check"></i>}</Link></button>
+            <h1>AÑADIR </h1>
+            <div className="form" onSubmit={enviarDatos} action="">
                 <div>
                     <label htmlFor="">FECHA</label>
                     <input value={registryData.date} onChange={handleInputChange}type="date"  name="registry_date" className="input"/>
@@ -48,10 +48,11 @@ function Form(props) {
                     <label htmlFor="price">IMPORTE</label>
                     <input value={registryData.amount} onChange={handleInputChange} type="text" name="import" className="input"/>
                 </div>
+
                 <div>
                     <label htmlFor="">PAGADO POR</label>
-                    <button  className="button-select">Por ti</button> link a cobrar
-                    <button  className="button-select">Por otro</button> link a pagar
+                    <button  className="button-select">Por ti</button>
+                    <button  className="button-select">Por otro</button>
                 </div>
                 <div>
                     <label htmlFor="">NOMBRE</label>
@@ -65,7 +66,7 @@ function Form(props) {
                     <p className="input">AMIGOS: ${registryData.numberFriends}</p>
                     <p className="input">TOTAL APACHAS= 5 €/cada participante</p>
                 </div>
-            </div>*/}
+            </div>
         </div>
     </>
 )
