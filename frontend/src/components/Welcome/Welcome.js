@@ -1,5 +1,6 @@
 import React  from "react";
 import './Welcome.css'
+import logo from './assets/logo.png'
 
 const Welcome = () => {
 
@@ -7,8 +8,8 @@ const Welcome = () => {
 
             <div className="WelcomeHello">
 
-                <h1> CUANDO CADA CÉNTIMO CUENTA </h1>
-                <img src={"./assets/logo_transparente.png"} />
+                <img className= "logo-Welcome" src={logo} />
+                <h1 className="slogan"> CUANDO CADA CÉNTIMO CUENTA </h1>
 
             </div>
         )
