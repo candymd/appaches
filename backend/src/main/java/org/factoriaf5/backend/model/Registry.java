@@ -1,5 +1,7 @@
 package org.factoriaf5.backend.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -18,12 +20,19 @@ public class Registry {
     private Double amount;
     private int numberFriends;
     private boolean paidByMe;
-    @ManyToMany(cascade = CascadeType.ALL)
+
+
+    @OneToMany(mappedBy = "registry")
+    @JsonIgnore
+    List<Logs> logs;
+
+
+    /*@ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "logs",
             joinColumns = { @JoinColumn(name = "registry_id") },
             inverseJoinColumns = { @JoinColumn(name = "friend_id") })
     private final List<Friend> friends = new ArrayList<Friend>();
-
+*/
     public Registry(String name, String date, Double amount, int numberFriends, boolean paidByMe) {
         this.name = name;
         this.date = date;
@@ -84,7 +93,7 @@ public class Registry {
         this.paidByMe = paidByMe;
     }
 
-    public List<Friend> getFriends() {
+   /* public List<Friend> getFriends() {
         return friends;
     }
 
@@ -112,5 +121,5 @@ public class Registry {
                 ", paidByMe=" + paidByMe +
                 ", friends=" + friends +
                 '}';
-    }
+    }*/
 }

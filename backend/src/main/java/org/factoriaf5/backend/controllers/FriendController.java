@@ -42,7 +42,7 @@ public class FriendController {
 
     @GetMapping("/friends/{id}/registries")
     public List<Registry> registryByFriend(@PathVariable Long id) {
-        return logsRepository.findAllByFriendId(id)
+        return logsRepository.findAllByFriendsId(id)
                 .stream()
                 .map(Logs::getRegistry)
                 .collect(Collectors.toList());

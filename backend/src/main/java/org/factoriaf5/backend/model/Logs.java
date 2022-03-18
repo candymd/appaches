@@ -1,6 +1,7 @@
 package org.factoriaf5.backend.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name="logs")
@@ -22,21 +23,24 @@ public class Logs {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "friend_id")
-    Friend friend;
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinColumn(name = "friends_id")
+    private List<Friend> friends;
 
     @ManyToOne
     @JoinColumn(name = "registry_id")
     Registry registry;
 
-    public Logs(Friend friend, Registry registry) {
-        this.friend = friend;
-        this.registry = registry;
+    public List<Friend> getFriends() {
+        return friends;
     }
 
-    public Friend getFriend() {
-        return friend;
+    public void setFriends(List<Friend> friends) {
+        this.friends = friends;
+    }
+
+    public void setRegistry(Registry registry) {
+        this.registry = registry;
     }
 
     public Registry getRegistry() {

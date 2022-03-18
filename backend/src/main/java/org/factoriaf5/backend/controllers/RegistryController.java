@@ -53,10 +53,10 @@ public class RegistryController {
     }
 
     @GetMapping("/registries/{id}/friends")
-    public List<Friend> registriesByFriend(@PathVariable Long id) {
+    public List<List<Friend>> registriesByFriend(@PathVariable Long id) {
         return logsRepository.findAllByRegistryId(id)
                 .stream()
-                .map(Logs::getFriend)
+                .map(Logs::getFriends)
                 .collect(Collectors.toList());
     }
 }

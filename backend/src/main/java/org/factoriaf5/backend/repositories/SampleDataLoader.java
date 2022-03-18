@@ -48,6 +48,19 @@ public class SampleDataLoader {
                 evaMaria
         );
 
+        List<Friend> cenaFriends = List.of(
+                candy,
+                sonia,
+                faby
+        );
+
+        List<Friend> mariscadaFriends = List.of(
+                candy,
+                sonia,
+                faby
+        );
+
+
         friendRepository.saveAll(friends);
 
         Registry cena = new Registry("Cena", "08/03/2022", 50.00, 3, true);
@@ -55,6 +68,16 @@ public class SampleDataLoader {
         Registry mariscada = new Registry("Mariscada", "16/03/2022", 100.00, 3, false);
         Registry cine = new Registry("Entradas al cine", "10/03/2022", 40.00, 2, false);
         Registry concierto = new Registry("Entradas a concierto Alejandro Sanz", "09/03/2022", 150.00, 3, false);
+
+        Logs logCena = new Logs();
+        Logs logConcierto = new Logs();
+        logConcierto.setFriends(cenaFriends);
+        logConcierto.setRegistry(concierto);
+        logCena.setFriends(cenaFriends);
+        logCena.setRegistry(cena);
+        Logs logMariscada = new Logs();
+        logMariscada.setFriends(mariscadaFriends);
+        logMariscada.setRegistry(mariscada);
 
 
         registryRepository.saveAll(List.of(
@@ -67,18 +90,8 @@ public class SampleDataLoader {
 
 
         logsRepository.saveAll( List.of(
-               new Logs(sonia, cena),
-               new Logs(faby, cena),
-               new Logs(sonia, cervezas),
-               new Logs(candy, cervezas),
-               new Logs(valentina, cervezas),
-                new Logs(sandra, cervezas),
-               new Logs(evaMaria, mariscada),
-               new Logs(joseManuel, mariscada),
-               new Logs(candy, concierto),
-               new Logs(joseManuel, concierto),
-               new Logs(sonia, cine)
 
+                logCena, logMariscada, logConcierto
                )
        );
 
