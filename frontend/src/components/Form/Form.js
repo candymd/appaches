@@ -8,7 +8,17 @@ const Form = (props) => {
     const navigate = useNavigate();
     const [isGreenActive, setIsGreenActive] = useState(true);
     const [input, setInput] = useState( {
-        date: '', name: '', amount: '', friends: '', numberFriends: ''
+
+        registry: [
+            {
+                date: '', name: '', amount: '', numberFriends: '', paidByMe: true}
+        ],
+         friends: [
+            {
+                name: '',
+                email: ''
+            }
+        ]
     })
 
     function setVistaACobrar(b) {
@@ -26,13 +36,15 @@ const Form = (props) => {
     }
 
     const handleInputChange = (event) => {
-        setInput(event.target.value)
+        setInput({
+            ...input,
+            [event.target.name]: event.target.value
+        })
     }
 
     const enviarDatos = (event) => {
         event.preventDefault();
         props.onSubmit(input)
-        props.onClose()
         navigate("/")
 
     }
@@ -40,24 +52,23 @@ const Form = (props) => {
     return (
         <>
             <form className="container" onSubmit={enviarDatos}>
-                <button type="submit" className="button-icon" ><Link
-                    to="/">{input ? 'Guardar cambios' : <i className="fa-solid fa-circle-check"></i>}</Link>
+                <button type="submit" className="button-icon" >{input ? 'Guardar cambios' : <i className="fa-solid fa-circle-check"></i>}
                 </button>
                 <h1>AÑADIR </h1>
                 <div className="form">
                     <div>
                         <label htmlFor="date">FECHA</label>
                         <input value={input.date} onChange={handleInputChange} type="date" id="date"
-                               name="registry_date" className="input"/>
+                               name="date" className="input"/>
                     </div>
                     <div>
                         <label htmlFor="name">NOMBRE DEL GASTO</label>
-                        <input value={input.name} onChange={handleInputChange} type="text" className="input" id="name"/>
+                        <input value={input.name} onChange={handleInputChange} type="text" className="input"  name="name" id="name"/>
                     </div>
                     <div>
                         <label htmlFor="price">IMPORTE</label>
                         <input value={input.amount} onChange={handleInputChange} type="text"
-                               name="import" className="input" id="price"/>
+                               name="amount" className="input" id="price"/>
                     </div>
 
                     <div>
@@ -72,7 +83,7 @@ const Form = (props) => {
                     <div>
                         <label htmlFor="friends">NOMBRE</label>
                         <input value={input.friends} onChange={handleInputChange} type="text" required
-                               name="user_name" className="input" id="friends"/>
+                               name="friends" className="input" id="friends"/>
                     </div>
                     <div>
                         <label htmlFor="">LISTA</label>
@@ -81,7 +92,6 @@ const Form = (props) => {
                     <div>
                         <p className="input">AMIGOS: ${input.numberFriends}</p>
                         <p className="input">TOTAL APACHAS= 5 €/cada uno</p>
-
                     </div>
                 </div>
 

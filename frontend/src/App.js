@@ -25,9 +25,15 @@ function App() {
         }
     }, [requiresUpdate])
 
-    const addRegistry = newRegistry => {
-        const newRegistries = [newRegistry, ...registries];
-        setRegistries(newRegistries);
+    const addRegistry = (newRegistry) => {
+        fetch("http://localhost:8080/registries/add",
+            {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(newRegistry)
+            }
+        ).then(_ => setRequiresUpdate(true))
+
     }
 
 
@@ -35,7 +41,7 @@ function App() {
     <div className="App">
         <Routes>
             <Route path="/" exact element={<MainPage registrosACobrar={registrosACobrar} registrosAPagar={registrosAPagar} vistaACobrar={vistaACobrar} setVistaACobrar={setVistaACobrar}/>}/>
-            <Route path="/form" element={<Form registrosACobrar={registrosACobrar} registrosAPagar={registrosAPagar} addRegistry={addRegistry}/>}/>
+            <Route path="/form" element={<Form registrosACobrar={registrosACobrar} registrosAPagar={registrosAPagar} onSubmit={e => addRegistry(e)}/>}/>
             </Routes>
     </div>
   );
