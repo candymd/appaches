@@ -70,6 +70,7 @@ const Form = (props) => {
                         <input value={registryData.amount} onChange={handleInputChange} type="text"
                                name="import" className="input"/>
                     </div>
+<<<<<<< HEAD
                         <div>
                             <label htmlFor="">PAGADO POR</label>
                             <button onClick=
@@ -92,6 +93,30 @@ const Form = (props) => {
                             <p className="input">AMIGOS: ${registryData.numberFriends}</p>
                             <p className="input">TOTAL APACHAS= 5 €/cada uno</p>
                         </div>
+=======
+
+                    <div>
+                        <label htmlFor="">PAGADO POR</label>
+                        <button onClick=
+                                    {irACobrar} className={isGreenActive ? 'green active' : 'green'}>POR MI
+                        </button>
+                        <button onClick=
+                                    {irAPagar} className={!isGreenActive ? 'red active' : 'red'}>POR OTRO
+                        </button>
+                    </div>
+                    <div>
+                        <label htmlFor="">NOMBRE</label>
+                        <input value={registryData.friends} onChange={handleInputChange} type="text" required
+                               name="user_name" className="input"/>
+                    </div>
+                    <div>
+                        <label htmlFor="">LISTA</label>
+                        <textarea className="text"></textarea>
+                    </div>
+                    <div>
+                        <p className="input">AMIGOS: ${registryData.numberFriends}</p>
+                        <p className="input">TOTAL APACHAS= 5 €/cada uno</p>
+>>>>>>> 3cbabeeff4e7c8232768ce8c743471c4588cb595
                     </div>
                 </div>
 
