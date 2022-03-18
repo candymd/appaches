@@ -91,7 +91,7 @@ const Form = (props) => {
                         </div>
                         <div>
                             <p className="input">AMIGOS: ${registryData.numberFriends}</p>
-                            <p className="input">TOTAL APACHAS= 5 €/cada participante</p>
+                            <p className="input">TOTAL APACHAS= 5 €/cada uno</p>
                         </div>
                     </div>
                 </div>
