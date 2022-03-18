@@ -24,22 +24,26 @@ function App() {
         }
     }, [requiresUpdate])
 
-    const deleteBill = (id) => {
-        fetch(`http://localhost:8080/bills/delete/${id}`,
+
+    const addRegistry = (newRegistry) => {
+        fetch("http://localhost:8080/registries/add",
             {
-                method: 'GET'
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(newRegistry)
             }
         ).then(_ => setRequiresUpdate(true))
 
     }
-
     return (
     <div className="App">
         <Routes>
-            <Route path="/" exact element={<MainPage deleteBill={deleteBill} eventsACobrar={eventsACobrar} eventsAPagar={eventsAPagar} vistaACobrar={vistaACobrar} setVistaACobrar={setVistaACobrar}/>}/>
-            <Route path="/form" element={<Form/>}/>
+
+            <Route path="/" exact element={<MainPage registrosACobrar={registrosACobrar} registrosAPagar={registrosAPagar} vistaACobrar={vistaACobrar} setVistaACobrar={setVistaACobrar}/>}/>
+            <Route path="/form" element={<Form registrosACobrar={registrosACobrar} registrosAPagar={registrosAPagar} onSubmit={e => addRegistry(e)}/>}/>
             <Route path ="/welcome" element={<Welcome/>}/>
-        </Routes>
+            </Routes>
+
     </div>
   );
 }
