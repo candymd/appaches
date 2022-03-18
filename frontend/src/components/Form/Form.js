@@ -1,75 +1,105 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './Form.css'
-import {Link, useNavigate} from "react-router-dom";
+import {Link, useLocation, useNavigate} from "react-router-dom";
 
-function Form(props) {
-    /*const navigate = useNavigate();
+const Form = (props) => {
 
 
-    const [registryData, setRegistryData] = useState(props.registryData || {
-        date: '',
-        name: '',
-        amount: '',
-        friends: '',
-        numberFriends: '',
+    const navigate = useNavigate();
+    const [isGreenActive, setIsGreenActive] = useState(true);
+    const [input, setInput] = useState( {
+
+        registry: [
+            {
+                date: '', name: '', amount: '', numberFriends: '', paidByMe: true}
+        ],
+         friends: [
+            {
+                name: '',
+                email: ''
+            }
+        ]
     })
 
+    function setVistaACobrar(b) {
+        return;
+    }
+
+    const irACobrar = () => {
+        setIsGreenActive(true);
+        setVistaACobrar(true)
+    }
+
+    const irAPagar = () => {
+        setIsGreenActive(false);
+        setVistaACobrar(false)
+    }
+
     const handleInputChange = (event) => {
-        console.log(event.target.value)
-        setRegistryDataData({
-            ...registryData,
+        setInput({
+            ...input,
             [event.target.name]: event.target.value
         })
     }
 
     const enviarDatos = (event) => {
-        event.preventDefault()
-        props.onSubmit(registryData)
-        props.onClose()
+        event.preventDefault();
+        props.onSubmit(input)
         navigate("/")
 
-    } */
+    }
 
     return (
-    <>
-        <div className="container">
-            <button className="button-icon"><Link to="/"><i className="fa-solid fa-circle-check"></i></Link></button>
-            <h1>AÑADIR</h1>
-            {/*<div className="form">
-                <div>
-                    <label htmlFor="">FECHA</label>
-                    <input value={registryData.date} onChange={handleInputChange}type="date"  name="registry_date" className="input"/>
-                </div>
-                <div>
-                    <label htmlFor="">NOMBRE DEL GASTO</label>
-                    <input value={registryData.name} onChange={handleInputChange} type="text" className="input"/>
-                </div>
-                <div>
-                    <label htmlFor="price">IMPORTE</label>
-                    <input value={registryData.amount} onChange={handleInputChange} type="text" name="import" className="input"/>
-                </div>
-                <div>
-                    <label htmlFor="">PAGADO POR</label>
-                    <button  className="button-select">Por ti</button> link a cobrar
-                    <button  className="button-select">Por otro</button> link a pagar
-                </div>
-                <div>
-                    <label htmlFor="">NOMBRE</label>
-                    <input value={registryData.friends} onChange={handleInputChange}type="text" required name="user_name" className="input"/>
-                </div>
-                <div>
-                    <label htmlFor="">LISTA</label>
-                    <textarea  className="text"></textarea>
-                </div>
-                <div>
-                    <p className="input">AMIGOS: ${registryData.numberFriends}</p>
-                    <p className="input">TOTAL APACHAS= 5 €/cada participante</p>
-                </div>
-            </div>*/}
-        </div>
-    </>
-)
-}
-export default Form
+        <>
+            <form className="container" onSubmit={enviarDatos}>
+                <button type="submit" className="button-icon" >{input ? 'Guardar cambios' : <i className="fa-solid fa-circle-check"></i>}
+                </button>
+                <h1>AÑADIR </h1>
+                <div className="form">
+                    <div>
+                        <label htmlFor="date">FECHA</label>
+                        <input value={input.date} onChange={handleInputChange} type="date" id="date"
+                               name="date" className="input"/>
+                    </div>
+                    <div>
+                        <label htmlFor="name">NOMBRE DEL GASTO</label>
+                        <input value={input.name} onChange={handleInputChange} type="text" className="input"  name="name" id="name"/>
+                    </div>
+                    <div>
+                        <label htmlFor="price">IMPORTE</label>
+                        <input value={input.amount} onChange={handleInputChange} type="text"
+                               name="amount" className="input" id="price"/>
+                    </div>
 
+                    <div>
+                        <label htmlFor="">PAGADO POR</label>
+                        <button onClick=
+                                    {irACobrar} className={isGreenActive ? 'green active' : 'green'}>POR MI
+                        </button>
+                        <button onClick=
+                                    {irAPagar} className={!isGreenActive ? 'red active' : 'red'}>POR OTRO
+                        </button>
+                    </div>
+                    <div>
+                        <label htmlFor="friends">NOMBRE</label>
+                        <input value={input.friends} onChange={handleInputChange} type="text" required
+                               name="friends" className="input" id="friends"/>
+                    </div>
+                    <div>
+                        <label htmlFor="">LISTA</label>
+                        <textarea className="text"></textarea>
+                    </div>
+                    <div>
+                        <p className="input">AMIGOS: ${input.numberFriends}</p>
+                        <p className="input">TOTAL APACHAS= 5 €/cada uno</p>
+                    </div>
+                </div>
+
+            </form>
+
+        </>
+    )
+}
+
+export default Form
 
