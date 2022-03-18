@@ -25,12 +25,17 @@ function App() {
         }
     }, [requiresUpdate])
 
+    const addRegistry = newRegistry => {
+        const newRegistries = [newRegistry, ...registries];
+        setRegistries(newRegistries);
+    }
+
 
     return (
     <div className="App">
         <Routes>
             <Route path="/" exact element={<MainPage registrosACobrar={registrosACobrar} registrosAPagar={registrosAPagar} vistaACobrar={vistaACobrar} setVistaACobrar={setVistaACobrar}/>}/>
-            <Route path="/form" element={<Form registrosACobrar={registrosACobrar} registrosAPagar={registrosAPagar}/>}/>
+            <Route path="/form" element={<Form registrosACobrar={registrosACobrar} registrosAPagar={registrosAPagar} addRegistry={addRegistry}/>}/>
             </Routes>
     </div>
   );
