@@ -1,13 +1,12 @@
 import './App.css';
 import './components/Footer/Footer'
 import './components/Header/Header'
-
+import './components/Welcome/Welcome'
 import {useEffect, useState} from "react";
 import Form from "./components/Form/Form";
 import {Route, Routes} from "react-router-dom";
 import {MainPage} from "./components/MainPage/MainPage";
-
-
+import Welcome from "./components/Welcome/Welcome"
 function App() {
 
     const [registries, setRegistries] = useState([]);
@@ -39,7 +38,8 @@ function App() {
         <Routes>
             <Route path="/" exact element={<MainPage deleteRegistry={deleteRegistry} registrosACobrar={registrosACobrar} registrosAPagar={registrosAPagar} vistaACobrar={vistaACobrar} setVistaACobrar={setVistaACobrar}/>}/>
             <Route path="/form" element={<Form/>}/>
-            </Routes>
+            <Route path ="/welcome" element={<Welcome/>}/>
+        </Routes>
     </div>
   );
 }
