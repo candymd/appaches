@@ -9,37 +9,41 @@ import {MainPage} from "./components/MainPage/MainPage";
 import Welcome from "./components/Welcome/Welcome"
 function App() {
 
-    const [registries, setRegistries] = useState([]);
+    const [bills, setBills] = useState([]);
     const [requiresUpdate, setRequiresUpdate] = useState(true);
     const [vistaACobrar, setVistaACobrar] = useState(true);
-    const registrosACobrar = registries.filter((n) => n.paidByMe);
-    const registrosAPagar = registries.filter((n) => !n.paidByMe);
+    const eventsACobrar = bills.filter((n) => n.event.paidByMe);
+    const eventsAPagar = bills.filter((n) => !n.event.paidByMe);
 
     useEffect(() => {
         if (requiresUpdate) {
-            fetch("http://localhost:8080/registries")
+            fetch("http://localhost:8080/bills")
                 .then(r => r.json())
-                .then(setRegistries)
+                .then(setBills)
                 .then(_ => setRequiresUpdate(false));
         }
     }, [requiresUpdate])
 
-    const deleteRegistry = (id) => {
-        fetch(`http://localhost:8080/registries/delete/${id}`,
+
+    const addRegistry = (newRegistry) => {
+        fetch("http://localhost:8080/registries/add",
             {
-                method: 'GET'
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(newRegistry)
             }
         ).then(_ => setRequiresUpdate(true))
 
     }
-
     return (
     <div className="App">
         <Routes>
-            <Route path="/" exact element={<MainPage deleteRegistry={deleteRegistry} registrosACobrar={registrosACobrar} registrosAPagar={registrosAPagar} vistaACobrar={vistaACobrar} setVistaACobrar={setVistaACobrar}/>}/>
-            <Route path="/form" element={<Form/>}/>
+
+            <Route path="/" exact element={<MainPage registrosACobrar={registrosACobrar} registrosAPagar={registrosAPagar} vistaACobrar={vistaACobrar} setVistaACobrar={setVistaACobrar}/>}/>
+            <Route path="/form" element={<Form registrosACobrar={registrosACobrar} registrosAPagar={registrosAPagar} onSubmit={e => addRegistry(e)}/>}/>
             <Route path ="/welcome" element={<Welcome/>}/>
-        </Routes>
+            </Routes>
+
     </div>
   );
 }

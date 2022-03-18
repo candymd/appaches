@@ -1,7 +1,10 @@
 package org.factoriaf5.backend.model;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
+import java.util.List;
 import java.util.Objects;
 
 
@@ -15,6 +18,12 @@ public class Friend {
     private Long id;
     private String name;
     private String email;
+
+
+    @ManyToMany(mappedBy = "friends", fetch = FetchType.LAZY)
+    @JsonIgnore
+    List<Bills> bills;
+
 
     public Friend(String name, String email) {
         this.name = name;
@@ -49,6 +58,14 @@ public class Friend {
         this.email = email;
     }
 
+    public List<Bills> getBills() {
+        return bills;
+    }
+
+    public void setBills(List<Bills> bills) {
+        this.bills = bills;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -70,4 +87,5 @@ public class Friend {
                 ", email='" + email + '\'' +
                 '}';
     }
+
 }
