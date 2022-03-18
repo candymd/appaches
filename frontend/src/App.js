@@ -35,8 +35,6 @@ function App() {
         ).then(_ => setRequiresUpdate(true))
 
     }
-
-
     return (
     <div className="App">
         <Routes>

@@ -23,33 +23,29 @@ const APagarCard = ({registry}) => {
 
 
     return (
-        <Accordion className="card2" sx={{backgroundColor: "#D6EADF"}} expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
+        <div className="card2" >
 
-            <AccordionSummary sx={{display: "flex"}}
-                              expandIcon={ expanded ?  <i className="fa-solid fa-angle-up"/> :
-                                  <i className="fa-solid fa-ellipsis icon"/> }
-                              aria-controls="panel1bh-content"
-                              id="panel1bh-header">
+            <div className="date-title">
+                <span className="date2">{registry.date}</span>
+                <p>{registry.name}</p>
 
-                <div className="title">
-                    <p>{registry.name}</p>
-                </div>
-                <div className="date-amount">
-                    <span className="date">{registry.date}</span>
-                    <span className="amount">{registry.amount + '€'}</span>
-                </div>
-                <div className="friends-paid">
-                    <span>Participantes: {registry.numberFriends}</span>
-                    <span>SALDADO: 1/3</span>
-                </div>
-            </AccordionSummary>
+            </div>
+
 
             <AccordionDetails>
                 <ul className="friends">
-                    { friends.map( friend => <li><span>{friend.name}</span><span>5€</span></li>) }
+                    { friends.map( friend => <li><span>{friend.name.toUpperCase()}</span><span>5€</span></li>) }
                 </ul>
             </AccordionDetails>
-        </Accordion>
+
+
+
+                <div className="friends-paid">
+
+                </div>
+
+
+        </div>
     );
 };
 
