@@ -1,12 +1,12 @@
 package org.factoriaf5.backend.controllers;
 
 import org.factoriaf5.backend.model.Friend;
-import org.factoriaf5.backend.model.Registry;
-import org.factoriaf5.backend.model.Logs;
+import org.factoriaf5.backend.model.Event;
+import org.factoriaf5.backend.model.Bills;
 import org.factoriaf5.backend.repositories.FriendRepository;
 
-import org.factoriaf5.backend.repositories.LogsRepository;
-import org.factoriaf5.backend.repositories.RegistryRepository;
+import org.factoriaf5.backend.repositories.BillsRepository;
+import org.factoriaf5.backend.repositories.EventRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,12 +17,12 @@ import java.util.stream.Collectors;
 @RestController
 public class FriendController {
     private final FriendRepository friendRepository;
-    private final LogsRepository logsRepository;
+    private final BillsRepository billsRepository;
 
     @Autowired
-    public FriendController(FriendRepository friendRepository, RegistryRepository registryRepository, LogsRepository logsRepository) {
+    public FriendController(FriendRepository friendRepository, EventRepository eventRepository, BillsRepository billsRepository) {
         this.friendRepository = friendRepository;
-        this.logsRepository = logsRepository;
+        this.billsRepository = billsRepository;
     }
 
     @GetMapping("/friends")
@@ -40,11 +40,11 @@ public class FriendController {
         return friendRepository.save(friend);
     }
 
-    @GetMapping("/friends/{id}/registries")
-    public List<Registry> registryByFriend(@PathVariable Long id) {
-        return logsRepository.findAllByFriendsId(id)
+    @GetMapping("/friends/{id}/events")
+    public List<Event> eventByFriend(@PathVariable Long id) {
+        return billsRepository.findAllByFriendsId(id)
                 .stream()
-                .map(Logs::getRegistry)
+                .map(Bills::getEvent)
                 .collect(Collectors.toList());
     }
 }

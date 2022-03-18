@@ -10,23 +10,23 @@ import {MainPage} from "./components/MainPage/MainPage";
 
 function App() {
 
-    const [registries, setRegistries] = useState([]);
+    const [bills, setBills] = useState([]);
     const [requiresUpdate, setRequiresUpdate] = useState(true);
     const [vistaACobrar, setVistaACobrar] = useState(true);
-    const registrosACobrar = registries.filter((n) => n.paidByMe);
-    const registrosAPagar = registries.filter((n) => !n.paidByMe);
+    const eventsACobrar = bills.filter((n) => n.event.paidByMe);
+    const eventsAPagar = bills.filter((n) => !n.event.paidByMe);
 
     useEffect(() => {
         if (requiresUpdate) {
-            fetch("http://localhost:8080/registries")
+            fetch("http://localhost:8080/bills")
                 .then(r => r.json())
-                .then(setRegistries)
+                .then(setBills)
                 .then(_ => setRequiresUpdate(false));
         }
     }, [requiresUpdate])
 
-    const deleteRegistry = (id) => {
-        fetch(`http://localhost:8080/registries/delete/${id}`,
+    const deleteBill = (id) => {
+        fetch(`http://localhost:8080/bills/delete/${id}`,
             {
                 method: 'GET'
             }
@@ -37,7 +37,7 @@ function App() {
     return (
     <div className="App">
         <Routes>
-            <Route path="/" exact element={<MainPage deleteRegistry={deleteRegistry} registrosACobrar={registrosACobrar} registrosAPagar={registrosAPagar} vistaACobrar={vistaACobrar} setVistaACobrar={setVistaACobrar}/>}/>
+            <Route path="/" exact element={<MainPage deleteBill={deleteBill} eventsACobrar={eventsACobrar} eventsAPagar={eventsAPagar} vistaACobrar={vistaACobrar} setVistaACobrar={setVistaACobrar}/>}/>
             <Route path="/form" element={<Form/>}/>
             </Routes>
     </div>

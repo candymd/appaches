@@ -5,11 +5,12 @@ import java.util.List;
 
 @Entity
 @Table(name="logs")
-public class Logs {
+public class Bills {
 
-    public Logs() {
+    public Bills() {
 
     }
+
 
     public Long getId() {
         return id;
@@ -23,13 +24,16 @@ public class Logs {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @ManyToOne
+    private Friend paidBy;
+
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinColumn(name = "friends_id")
     private List<Friend> friends;
 
     @ManyToOne
-    @JoinColumn(name = "registry_id")
-    Registry registry;
+    @JoinColumn(name = "event_id")
+    Event event;
 
     public List<Friend> getFriends() {
         return friends;
@@ -39,11 +43,19 @@ public class Logs {
         this.friends = friends;
     }
 
-    public void setRegistry(Registry registry) {
-        this.registry = registry;
+    public Event getEvent() {
+        return event;
     }
 
-    public Registry getRegistry() {
-        return registry;
+    public void setEvent(Event event) {
+        this.event = event;
+    }
+
+    public Friend getPaidBy() {
+        return paidBy;
+    }
+
+    public void setPaidBy(Friend paidBy) {
+        this.paidBy = paidBy;
     }
 }

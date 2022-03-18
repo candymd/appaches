@@ -3,17 +3,15 @@ package org.factoriaf5.backend.model;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 @Entity
-@Table(name="registries")
-public class Registry {
+@Table(name="events")
+public class Event {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "registry_id")
+    @Column(name = "event_id")
     private Long id;
     private String name;
     private String date;
@@ -22,18 +20,11 @@ public class Registry {
     private boolean paidByMe;
 
 
-    @OneToMany(mappedBy = "registry")
+    @OneToMany(mappedBy = "event")
     @JsonIgnore
-    List<Logs> logs;
+    List<Bills> bills;
 
-
-    /*@ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(name = "logs",
-            joinColumns = { @JoinColumn(name = "registry_id") },
-            inverseJoinColumns = { @JoinColumn(name = "friend_id") })
-    private final List<Friend> friends = new ArrayList<Friend>();
-*/
-    public Registry(String name, String date, Double amount, int numberFriends, boolean paidByMe) {
+    public Event(String name, String date, Double amount, int numberFriends, boolean paidByMe) {
         this.name = name;
         this.date = date;
         this.amount = amount;
@@ -41,7 +32,7 @@ public class Registry {
         this.paidByMe = paidByMe;
     }
 
-    public Registry() {
+    public Event() {
 
     }
 
@@ -93,7 +84,16 @@ public class Registry {
         this.paidByMe = paidByMe;
     }
 
-   /* public List<Friend> getFriends() {
+    public List<Bills> getBills() {
+        return bills;
+    }
+
+    public void setBills(List<Bills> bills) {
+        this.bills = bills;
+    }
+
+
+        /* public List<Friend> getFriends() {
         return friends;
     }
 
@@ -101,8 +101,8 @@ public class Registry {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Registry registry = (Registry) o;
-        return numberFriends == registry.numberFriends && paidByMe == registry.paidByMe && Objects.equals(id, registry.id) && Objects.equals(name, registry.name) && Objects.equals(date, registry.date) && Objects.equals(amount, registry.amount) && Objects.equals(friends, registry.friends);
+        Event event = (Event) o;
+        return numberFriends == event.numberFriends && paidByMe == event.paidByMe && Objects.equals(id, event.id) && Objects.equals(name, event.name) && Objects.equals(date, event.date) && Objects.equals(amount, event.amount) && Objects.equals(friends, event.friends);
     }
 
     @Override
@@ -112,7 +112,7 @@ public class Registry {
 
     @Override
     public String toString() {
-        return "Registry{" +
+        return "Event{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", date='" + date + '\'' +

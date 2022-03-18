@@ -3,15 +3,14 @@ import '../ACobrarCard/ACobrarCard'
 import ACobrarCard from "../ACobrarCard/ACobrarCard";
 import APagarCard from "../APagarCard/APagarCard";
 
-const CardList = ({registrosACobrar, registrosAPagar, vistaACobrar, deleteRegistry}) => {
-
+const CardList = ({eventsACobrar, eventsAPagar, vistaACobrar, deleteBill}) => {
 
 
     return (
 
           <div className="cardList">
-              {vistaACobrar ? registrosACobrar.map(registry => <ACobrarCard deleteRegistry={deleteRegistry}  key={registry.id} registry={registry}/>)
-              : registrosAPagar.map(registry => <APagarCard key={registry.id} registry={registry}/>)}
+              {vistaACobrar ? eventsACobrar.map(bill => <ACobrarCard deleteBill={deleteBill} friends={bill.friends} event={bill.event} key={bill.id}/>)
+              : eventsAPagar.map(bill => <APagarCard friends={bill.friends} event={bill.event} key={bill.id} bill={bill}/>)}
         </div>
     );
 };
