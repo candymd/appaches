@@ -25,6 +25,24 @@ h1.hola {
     margin: 20px;
 }
 
+div.Container > div > div > button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+
+}
+
+button > span.numbers {
+    color: #2C5725;
+    font-weight: 700;
+    font-size: 25px;
+}
+
+button > span.total {
+    font-size: 10px;
+
+}
 
 .red, .green{
     background-color: white;

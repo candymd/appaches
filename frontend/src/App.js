@@ -16,6 +16,7 @@ function App() {
     const eventsACobrar = bills.filter((n) => n.event.paidByMe);
     const eventsAPagar = bills.filter((n) => !n.event.paidByMe);
 
+
     useEffect(() => {
         if (requiresUpdate) {
             fetch("http://localhost:8080/bills")
