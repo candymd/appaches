@@ -18,7 +18,7 @@ const ACobrarCard = ({bill, deleteBill, friends, event}) => {
         menuIsOpen ? setMenuIsOpen(false) : setMenuIsOpen(true)
     }
 
-    const onDeleteRegistry = () => {
+    const onDeleteBill = () => {
         setMenuIsOpen(false)
         deleteBill(bill.id);
     }
@@ -26,7 +26,7 @@ const ACobrarCard = ({bill, deleteBill, friends, event}) => {
     const amountPerParticipant = (event.amount / (friends.length + 1)).toFixed(2)
 
     return (
-        <Accordion className="card" sx={{backgroundColor: "#D6EADF"}} expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
+        <Accordion className="card"  expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
 
             <AccordionSummary sx={{display: "flex"}}
                               expandIcon={<i onClick={toggleMenu} className="fa-solid fa-ellipsis icon"/>}
@@ -35,7 +35,7 @@ const ACobrarCard = ({bill, deleteBill, friends, event}) => {
                 {menuIsOpen && <div className="menu">
                     <ul>
                         <li onClick={toggleMenu}>Editar</li>
-                        <li onClick={onDeleteRegistry}>Borrar</li>
+                        <li onClick={onDeleteBill}>Borrar</li>
                     </ul>
                 </div>}
 

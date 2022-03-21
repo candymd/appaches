@@ -6,11 +6,29 @@
     display: flex;
     flex-direction: column;
 }
-.card {
-    border-bottom: 0.5px solid #0E7AC6;
-    padding: 0 0.5rem 0.5rem;
+
+.cardList {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
+div.cardList > div{
+    border-radius: 20px;
+}
+
+.card {
+    background-color: #2C5725;
+    padding: 0 0.5rem 0.5rem;
+}
+.css-1elwnq4-MuiPaper-root-MuiAccordion-root:before {
+    display: none;
+}
+
+.css-1elwnq4-MuiPaper-root-MuiAccordion-root {
+    box-shadow: 2px 3px 1px -2px rgb(0 0 0 / 20%), 2px 2px 7px 0px rgb(0 0 0 / 14%), 0px 3px 3px 0px rgb(0 0 0 / 12%);
+}
 .MuiAccordionSummary-root {
     position: relative;
 }
@@ -28,9 +46,10 @@
 
 
 .css-o4b71y-MuiAccordionSummary-content > .date-amount{
-    margin-top: -10px;
+    margin-top: -7px;
     align-items: center;
-    justify-content: space-between;}
+    justify-content: space-between;
+}
 
 .title {
    font-size: 22px;
@@ -54,7 +73,7 @@
 
 .amount {
     font-size: 30px;
-    font-weight: 500;
+    font-weight: 700;
 }
 
 .date {
@@ -68,7 +87,6 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    border-top: 2px solid white;
     padding: 5px;
     font-size:20px;
     font-weight: 600;
