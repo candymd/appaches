@@ -86,4 +86,5 @@ button.green.active{
     display: flex;
     justify-content: right;
     padding-inline: inherit;
+    color: black;
 }
