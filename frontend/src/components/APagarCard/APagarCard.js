@@ -1,37 +1,18 @@
-import React, {useState} from 'react';
+import React from 'react';
 import './APagarCard.css';
-import {AccordionDetails} from "@mui/material";
 
 
-const APagarCard = ({event, friends, bill}) => {
-
-    const [expanded, setExpanded] = useState(false);
-
-    const handleChange = (panel) => (event, isExpanded) => {
-        setExpanded(isExpanded ? panel : false);
-    };
-
+const APagarCard = ({event, bill}) => {
 
     return (
-        <div className="card2" >
-
+        <div className="aPagar-card" >
             <div className="date-title">
-                <span className="date2">{event.date}</span>
-                <p>{bill.paidBy.name}</p>
-
+                <span className="date">{event.date}</span>
+                <p>{bill.event.name}</p>
             </div>
-
-
-            <AccordionDetails>
-                <ul className="friends">
-                    { friends.map( friend => <li><span>{friend.name.toUpperCase()}</span><span>5€</span></li>) }
-                </ul>
-            </AccordionDetails>
-
-
-
-                <div className="friends-paid">
-
+                <div className="friend">
+                    <span>{bill.paidBy.name}</span>
+                    <span>5€</span>
                 </div>
 
 
