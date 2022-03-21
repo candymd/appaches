@@ -1,51 +1,21 @@
 
-.card2 {
-    background-color:#D6EADF;
+.aPagar-card{
+    background-color: white;
     padding: 10px;
-    border-bottom: 0.5px solid #0E7AC6;
-
+    box-shadow: 2px 3px 1px -2px rgb(0 0 0 / 20%), 2px 2px 7px 0 rgb(0 0 0 / 14%), 0 3px 3px 0 rgb(0 0 0 / 12%);
+    font-weight: 700;
+    font-size: 20px;
 }
 
-.title2 {
-    font-size: 22px;
-    font-weight: 500;
-    justify-items: flex-end;
-}
-
-.title2 p {
-    margin: 0;
-    padding: 0;
-}
-
-.friends-paid {
+.friend {
     margin-top: 3%;
-    font-size: 15px;
     font-weight: 400;
-    justify-content: space-between ;
-}
-
-
-.date2 {
-    font-size: 15px;
-    font-style: italic;
-    color: rgba(38, 26, 12, 0.7);
     display: flex;
-    justify-content: left;
+    justify-content: space-around;
+    padding-bottom: 10px;
 }
 
-
-
-.card2 ul > li{
-    list-style: none;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 5px;
-    font-size:20px;
-    font-weight: 600;
-}
-
-.date-title{
+.date-title {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
