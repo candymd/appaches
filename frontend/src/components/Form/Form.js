@@ -6,7 +6,7 @@ const Form = (props) => {
 
 
     const navigate = useNavigate();
-    const [isGreenActive, setIsGreenActive] = useState(true);
+    const [isGreenActiveForm, setIsGreenActiveForm] = useState(true);
     const [input, setInput] = useState( {
 
         registry: [
@@ -26,12 +26,12 @@ const Form = (props) => {
     }
 
     const irACobrar = () => {
-        setIsGreenActive(true);
+        setIsGreenActiveForm(true);
         setVistaACobrar(true)
     }
 
     const irAPagar = () => {
-        setIsGreenActive(false);
+        setIsGreenActiveForm(false);
         setVistaACobrar(false)
     }
 
@@ -74,10 +74,10 @@ const Form = (props) => {
                     <div>
                         <label htmlFor="">PAGADO POR</label>
                         <button onClick=
-                                    {irACobrar} className={isGreenActive ? 'green active' : 'green'}>POR MI
+                                    {irACobrar} className={isGreenActiveForm ? 'verde active' : 'verde'}>POR MI
                         </button>
                         <button onClick=
-                                    {irAPagar} className={!isGreenActive ? 'red active' : 'red'}>POR OTRO
+                                    {irAPagar} className={!isGreenActiveForm ? 'rojo active' : 'rojo'}>POR OTRO
                         </button>
                     </div>
                     <div>
