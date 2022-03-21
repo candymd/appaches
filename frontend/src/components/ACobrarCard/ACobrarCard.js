@@ -18,7 +18,7 @@ const ACobrarCard = ({bill, deleteBill, friends, event}) => {
         menuIsOpen ? setMenuIsOpen(false) : setMenuIsOpen(true)
     }
 
-    const onDeleteRegistry = () => {
+    const onDeleteBill = () => {
         setMenuIsOpen(false)
         deleteBill(bill.id);
     }
@@ -35,7 +35,7 @@ const ACobrarCard = ({bill, deleteBill, friends, event}) => {
                 {menuIsOpen && <div className="menu">
                     <ul>
                         <li onClick={toggleMenu}>Editar</li>
-                        <li onClick={onDeleteRegistry}>Borrar</li>
+                        <li onClick={onDeleteBill}>Borrar</li>
                     </ul>
                 </div>}
 

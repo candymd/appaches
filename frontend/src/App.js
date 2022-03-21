@@ -11,6 +11,7 @@ import Welcome from "./components/Welcome/Welcome"
 function App() {
 
     const [bills, setBills] = useState([]);
+    const [friends, setFriends] = useState([]);
     const [requiresUpdate, setRequiresUpdate] = useState(true);
     const [vistaACobrar, setVistaACobrar] = useState(true);
     const eventsACobrar = bills.filter((n) => n.event.paidByMe);
@@ -20,7 +21,17 @@ function App() {
       return eventType.reduce((s, a) => s + a.event.amount, 0);
    }
 
-   console.log(eventsAPagar);
+
+    useEffect(() => {
+        if (requiresUpdate) {
+            fetch("http://localhost:8080/friends")
+                .then(r => r.json())
+                .then(setFriends)
+                .then(_ => setRequiresUpdate(false));
+        }
+    }, [requiresUpdate])
+
+    console.log(friends)
 
     useEffect(() => {
         if (requiresUpdate) {
@@ -57,7 +68,7 @@ function App() {
             <Route path="/" exact
                    element={<MainPage deleteBill={deleteBill} eventsACobrar={eventsACobrar} eventsAPagar={eventsAPagar}
                                   totalACobrar={total(eventsACobrar)} totalAPagar={total(eventsAPagar)}    vistaACobrar={vistaACobrar} setVistaACobrar={setVistaACobrar}/>}/>
-            <Route path="/form" element={<Form eventsACobrar={eventsACobrar} eventsAPagar={eventsAPagar}
+            <Route path="/form" element={<Form friends={friends} eventsACobrar={eventsACobrar} eventsAPagar={eventsAPagar}
                                                onSubmit={e => addBill(e)}/>}/>
             <Route path="/welcome" element={<Welcome/>}/>
         </Routes>

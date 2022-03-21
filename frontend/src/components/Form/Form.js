@@ -10,22 +10,24 @@ const Form = (props) => {
     const [input, setInput] = useState( {
 
         paidBy: {
+            id: 2,
             name: "",
             email: ""
-    },
+        },
         friends: [
-        {
-            name: "",
-            email: ""
-        }
-    ],
+            {
+                id: 2,
+                name: "",
+                email: ""
+            }
+        ],
         event: {
-        name: "",
+            name: "",
             date: "",
-            amount: 0,
-            numberFriends: 0,
+            amount: '',
+            numberFriends: '',
             paidByMe: false
-    }
+        }
     })
 
     function setVistaACobrar(b) {
@@ -80,21 +82,21 @@ const Form = (props) => {
 
                     <div>
                         <label htmlFor="">PAGADO POR</label>
-                        <div className= "botonForm">
                         <button onClick=
                                     {irACobrar} className={isGreenActiveForm ? 'verde active' : 'verde'}>POR MI
                         </button>
                         <button onClick=
                                     {irAPagar} className={!isGreenActiveForm ? 'rojo active' : 'rojo'}>POR OTRO
                         </button>
-                        </div>
-
                     </div>
                     <div>
                         <label htmlFor="friends">NOMBRE</label>
-                        <input value={input.friends.name} onChange={handleInputChange} type="text"
-                               name="name" className="input" id="friends"/>
-                    </div>
+                        <select value={input.friends.name} onChange={handleInputChange}
+                                name="friends name" className="input" id="friends" >
+                            {props.friends.map(friend => <option value={friend.name}>{friend.name}</option>)}
+                        </select>
+
+                                           </div>
                     <div>
                         <label htmlFor="">LISTA</label>
                         <textarea className="text"></textarea>
