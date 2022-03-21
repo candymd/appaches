@@ -6,11 +6,18 @@
 .TextoBienvenida{
     text-align: left;
     font-size: 10px;
-    margin-top: 40px;
-    padding: 10px;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
     color:#2C5725;
-
 }
+
+.texto {
+    display: flex;
+    flex-direction: column;
+}
+
 h1.hola {
     font-weight: 600;
     font-size: 26px;
@@ -25,13 +32,16 @@ h1.hola {
     margin: 20px;
 }
 
+.Button > * {
+    font-weight: 600;
+}
 
-div.Container > div > div > button {
+
+div.Container > div > button {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-
 
 }
 

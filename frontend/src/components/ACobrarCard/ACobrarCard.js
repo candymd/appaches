@@ -26,7 +26,7 @@ const ACobrarCard = ({bill, deleteBill, friends, event}) => {
     const amountPerParticipant = (event.amount / (friends.length + 1)).toFixed(2)
 
     return (
-        <Accordion className="card" sx={{backgroundColor: "#D6EADF"}} expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
+        <Accordion className="card"  expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
 
             <AccordionSummary sx={{display: "flex"}}
                               expandIcon={<i onClick={toggleMenu} className="fa-solid fa-ellipsis icon"/>}
