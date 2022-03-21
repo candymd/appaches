@@ -73,12 +73,15 @@ const Form = (props) => {
 
                     <div>
                         <label htmlFor="">PAGADO POR</label>
+                        <div className= "botonForm">
                         <button onClick=
                                     {irACobrar} className={isGreenActiveForm ? 'verde active' : 'verde'}>POR MI
                         </button>
                         <button onClick=
                                     {irAPagar} className={!isGreenActiveForm ? 'rojo active' : 'rojo'}>POR OTRO
                         </button>
+                        </div>
+
                     </div>
                     <div>
                         <label htmlFor="friends">NOMBRE</label>
