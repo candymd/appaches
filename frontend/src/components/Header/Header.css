@@ -32,12 +32,19 @@ div.Container > div > div > button {
     align-items: center;
     justify-content: space-evenly;
 
+
 }
 
 button > span.numbers {
-    color: #2C5725;
     font-weight: 700;
     font-size: 25px;
+}
+
+button.green > span.numbers {
+    color: #2C5725;
+}
+button.red > span.numbers {
+    color: #891717;
 }
 
 button > span.total {
@@ -48,9 +55,9 @@ button > span.total {
 .red, .green{
     background-color: white;
     height: 100px ;
-    width: 100px;
+    width: 125px;
     box-shadow: 1px 1px 6px 0 rgb(13 14 13);
-    border-radius: 20%;
+    border-radius: 12%;
     border: none;
     cursor: pointer;
 }

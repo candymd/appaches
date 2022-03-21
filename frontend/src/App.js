@@ -16,6 +16,11 @@ function App() {
     const eventsACobrar = bills.filter((n) => n.event.paidByMe);
     const eventsAPagar = bills.filter((n) => !n.event.paidByMe);
 
+   function total(eventType) {
+      return eventType.reduce((s, a) => s + a.event.amount, 0);
+   }
+
+   console.log(eventsAPagar);
 
     useEffect(() => {
         if (requiresUpdate) {
@@ -26,12 +31,12 @@ function App() {
         }
     }, [requiresUpdate])
 
-    const addEvents = (newEvents) => {
-        fetch("http://localhost:8080/events/add",
+    const addBill = (newBill) => {
+        fetch("http://localhost:8080/bills",
             {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify(newEvents)
+                body: JSON.stringify(newBill)
             }
         ).then(_ => setRequiresUpdate(true))
 
@@ -49,10 +54,13 @@ function App() {
     return (
     <div className="App">
         <Routes>
-            <Route path="/" exact element={<MainPage deleteBill={deleteBill} eventsACobrar={eventsACobrar} eventsAPagar={eventsAPagar} vistaACobrar={vistaACobrar} setVistaACobrar={setVistaACobrar}/>}/>
-            <Route path="/form" element={<Form eventsACobrar={eventsACobrar} eventsAPagar={eventsAPagar} onSubmit={e => addEvents(e)}/>}/>
-            <Route path ="/welcome" element={<Welcome/>}/>
-            </Routes>
+            <Route path="/" exact
+                   element={<MainPage deleteBill={deleteBill} eventsACobrar={eventsACobrar} eventsAPagar={eventsAPagar}
+                                  totalACobrar={total(eventsACobrar)} totalAPagar={total(eventsAPagar)}    vistaACobrar={vistaACobrar} setVistaACobrar={setVistaACobrar}/>}/>
+            <Route path="/form" element={<Form eventsACobrar={eventsACobrar} eventsAPagar={eventsAPagar}
+                                               onSubmit={e => addBill(e)}/>}/>
+            <Route path="/welcome" element={<Welcome/>}/>
+        </Routes>
     </div>
   );
 }

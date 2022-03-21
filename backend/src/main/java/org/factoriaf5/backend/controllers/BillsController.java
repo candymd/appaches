@@ -1,7 +1,9 @@
 package org.factoriaf5.backend.controllers;
 
 import org.factoriaf5.backend.model.Bills;
+import org.factoriaf5.backend.model.Event;
 import org.factoriaf5.backend.repositories.BillsRepository;
+import org.factoriaf5.backend.repositories.EventRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,11 +13,14 @@ import java.util.List;
 @CrossOrigin(origins = "http://localhost:3000", methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.OPTIONS})
 public class BillsController {
 
+
     private final BillsRepository billsRepository;
+    private final EventRepository eventRepository;
 
     @Autowired
-    public BillsController(BillsRepository billsRepository) {
+    public BillsController(BillsRepository billsRepository, EventRepository eventRepository) {
         this.billsRepository = billsRepository;
+        this.eventRepository = eventRepository;
     }
 
     @GetMapping("/bills")
@@ -23,8 +28,12 @@ public class BillsController {
         return billsRepository.findAll();
     }
 
-     @PostMapping("/bills")
+    @PostMapping("/bills")
     public Bills addNewBill(@RequestBody Bills bill) {
+        if (bill.getEvent().getId() == null) {
+            Event event =  eventRepository.save(bill.getEvent());
+            bill.setEvent(event);
+        }
         return billsRepository.save(bill);
      }
 

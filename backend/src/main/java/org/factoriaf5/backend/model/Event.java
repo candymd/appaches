@@ -20,7 +20,8 @@ public class Event {
     private boolean paidByMe;
 
 
-    @OneToMany(mappedBy = "event")
+    // debería ser one to one???
+    @OneToMany(mappedBy = "event", cascade = CascadeType.ALL)
     @JsonIgnore
     List<Bills> bills;
 

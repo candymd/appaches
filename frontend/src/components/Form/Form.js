@@ -9,16 +9,23 @@ const Form = (props) => {
     const [isGreenActiveForm, setIsGreenActiveForm] = useState(true);
     const [input, setInput] = useState( {
 
-        registry: [
-            {
-                date: '', name: '', amount: '', numberFriends: '', paidByMe: true}
-        ],
-         friends: [
-            {
-                name: '',
-                email: ''
-            }
-        ]
+        paidBy: {
+            name: "",
+            email: ""
+    },
+        friends: [
+        {
+            name: "",
+            email: ""
+        }
+    ],
+        event: {
+        name: "",
+            date: "",
+            amount: 0,
+            numberFriends: 0,
+            paidByMe: false
+    }
     })
 
     function setVistaACobrar(b) {
@@ -58,16 +65,16 @@ const Form = (props) => {
                 <div className="form">
                     <div>
                         <label htmlFor="date">FECHA</label>
-                        <input value={input.date} onChange={handleInputChange} type="date" id="date"
+                        <input value={input.event.date} onChange={handleInputChange} type="date" id="date"
                                name="date" className="input"/>
                     </div>
                     <div>
                         <label htmlFor="name">NOMBRE DEL GASTO</label>
-                        <input value={input.name} onChange={handleInputChange} type="text" className="input"  name="name" id="name"/>
+                        <input value={input.event.name} onChange={handleInputChange} type="text" className="input"  name="name" id="name"/>
                     </div>
                     <div>
                         <label htmlFor="price">IMPORTE</label>
-                        <input value={input.amount} onChange={handleInputChange} type="text"
+                        <input value={input.event.amount} onChange={handleInputChange} type="text"
                                name="amount" className="input" id="price"/>
                     </div>
 
@@ -82,8 +89,8 @@ const Form = (props) => {
                     </div>
                     <div>
                         <label htmlFor="friends">NOMBRE</label>
-                        <input value={input.friends} onChange={handleInputChange} type="text" required
-                               name="friends" className="input" id="friends"/>
+                        <input value={input.friends.name} onChange={handleInputChange} type="text"
+                               name="name" className="input" id="friends"/>
                     </div>
                     <div>
                         <label htmlFor="">LISTA</label>

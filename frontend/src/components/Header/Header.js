@@ -2,11 +2,7 @@ import React, {useState} from 'react';
 import './Header.css'
 
 
-
-
-const Header = ({setVistaACobrar}) => {
-
-
+const Header = ({setVistaACobrar, totalACobrar, totalAPagar}) => {
 
     const [isGreenActive, setIsGreenActive] = useState(true);
 
@@ -20,6 +16,8 @@ const Header = ({setVistaACobrar}) => {
         setVistaACobrar(false)
     }
 
+
+
     return (
 
         <div className="Container">
@@ -31,10 +29,13 @@ const Header = ({setVistaACobrar}) => {
 
                  <button  onClick={irACobrar} className={isGreenActive ? 'green active': 'green' }>
                      <span>A COBRAR</span>
-                     <span className="numbers">€250</span>
+                     <span className="numbers">{totalACobrar + '€'}</span>
                      <span className="total">TOTAL</span>
                  </button>
-                   <button onClick={irAPagar} className= {!isGreenActive ? 'red active': 'red' } >A PAGAR</button>
+                   <button onClick={irAPagar} className= {!isGreenActive ? 'red active': 'red' } >
+                       <span>A PAGAR</span>
+                       <span className="numbers">{totalAPagar + '€'}</span>
+                       <span className="total">TOTAL</span></button>
                 </div>
             </div>
 
