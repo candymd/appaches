@@ -1,28 +1,30 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import './Form.css'
 import {Link, useLocation, useNavigate} from "react-router-dom";
 import Select from "react-select";
 import makeAnimated from 'react-select/animated'
 
-const Form = (props) => {
+const Form = ({onSubmit, friends}) => {
+
+
+    const friendsSelectOptions = friends.map(friend => {
+        return {
+            value: friend.name,
+            label: friend.name
+        }
+    });
 
 
     const navigate = useNavigate();
     const [isGreenActiveForm, setIsGreenActiveForm] = useState(true);
-    const [input, setInput] = useState( {
+    const [input, setInput] = useState({
 
         paidBy: {
             id: 2,
             name: "",
             email: ""
         },
-        friends: [
-            {
-                id: 2,
-                name: "",
-                email: ""
-            }
-        ],
+        friends: [],
         event: {
             name: "",
             date: "",
@@ -46,31 +48,22 @@ const Form = (props) => {
         setVistaACobrar(false)
     }
 
-    const handleInputChange = (event) => {
+    const handleEventChange = (changeEvent) => {
         setInput({
             ...input,
-            [event.target.name]: event.target.value
+            event: {...input.event, [changeEvent.target.name]: changeEvent.target.value}
         })
     }
 
     const enviarDatos = (event) => {
         event.preventDefault();
-        props.onSubmit(input)
+        onSubmit(input)
         navigate("/")
 
     }
-    const friendsOptions = [
-        {value: "Candy", label: "Candy"},
-        {value: "Sonia", label:"Sonia"},
-        {value: "Faby", label:"Faby"},
-        {value: "Valentina", label:"Valentina"},
-        {value: "Sandra", label:"Sandra"},
-        {value: "Jose Manuel", label:"Jose Manuel"},
-        {value: "Eva Maria", label:"Eva Maria"} ]
 
 
     const animatedComponents = makeAnimated();
-
 
 
     return (
@@ -81,22 +74,22 @@ const Form = (props) => {
                 <div className="form">
                     <div>
                         <label htmlFor="date">FECHA</label>
-                        <input value={input.event.date} onChange={handleInputChange} type="date" id="date"
+                        <input value={input.event.date} onChange={handleEventChange} type="date" id="date"
                                name="date" className="input"/>
                     </div>
                     <div>
                         <label htmlFor="name">NOMBRE DEL GASTO</label>
-                        <input value={input.event.name} onChange={handleInputChange} type="text" className="input"
+                        <input value={input.event.name} onChange={handleEventChange} type="text" className="input"
                                name="name" id="name"/>
                     </div>
                     <div>
                         <label htmlFor="price">IMPORTE</label>
-                        <input value={input.event.amount} onChange={handleInputChange} type="text"
+                        <input value={input.event.amount} onChange={handleEventChange} type="text"
                                name="amount" className="input" id="price"/>
                     </div>
                     <div>
                         <label htmlFor="friends">NOMBRE</label>
-                        <Select className="option" name="friends" isMulti options={friendsOptions} />
+                        <Select className="option" name="friends" isMulti options={friendsSelectOptions} />
 
                     </div>
                     <div>
