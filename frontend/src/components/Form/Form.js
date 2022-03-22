@@ -3,9 +3,11 @@ import './Form.css'
 import {Link, useLocation, useNavigate} from "react-router-dom";
 import Select from "react-select";
 import makeAnimated from 'react-select/animated'
+import {Radio} from "@mui/material";
 
 const Form = ({onSubmit, friends}) => {
 
+    const [booleanPaidByMe, setBoolanPaidByMe] = useState(true)
 
     const friendsSelectOptions = friends.map(friend => {
         return {
@@ -97,13 +99,22 @@ const Form = ({onSubmit, friends}) => {
                         <p className="input">TOTAL APACHAS= 5 €/cada uno</p>
                     </div>
                     <div>
-                        <label htmlFor="">GUARDAR EN </label>
-                        <button onClick=
-                                    {irACobrar} className={isGreenActiveForm ? 'verde active' : 'verde'}>A COBRAR
-                        </button>
-                        <button onClick=
-                                    {irAPagar} className={!isGreenActiveForm ? 'rojo active' : 'rojo'}>A PAGAR
-                        </button>
+                        <label htmlFor="paidByMe">A Cobrar </label>
+                        <Radio
+                            onChange={handleEventChange}
+                            value={input.event.paidByMe = booleanPaidByMe}
+                            name="paidByMe"
+                            checked={booleanPaidByMe}
+                            onClick={() => setBoolanPaidByMe(true)}
+                        />
+                        <label htmlFor="paidByMe">A Pagar </label>
+                        <Radio
+                            onChange={handleEventChange}
+                            value={input.event.paidByMe = booleanPaidByMe}
+                            name="paidByMe"
+                            checked={!booleanPaidByMe}
+                            onClick={() => setBoolanPaidByMe(false)}
+                        />
                     </div>
                 </div>
 
