@@ -86,28 +86,22 @@ const Form = ({onSubmit, friends}) => {
                         <p className="input">TOTAL APACHAS= 5 €/cada uno</p>
                     </div>
                     <div>
-                        <label htmlFor="">GUARDAR EN </label>
-                        <label htmlFor="paidByMe">A Cobrar </label>
-                        <Radio
-                            onChange={handleEventChange}
-                            value={input.event.paidByMe = booleanPaidByMe}
-                            name="paidByMe"
-                            checked={booleanPaidByMe}
-                            onClick={() => setBoolanPaidByMe(true)}
-                        />
-                        <label htmlFor="paidByMe">A Pagar </label>
-                        <Radio
-                            onChange={handleEventChange}
-                            value={input.event.paidByMe = booleanPaidByMe}
-                            name="paidByMe"
-                            checked={!booleanPaidByMe}
-                            onClick={() => setBoolanPaidByMe(false)}
-                        />
-                        <label htmlFor="">GUARDAR EN </label>
+
+                        <label htmlFor="paidByMe">GUARDAR EN </label>
                         <div className="botonForm">
-                        <button className="input" type="submit" name="paidByMe" value={input.event.paidByMe = 'false'}>A COBRAR
-                        </button>
-                        <button className="input" type="submit" name="!paidByMe" value={input.event.paidByMe = 'true'}>A PAGAR
+                        <button className="input" type="submit"
+                                onChange={handleEventChange}
+                                value={input.event.paidByMe = booleanPaidByMe}
+                                name="paidByMe"
+                                checked={booleanPaidByMe}
+                                onClick={() => setBoolanPaidByMe(true)}
+                        >A COBRAR</button>
+                        <button className="input" type="submit"
+                                onChange={handleEventChange}
+                                value={input.event.paidByMe = booleanPaidByMe}
+                                name="paidByMe"
+                                checked={!booleanPaidByMe}
+                                onClick={() => setBoolanPaidByMe(false)}>A PAGAR
                         </button>
 
                         </div>
