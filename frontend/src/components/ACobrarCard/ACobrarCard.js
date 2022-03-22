@@ -3,6 +3,7 @@ import './ACobrarCardStyle.css';
 import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import {AccordionDetails} from "@mui/material";
+import * as icon from '../../assets/category-icons/category-icons'
 
 
 const ACobrarCard = ({bill, deleteBill, friends, event}) => {
@@ -38,13 +39,18 @@ const ACobrarCard = ({bill, deleteBill, friends, event}) => {
                         <li onClick={onDeleteBill}>Borrar</li>
                     </ul>
                 </div>}
+                <div>
+                    <div>
+                    <img src={icon[event.category]} alt={'icono de ' + event.category} />
 
                 <div className="title">
                     <p>{event.name}</p>
+                    <span className="date">{event.date}</span>
+                </div>
                 </div>
                 <div className="date-amount">
-                    <span className="date">{event.date}</span>
                     <span className="amount">{event.amount + '€'}</span>
+                </div>
                 </div>
                 <div className="friends-paid">
                     <span>Participantes: {friends.length}</span>

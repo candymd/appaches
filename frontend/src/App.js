@@ -31,7 +31,6 @@ function App() {
         }
     }, [requiresUpdate])
 
-    console.log(friends)
 
     useEffect(() => {
         if (requiresUpdate) {

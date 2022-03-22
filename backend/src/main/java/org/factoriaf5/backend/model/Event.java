@@ -16,6 +16,7 @@ public class Event {
     private String name;
     private String date;
     private Double amount;
+    private String category;
     private int numberFriends;
     private boolean paidByMe;
 
@@ -25,10 +26,11 @@ public class Event {
     @JsonIgnore
     List<Bills> bills;
 
-    public Event(String name, String date, Double amount, int numberFriends, boolean paidByMe) {
+    public Event(String name, String date, Double amount, String category, int numberFriends, boolean paidByMe) {
         this.name = name;
         this.date = date;
         this.amount = amount;
+        this.category = category;
         this.numberFriends = numberFriends;
         this.paidByMe = paidByMe;
     }
@@ -93,34 +95,11 @@ public class Event {
         this.bills = bills;
     }
 
-
-        /* public List<Friend> getFriends() {
-        return friends;
+    public String getCategory() {
+        return category;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Event event = (Event) o;
-        return numberFriends == event.numberFriends && paidByMe == event.paidByMe && Objects.equals(id, event.id) && Objects.equals(name, event.name) && Objects.equals(date, event.date) && Objects.equals(amount, event.amount) && Objects.equals(friends, event.friends);
+    public void setCategory(String category) {
+        this.category = category;
     }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, name, date, amount, numberFriends, paidByMe, friends);
-    }
-
-    @Override
-    public String toString() {
-        return "Event{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", date='" + date + '\'' +
-                ", amount=" + amount +
-                ", numberFriends=" + numberFriends +
-                ", paidByMe=" + paidByMe +
-                ", friends=" + friends +
-                '}';
-    }*/
 }

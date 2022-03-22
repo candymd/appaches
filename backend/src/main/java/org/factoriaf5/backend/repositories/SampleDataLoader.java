@@ -81,11 +81,11 @@ public class SampleDataLoader {
 
         friendRepository.saveAll(friends);
 
-        Event cena = new Event("Cena", "08/03/2022", 50.00, 3, true);
-        Event cervezas = new Event("Cervezas", "09/03/2022", 40.00, 3, true);
-        Event mariscada = new Event("Mariscada", "16/03/2022", 100.00, 3, false);
-        Event cine = new Event("Entradas al cine", "10/03/2022", 40.00, 2, false);
-        Event concierto = new Event("Entradas a concierto Alejandro Sanz", "09/03/2022", 150.00, 3, true);
+        Event cena = new Event("Cena", "08/03/2022", 50.00, "comida", 3, true);
+        Event cervezas = new Event("Cervezas", "09/03/2022", 40.00, "bar", 3, true);
+        Event mariscada = new Event("Mariscada", "16/03/2022", 100.00, "comida", 3, false);
+        Event cine = new Event("Entradas al cine", "10/03/2022", 40.00, "entretenimiento", 2, false);
+        Event concierto = new Event("Entradas a concierto Alejandro Sanz", "09/03/2022", 150.00,"entretenimiento", 3, true);
 
         Bills eventCena = new Bills();
         Bills eventConcierto = new Bills();
