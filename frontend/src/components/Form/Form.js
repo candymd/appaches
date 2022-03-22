@@ -69,7 +69,7 @@ const Form = ({onSubmit, friends}) => {
     return (
         <>
             <form className="container" onSubmit={enviarDatos}>
-                <button type="submit" className="button-icon">volver</button>
+                <button type="submit" className="button-icon"><i className="fa-solid fa-arrow-left"></i></button>
                 <h1>AÑADIR </h1>
                 <div className="form">
                     <div>
@@ -98,12 +98,14 @@ const Form = ({onSubmit, friends}) => {
                     </div>
                     <div>
                         <label htmlFor="">GUARDAR EN </label>
+                        <div className="botonForm">
                         <button onClick=
                                     {irACobrar} className={isGreenActiveForm ? 'verde active' : 'verde'}>A COBRAR
                         </button>
                         <button onClick=
                                     {irAPagar} className={!isGreenActiveForm ? 'rojo active' : 'rojo'}>A PAGAR
                         </button>
+                        </div>
                     </div>
                 </div>
 
