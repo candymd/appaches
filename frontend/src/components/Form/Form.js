@@ -4,7 +4,7 @@ import {Link, useLocation, useNavigate} from "react-router-dom";
 import Select from "react-select";
 import makeAnimated from 'react-select/animated'
 
-const Form = ({onSubmit, friends}) => {
+const Form = ({onSubmit, friends, eventsACobrar, eventsAPagar}) => {
 
 
     const friendsSelectOptions = friends.map(friend => {
@@ -48,14 +48,14 @@ const Form = ({onSubmit, friends}) => {
 
     }
 
-
+    const numberFriends = friends.length;
     const animatedComponents = makeAnimated();
 
 
     return (
         <>
             <form className="container" onSubmit={enviarDatos}>
-                <button type="submit" className="button-icon"><i className="fa-solid fa-arrow-left"></i></button>
+                <button className="button-icon"><i className="fa-solid fa-arrow-left"></i></button>
                 <h1>AÑADIR </h1>
                 <div className="form">
                     <div>
@@ -79,15 +79,15 @@ const Form = ({onSubmit, friends}) => {
 
                     </div>
                     <div>
-                        <p className="input">CANTIDAD DE AMIGOS: ${input.numberFriends}</p>
+                        <p className="input">CANTIDAD DE AMIGOS: {input.numberFriends}</p>
                         <p className="input">TOTAL APACHAS= 5 €/cada uno</p>
                     </div>
                     <div>
                         <label htmlFor="">GUARDAR EN </label>
                         <div className="botonForm">
-                        <button className="input" type="radio" id="contactChoice1" name="paidByMe" value={input.event.paidByMe = 'false'}>A COBRAR
+                        <button className="input" type="submit" name="paidByMe" value={input.event.paidByMe = 'false'}>A COBRAR
                         </button>
-                        <button className="input" type="radio" id="contactChoice1" name="paidByMe" value={input.event.paidByMe = 'true'}>A PAGAR
+                        <button className="input" type="submit" name="!paidByMe" value={input.event.paidByMe = 'true'}>A PAGAR
                         </button>
 
                         </div>
