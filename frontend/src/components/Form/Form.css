@@ -68,16 +68,6 @@ h1  {
 
 }
 
-.rojo, .verde {
-    background-color: white;
-    height: 40px ;
-    width: 100px;
-    box-shadow: 1px 1px 4px 0 rgb(13 14 13);
-    border-radius: 6px;
-    border: none;
-    cursor: pointer;
-}
-
 label {
     float: left;
 }
@@ -89,4 +79,9 @@ label {
     width: 200%;
     padding: 10px;
 
+}
+
+.option {
+    display: flex;
+    margin: 20px;
 }

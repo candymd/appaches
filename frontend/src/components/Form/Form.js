@@ -34,21 +34,7 @@ const Form = ({onSubmit, friends}) => {
         }
     })
 
-    function setVistaACobrar(b) {
-        return;
-    }
-
-    const irACobrar = () => {
-        setIsGreenActiveForm(true);
-        setVistaACobrar(true)
-    }
-
-    const irAPagar = () => {
-        setIsGreenActiveForm(false);
-        setVistaACobrar(false)
-    }
-
-    const handleEventChange = (changeEvent) => {
+        const handleEventChange = (changeEvent) => {
         setInput({
             ...input,
             event: {...input.event, [changeEvent.target.name]: changeEvent.target.value}
@@ -88,23 +74,22 @@ const Form = ({onSubmit, friends}) => {
                                name="amount" className="input" id="price"/>
                     </div>
                     <div>
-                        <label htmlFor="friends">NOMBRE</label>
+                        <label htmlFor="friends">NOMBRE DE AMIGXS</label>
                         <Select className="option" name="friends" isMulti options={friendsSelectOptions} />
 
                     </div>
                     <div>
-                        <p className="input">AMIGOS: ${input.numberFriends}</p>
+                        <p className="input">CANTIDAD DE AMIGOS: ${input.numberFriends}</p>
                         <p className="input">TOTAL APACHAS= 5 €/cada uno</p>
                     </div>
                     <div>
                         <label htmlFor="">GUARDAR EN </label>
                         <div className="botonForm">
-                        <button onClick=
-                                    {irACobrar} className={isGreenActiveForm ? 'verde active' : 'verde'}>A COBRAR
+                        <button className="input" type="radio" id="contactChoice1" name="paidByMe" value={input.event.paidByMe = 'false'}>A COBRAR
                         </button>
-                        <button onClick=
-                                    {irAPagar} className={!isGreenActiveForm ? 'rojo active' : 'rojo'}>A PAGAR
+                        <button className="input" type="radio" id="contactChoice1" name="paidByMe" value={input.event.paidByMe = 'true'}>A PAGAR
                         </button>
+
                         </div>
                     </div>
                 </div>
