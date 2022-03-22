@@ -36,21 +36,7 @@ const Form = ({onSubmit, friends}) => {
         }
     })
 
-    function setVistaACobrar(b) {
-        return;
-    }
-
-    const irACobrar = () => {
-        setIsGreenActiveForm(true);
-        setVistaACobrar(true)
-    }
-
-    const irAPagar = () => {
-        setIsGreenActiveForm(false);
-        setVistaACobrar(false)
-    }
-
-    const handleEventChange = (changeEvent) => {
+        const handleEventChange = (changeEvent) => {
         setInput({
             ...input,
             event: {...input.event, [changeEvent.target.name]: changeEvent.target.value}
@@ -71,7 +57,7 @@ const Form = ({onSubmit, friends}) => {
     return (
         <>
             <form className="container" onSubmit={enviarDatos}>
-                <button type="submit" className="button-icon">volver</button>
+                <button className="button-icon"><i className="fa-solid fa-arrow-left"></i></button>
                 <h1>AÑADIR </h1>
                 <div className="form">
                     <div>
@@ -90,15 +76,17 @@ const Form = ({onSubmit, friends}) => {
                                name="amount" className="input" id="price"/>
                     </div>
                     <div>
-                        <label htmlFor="friends">NOMBRE</label>
-                        <Select className="option" name="friends" isMulti options={friendsSelectOptions} />
-
+                        <label htmlFor="friends" >NOMBRE DE AMIGXS</label>
                     </div>
+                        <div>
+                            <Select className="select" name="friends" isMulti options={friendsSelectOptions}/>
+                        </div>
                     <div>
-                        <p className="input">AMIGOS: ${input.numberFriends}</p>
+                        <p className="input">CANTIDAD DE AMIGOS: {input.numberFriends}</p>
                         <p className="input">TOTAL APACHAS= 5 €/cada uno</p>
                     </div>
                     <div>
+                        <label htmlFor="">GUARDAR EN </label>
                         <label htmlFor="paidByMe">A Cobrar </label>
                         <Radio
                             onChange={handleEventChange}
@@ -115,6 +103,14 @@ const Form = ({onSubmit, friends}) => {
                             checked={!booleanPaidByMe}
                             onClick={() => setBoolanPaidByMe(false)}
                         />
+                        <label htmlFor="">GUARDAR EN </label>
+                        <div className="botonForm">
+                        <button className="input" type="submit" name="paidByMe" value={input.event.paidByMe = 'false'}>A COBRAR
+                        </button>
+                        <button className="input" type="submit" name="!paidByMe" value={input.event.paidByMe = 'true'}>A PAGAR
+                        </button>
+
+                        </div>
                     </div>
                 </div>
 
