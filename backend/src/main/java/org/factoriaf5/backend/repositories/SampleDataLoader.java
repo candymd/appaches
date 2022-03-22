@@ -78,6 +78,31 @@ public class SampleDataLoader {
                 sandra
         );
 
+        List<Friend> canchaFriends = List.of(
+                faby,
+                joseManuel,
+                valentina,
+                sandra
+        );
+
+        List<Friend> comprasFriends = List.of(
+                valentina,
+                evaMaria,
+                candy
+
+        );
+
+        List<Friend> facturaFriends = List.of(
+                evaMaria
+
+        );
+
+        List<Friend> taxiFriends = List.of(
+               valentina
+
+        );
+
+
 
         friendRepository.saveAll(friends);
 
@@ -86,14 +111,35 @@ public class SampleDataLoader {
         Event mariscada = new Event("Mariscada", "16/03/2022", 100.00, "comida", 3, false);
         Event cine = new Event("Entradas al cine", "10/03/2022", 40.00, "entretenimiento", 2, false);
         Event concierto = new Event("Entradas a concierto Alejandro Sanz", "09/03/2022", 150.00,"entretenimiento", 3, true);
+        Event facturaLuz = new Event("Factura de electricidad", "23/03/2022", 23.00,"hogar", 3, true);
+        Event taxi = new Event("Taxi a aeropuerto", "13/03/2022", 32.00,"transporte", 3, false);
+        Event diaDeCompras = new Event("Dia de compras", "01/02/2022", 18.00,"compras", 3, true);
+        Event alquilerCancha = new Event("Alquiler cancha de futbol", "19/02/2022", 40.00,"entretenimiento", 3, false);
+
+
 
         Bills eventCena = new Bills();
         Bills eventConcierto = new Bills();
         Bills eventMariscada = new Bills();
         Bills eventCervezas = new Bills();
+        Bills eventFactura = new Bills();
+        Bills eventTaxi = new Bills();
+        Bills eventCompras = new Bills();
+        Bills eventAlquilerCancha = new Bills();
         Bills eventCine = new Bills();
 
 
+
+        eventFactura.setEvent(facturaLuz);
+        eventFactura.setFriends(facturaFriends);
+        eventAlquilerCancha.setEvent(alquilerCancha);
+        eventAlquilerCancha.setFriends(canchaFriends);
+        eventAlquilerCancha.setPaidBy(joseManuel);
+        eventCompras.setEvent(diaDeCompras);
+        eventCompras.setFriends(comprasFriends);
+        eventTaxi.setEvent(taxi);
+        eventTaxi.setFriends(taxiFriends);
+        eventTaxi.setPaidBy(valentina);
         eventConcierto.setFriends(cenaFriends);
         eventConcierto.setEvent(concierto);
         eventCena.setFriends(cenaFriends);
@@ -113,12 +159,17 @@ public class SampleDataLoader {
                 cervezas,
                 cine,
                 concierto,
-                mariscada
+                mariscada,
+                diaDeCompras,
+                alquilerCancha,
+                taxi,
+                facturaLuz
         ));
 
         billsRepository.saveAll( List.of(
 
-                        eventCena, eventMariscada, eventConcierto, eventCine, eventCervezas
+                        eventCena, eventMariscada, eventConcierto, eventCine, eventCervezas,
+                eventAlquilerCancha, eventFactura, eventTaxi, eventCompras
                 )
         );
 
