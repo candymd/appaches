@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 import './Form.css'
 import {Link, useLocation, useNavigate} from "react-router-dom";
+import Select from "react-select";
+import makeAnimated from 'react-select/animated'
 
 const Form = (props) => {
 
@@ -57,12 +59,24 @@ const Form = (props) => {
         navigate("/")
 
     }
+    const friendsOptions = [
+        {value: "Candy", label: "Candy"},
+        {value: "Sonia", label:"Sonia"},
+        {value: "Faby", label:"Faby"},
+        {value: "Valentina", label:"Valentina"},
+        {value: "Sandra", label:"Sandra"},
+        {value: "Jose Manuel", label:"Jose Manuel"},
+        {value: "Eva Maria", label:"Eva Maria"} ]
+
+
+    const animatedComponents = makeAnimated();
+
+
 
     return (
         <>
             <form className="container" onSubmit={enviarDatos}>
-                <button type="submit" className="button-icon" >{input ? 'Guardar cambios' : <i className="fa-solid fa-circle-check"></i>}
-                </button>
+                <button type="submit" className="button-icon">volver</button>
                 <h1>AÑADIR </h1>
                 <div className="form">
                     <div>
@@ -72,38 +86,31 @@ const Form = (props) => {
                     </div>
                     <div>
                         <label htmlFor="name">NOMBRE DEL GASTO</label>
-                        <input value={input.event.name} onChange={handleInputChange} type="text" className="input"  name="name" id="name"/>
+                        <input value={input.event.name} onChange={handleInputChange} type="text" className="input"
+                               name="name" id="name"/>
                     </div>
                     <div>
                         <label htmlFor="price">IMPORTE</label>
                         <input value={input.event.amount} onChange={handleInputChange} type="text"
                                name="amount" className="input" id="price"/>
                     </div>
-
-                    <div>
-                        <label htmlFor="">PAGADO POR</label>
-                        <button onClick=
-                                    {irACobrar} className={isGreenActiveForm ? 'verde active' : 'verde'}>POR MI
-                        </button>
-                        <button onClick=
-                                    {irAPagar} className={!isGreenActiveForm ? 'rojo active' : 'rojo'}>POR OTRO
-                        </button>
-                    </div>
                     <div>
                         <label htmlFor="friends">NOMBRE</label>
-                        <select value={input.friends.name} onChange={handleInputChange}
-                                name="friends name" className="input" id="friends" >
-                            {props.friends.map(friend => <option value={friend.name}>{friend.name}</option>)}
-                        </select>
+                        <Select className="option" name="friends" isMulti options={friendsOptions} />
 
-                                           </div>
-                    <div>
-                        <label htmlFor="">LISTA</label>
-                        <textarea className="text"></textarea>
                     </div>
                     <div>
                         <p className="input">AMIGOS: ${input.numberFriends}</p>
                         <p className="input">TOTAL APACHAS= 5 €/cada uno</p>
+                    </div>
+                    <div>
+                        <label htmlFor="">GUARDAR EN </label>
+                        <button onClick=
+                                    {irACobrar} className={isGreenActiveForm ? 'verde active' : 'verde'}>A COBRAR
+                        </button>
+                        <button onClick=
+                                    {irAPagar} className={!isGreenActiveForm ? 'rojo active' : 'rojo'}>A PAGAR
+                        </button>
                     </div>
                 </div>
 
