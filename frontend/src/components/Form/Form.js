@@ -74,10 +74,11 @@ const Form = ({onSubmit, friends}) => {
                                name="amount" className="input" id="price"/>
                     </div>
                     <div>
-                        <label htmlFor="friends">NOMBRE DE AMIGXS</label>
-                        <Select className="option" name="friends" isMulti options={friendsSelectOptions} />
-
+                        <label htmlFor="friends" >NOMBRE DE AMIGXS</label>
                     </div>
+                        <div>
+                            <Select className="select" name="friends" isMulti options={friendsSelectOptions}/>
+                        </div>
                     <div>
                         <p className="input">CANTIDAD DE AMIGOS: ${input.numberFriends}</p>
                         <p className="input">TOTAL APACHAS= 5 €/cada uno</p>
