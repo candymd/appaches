@@ -1,2 +1,2 @@
 # Appaches
-Proyecto pedagógico Grupo 3 
+## Proyecto pedagógico Grupo 3 
