@@ -13,11 +13,11 @@
 
 ## Equipo : 
 
-* Candy Montero 
-* Faby Broc
-* Sandra Barrachina 
-* Sonia Moliner 
-* Valentina Vergara
+* [Candy Montero](https://github.com/candymd) 
+* [Faby Broc](https://github.com/FabyBroc)
+* [Sandra Barrachina](https://github.com/Sbarrachina) 
+* [Sonia Moliner](https://github.com/SMoliner) 
+* [Valentina Vergara](https://github.com/19valentinavergara98)
 
 ## Inspiración  
 Es una aplicación usado entre amigos para compartir los gastos.     
