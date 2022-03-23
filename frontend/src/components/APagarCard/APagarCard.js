@@ -1,5 +1,7 @@
 import React from 'react';
 import './APagarCard.css';
+import avatar from '../../assets/avatar.jpg'
+
 
 
 const APagarCard = ({event, bill}) => {
@@ -10,9 +12,15 @@ const APagarCard = ({event, bill}) => {
                 <span className="date">{event.date}</span>
                 <p>{bill.event.name}</p>
             </div>
-                <div className="friend">
-                    <span>{bill.paidBy.name}</span>
-                    <span>5€</span>
+                <div className="info">
+                    <div>
+                        <img src={avatar} className="avatar" alt={'icono de ' + event.category} />
+                        <span>{bill.paidBy.name}</span>
+                    </div>
+                   <div>
+                       <span>5€</span>
+                       <button className="pagar">PAGAR</button>
+                   </div>
                 </div>
 
 

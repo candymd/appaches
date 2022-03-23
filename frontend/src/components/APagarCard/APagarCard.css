@@ -7,16 +7,45 @@
     font-size: 20px;
 }
 
-.friend {
+.info {
     margin-top: 3%;
     font-weight: 400;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
+    align-items: center;
     padding-bottom: 10px;
+    padding-top: 15px;
+}
+
+button.pagar {
+    box-shadow: 0px 1px 3px 0px #00000059;
+    background-color: #ffffff;
+    border-radius: 33px;
+    cursor: pointer;
+    color: #000000;
+    font-weight: 600;
+    font-size: 13px;
+    padding: 12px 21px;
+    text-decoration: none;
+    border: none;
+}
+
+ div.info > div {
+     display: flex;
+     align-items: center;
+     gap: 10px;
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
 }
 
 .date-title {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    font-size: 16px;
+    padding-top: 10px;
 }

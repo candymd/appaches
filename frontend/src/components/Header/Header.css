@@ -1,6 +1,7 @@
 *{
     padding: 0;
     margin: 0;
+    text-shadow: none;
 
 }
 .TextoBienvenida{
@@ -64,9 +65,9 @@ button > span.total {
 
 .red, .green{
     background-color: white;
-    height: 100px ;
+    height: 100px;
     width: 125px;
-    box-shadow: 1px 1px 6px 0 rgb(13 14 13);
+    box-shadow: 1px 1px 3px 0 rgb(13 14 13 / 53%);
     border-radius: 12%;
     border: none;
     cursor: pointer;
