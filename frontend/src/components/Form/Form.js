@@ -3,7 +3,7 @@ import './Form.css'
 import {Link, useLocation, useNavigate} from "react-router-dom";
 import Select from "react-select";
 import makeAnimated from 'react-select/animated'
-import {Radio} from "@mui/material";
+
 
 const Form = ({onSubmit, friends}) => {
 
@@ -58,7 +58,9 @@ const Form = ({onSubmit, friends}) => {
         <>
             <form className="container" onSubmit={enviarDatos}>
                 <button className="button-icon"><i className="fa-solid fa-arrow-left"></i></button>
-                <h1>AÑADIR </h1>
+                <div className="tittle">
+                    <h1>AÑADIR </h1>
+                </div>
                 <div className="form">
                     <div>
                         <label htmlFor="date">FECHA</label>
@@ -76,17 +78,21 @@ const Form = ({onSubmit, friends}) => {
                                name="amount" className="input" id="price"/>
                     </div>
                     <div>
+                        <label htmlFor="price">FILTRO</label>
+                        <input value={input.event.amount} onChange={handleEventChange} type="img"
+                               name="filter" className="input" id="price"/>
+                    </div>
+                    <div>
                         <label htmlFor="friends" >NOMBRE DE AMIGXS</label>
                     </div>
                         <div>
                             <Select className="select" name="friends" isMulti options={friendsSelectOptions}/>
                         </div>
                     <div>
-                        <p className="input">CANTIDAD DE AMIGOS: {input.numberFriends}</p>
+                        <p className="input">CANTIDAD DE AMIGOS: 7{input.numberFriends}</p>
                         <p className="input">TOTAL APACHAS= 5 €/cada uno</p>
                     </div>
                     <div>
-
                         <label htmlFor="paidByMe">GUARDAR EN </label>
                         <div className="botonForm">
                         <button className="input" type="submit"

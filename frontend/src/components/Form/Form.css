@@ -1,7 +1,14 @@
-.container{
-    background: #FFFFFF;
+form.container{
     margin: 0;
+    padding: 20px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
 }
+
 .button-icon{
     position: absolute;
     width: 40px;
@@ -9,7 +16,7 @@
     left: 320px;
     top: 30px;
     background: #FFFFFF;
-    border: 0.5px solid #000000;
+    border: none;
     box-sizing: border-box;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 11px;
@@ -26,67 +33,66 @@
 }
 
 h1  {
-     height: 30px;
-     margin: 50px 5px;
      font-style: normal;
      font-weight: 600;
      font-size: 26px;
-     line-height: 31px;
-     text-align: center;
-     color: #000000;
+
  }
 
-.form{
+.form {
     font-size: 13px;
-    position: fixed;
-    width: 140px;
-    height: 16px;
-    left: 30px;
-    top: 100px;
-
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
 }
-.input{
-    margin: 5px;
-    width: 230%;
-    height: 25px;
-    left: 47px;
-    top: 170px;
-    padding: 5px;
+
+.form > * {
+    margin-top: 10px;
+}
+
+input {
+    width: 100%;
+    height: 50px;
+    text-indent: 10px;
+}
+
+.input:not(input){
     background: #FFFFFF;
     box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.34);
-
+    border: none;
+    display: flex;
+    flex-direction: column;
 }
+
 .select{
-    margin:20px;
-    width: 240%;
-    left: -16px;
+    padding: 0.5px;
     background: #FFFFFF;
-}
-.text{
-    width: 300px;
-    left: 47px;
-    margin-top: 5px;
-    padding: 20px;
-    background: #FFFFFF;
-    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.34);
-    border-radius: 6px;
-
 }
 
 label {
-    float: left;
+    display: inline-block;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+ div > form > div.form > div:nth-child(7) > p {
+     margin: 10px;
+     height: 30px;
+     text-align: center;
+     padding: 15px;
+     line-height: 30px;
+     align-items: center;
+}
+
+.option {
+    display: flex;
 }
 
 .botonForm{
     display: flex;
     justify-content: space-evenly;
-    margin: 10px;
-    width: 200%;
+    width: 100%;
     padding: 10px;
 
-}
-
-.option {
-    display: flex;
-    margin: 20px;
 }
