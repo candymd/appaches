@@ -3,7 +3,8 @@ import './Form.css'
 import {Link, useLocation, useNavigate} from "react-router-dom";
 import Select from "react-select";
 import makeAnimated from 'react-select/animated'
-import {Radio} from "@mui/material";
+import * as icon from '../../assets/category-icons/category-icons'
+
 
 const Form = ({onSubmit, friends}) => {
 
@@ -15,6 +16,19 @@ const Form = ({onSubmit, friends}) => {
             label: friend.name
         }
     });
+
+    const animatedComponents = makeAnimated();
+
+
+    const categoryOptions = [
+        {value: "moda", label: "moda"},
+        {value: "transporte", label:"transporte"},
+        {value: "bar", label:"bar"},
+        {value: "comida", label:"comida"},
+        {value: "compras", label:"compras"},
+        {value: "entretenimiento", label:"entretenimiento"},
+        {value: "hogar", label:"hogar"} 
+    ]
 
 
     const navigate = useNavigate();
@@ -31,6 +45,7 @@ const Form = ({onSubmit, friends}) => {
             name: "",
             date: "",
             amount: '',
+            category: '',
             numberFriends: '',
             paidByMe: false
         }
@@ -51,14 +66,15 @@ const Form = ({onSubmit, friends}) => {
     }
 
 
-    const animatedComponents = makeAnimated();
 
 
     return (
         <>
             <form className="container" onSubmit={enviarDatos}>
                 <button className="button-icon"><i className="fa-solid fa-arrow-left"></i></button>
-                <h1>AÑADIR </h1>
+                <div className="tittle">
+                    <h1>AÑADIR </h1>
+                </div>
                 <div className="form">
                     <div>
                         <label htmlFor="date">FECHA</label>
@@ -76,38 +92,36 @@ const Form = ({onSubmit, friends}) => {
                                name="amount" className="input" id="price"/>
                     </div>
                     <div>
+                        <label htmlFor="category">CATEGORIA</label>
+                        <Select className="select" name="category"  onChange={handleEventChange} options={categoryOptions}
+                        />
+                    </div>
+                    <div>
                         <label htmlFor="friends" >NOMBRE DE AMIGXS</label>
                     </div>
                         <div>
                             <Select className="select" name="friends" isMulti options={friendsSelectOptions}/>
                         </div>
                     <div>
-                        <p className="input">CANTIDAD DE AMIGOS: {input.numberFriends}</p>
+                        <p className="input">CANTIDAD DE AMIGOS: 7{input.numberFriends}</p>
                         <p className="input">TOTAL APACHAS= 5 €/cada uno</p>
                     </div>
                     <div>
-                        <label htmlFor="">GUARDAR EN </label>
-                        <label htmlFor="paidByMe">A Cobrar </label>
-                        <Radio
-                            onChange={handleEventChange}
-                            value={input.event.paidByMe = booleanPaidByMe}
-                            name="paidByMe"
-                            checked={booleanPaidByMe}
-                            onClick={() => setBoolanPaidByMe(true)}
-                        />
-                        <label htmlFor="paidByMe">A Pagar </label>
-                        <Radio
-                            onChange={handleEventChange}
-                            value={input.event.paidByMe = booleanPaidByMe}
-                            name="paidByMe"
-                            checked={!booleanPaidByMe}
-                            onClick={() => setBoolanPaidByMe(false)}
-                        />
-                        <label htmlFor="">GUARDAR EN </label>
+                        <label htmlFor="paidByMe">PAGADO POR </label>
                         <div className="botonForm">
-                        <button className="input" type="submit" name="paidByMe" value={input.event.paidByMe = 'false'}>A COBRAR
-                        </button>
-                        <button className="input" type="submit" name="!paidByMe" value={input.event.paidByMe = 'true'}>A PAGAR
+                        <button className="input" type="submit"
+                                onChange={handleEventChange}
+                                value={input.event.paidByMe = booleanPaidByMe}
+                                name="paidByMe"
+                                checked={booleanPaidByMe}
+                                onClick={() => setBoolanPaidByMe(true)}
+                        >POR MI</button>
+                        <button className="input" type="submit"
+                                onChange={handleEventChange}
+                                value={input.event.paidByMe = booleanPaidByMe}
+                                name="paidByMe"
+                                checked={!booleanPaidByMe}
+                                onClick={() => setBoolanPaidByMe(false)}>POR OTRO
                         </button>
 
                         </div>
