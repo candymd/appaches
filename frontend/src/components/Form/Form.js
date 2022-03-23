@@ -3,6 +3,7 @@ import './Form.css'
 import {Link, useLocation, useNavigate} from "react-router-dom";
 import Select from "react-select";
 import makeAnimated from 'react-select/animated'
+import * as icon from '../../assets/category-icons/category-icons'
 
 
 const Form = ({onSubmit, friends}) => {
@@ -15,6 +16,19 @@ const Form = ({onSubmit, friends}) => {
             label: friend.name
         }
     });
+
+    const animatedComponents = makeAnimated();
+
+
+    const categoryOptions = [
+        {value: "moda", label: "moda"},
+        {value: "transporte", label:"transporte"},
+        {value: "bar", label:"bar"},
+        {value: "comida", label:"comida"},
+        {value: "compras", label:"compras"},
+        {value: "entretenimiento", label:"entretenimiento"},
+        {value: "hogar", label:"hogar"} 
+    ]
 
 
     const navigate = useNavigate();
@@ -31,6 +45,7 @@ const Form = ({onSubmit, friends}) => {
             name: "",
             date: "",
             amount: '',
+            category: '',
             numberFriends: '',
             paidByMe: false
         }
@@ -51,7 +66,6 @@ const Form = ({onSubmit, friends}) => {
     }
 
 
-    const animatedComponents = makeAnimated();
 
 
     return (
@@ -78,9 +92,9 @@ const Form = ({onSubmit, friends}) => {
                                name="amount" className="input" id="price"/>
                     </div>
                     <div>
-                        <label htmlFor="price">FILTRO</label>
-                        <input value={input.event.amount} onChange={handleEventChange} type="img"
-                               name="filter" className="input" id="price"/>
+                        <label htmlFor="category">CATEGORIA</label>
+                        <Select className="select" name="category"  onChange={handleEventChange} options={categoryOptions}
+                        />
                     </div>
                     <div>
                         <label htmlFor="friends" >NOMBRE DE AMIGXS</label>
@@ -93,7 +107,7 @@ const Form = ({onSubmit, friends}) => {
                         <p className="input">TOTAL APACHAS= 5 €/cada uno</p>
                     </div>
                     <div>
-                        <label htmlFor="paidByMe">GUARDAR EN </label>
+                        <label htmlFor="paidByMe">PAGADO POR </label>
                         <div className="botonForm">
                         <button className="input" type="submit"
                                 onChange={handleEventChange}
@@ -101,13 +115,13 @@ const Form = ({onSubmit, friends}) => {
                                 name="paidByMe"
                                 checked={booleanPaidByMe}
                                 onClick={() => setBoolanPaidByMe(true)}
-                        >A COBRAR</button>
+                        >POR MI</button>
                         <button className="input" type="submit"
                                 onChange={handleEventChange}
                                 value={input.event.paidByMe = booleanPaidByMe}
                                 name="paidByMe"
                                 checked={!booleanPaidByMe}
-                                onClick={() => setBoolanPaidByMe(false)}>A PAGAR
+                                onClick={() => setBoolanPaidByMe(false)}>POR OTRO
                         </button>
 
                         </div>
