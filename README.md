@@ -5,6 +5,7 @@
 
 ## Tabla de contenidos
 * [Información General](#Información-General)
+* [Inspiración](#Inspiración)
 * [Tecnologías](#Tecnologías)
 
 
@@ -17,6 +18,16 @@
 * Sandra Barrachina 
 * Sonia Moliner 
 * Valentina Vergara
+
+## Inspiración  
+Es una aplicación usado entre amigos para compartir los gastos.     
+
+Comenzamos a darle forma en [Excalidraw](https://excalidraw.com/#room=6c81ebec452de005667c,zPrRBAow_boO8wdyAtLMXw
+)  
+
+Nuestras ideas las representamos en [Figma](https://www.figma.com/file/V1cnUjU0vDJJDAujb2Qpal/Grupo-3-Appacha-%3F%3F%3F?node-id=0%3A1
+)
+
 
 # Tecnologías 
 
