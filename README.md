@@ -1,5 +1,7 @@
 # Appaches
 ## Proyecto pedagógico Grupo 3 Factoria F5 03/2022.
+![welcome](https://i.ibb.co/0QWc00Y/Welcome.png)
+
 
 ## Tabla de contenidos
 * [Información General](#Información-General)
@@ -10,11 +12,11 @@
 
 ## Equipo : 
 
--Sandra Barrachina 
--Valentina Vergara
--Faby Broc
--Candy Montero 
--Sonia Moliner 
+* Candy Montero 
+* Faby Broc
+* Sandra Barrachina 
+* Sonia Moliner 
+* Valentina Vergara
 
 # Tecnologías 
 
