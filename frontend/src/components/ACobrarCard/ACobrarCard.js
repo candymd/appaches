@@ -41,7 +41,7 @@ const ACobrarCard = ({bill, deleteBill, friends, event}) => {
                 </div>}
                 <div>
                     <div>
-                    <img src={icon[event.category]} alt={'icono de ' + event.category} />
+                    <img src={icon[event.category]} className="category-icon" alt={'icono de ' + event.category} />
 
                 <div className="title">
                     <p>{event.name}</p>

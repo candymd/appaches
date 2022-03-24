@@ -34,7 +34,7 @@ public class SampleDataLoader {
         Friend faby = new Friend("Faby", "faby@factoriaf5.org");
         Friend valentina = new Friend("Valentina", "valentina@factoriaf5.org");
         Friend sandra = new Friend("Sandra", "sandra@factoriaf5.org");
-        Friend joseManuel = new Friend("Josefa", "josemanuel@factoriaf5.org");
+        Friend joseManuel = new Friend("Jose Manuel", "josemanuel@factoriaf5.org");
         Friend evaMaria = new Friend("Eva Maria", "evamaria@factoriaf5.org");
 
 
