@@ -4,6 +4,7 @@ import './components/Header/Header'
 import './components/Welcome/Welcome'
 import {useEffect, useState} from "react";
 import Form from "./components/Form/Form";
+import Formulario2 from "./components/Formulario2/Formulario2";
 import {Route, Routes} from "react-router-dom";
 import {MainPage} from "./components/MainPage/MainPage";
 import Welcome from "./components/Welcome/Welcome"
@@ -70,9 +71,12 @@ function App() {
                    element={<MainPage deleteBill={deleteBill} eventsACobrar={eventsACobrar} eventsAPagar={eventsAPagar}
                                   totalACobrar={total(eventsACobrar)} totalAPagar={total(eventsAPagar)}    vistaACobrar={vistaACobrar} setVistaACobrar={setVistaACobrar}/>}/>
             <Route path="/form" element={<Form friends={friends} eventsACobrar={eventsACobrar} eventsAPagar={eventsAPagar}
-                                               onSubmit={e => addBill(e)}/>}/>
+                                               onSubmit={e => addBill(e)}/>}/>element
             <Route path="/welcome" element={<Welcome/>}/>
-        </Routes>
+
+            <Route path="/formulario2"element={<Formulario2 friends={friends} 
+                                               onSubmit={e => addBill(e)}/>}/>element
+            </Routes>
     </div>
   );
 }
