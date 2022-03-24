@@ -113,7 +113,7 @@ div.cardList > div{
     gap: 15px;
     align-items: center;
 }
-.css-o4b71y-MuiAccordionSummary-content > div > div > img {
+.category-icon  {
     width: 30px;
     height: 40px
 }
