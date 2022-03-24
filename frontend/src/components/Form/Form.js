@@ -3,8 +3,7 @@ import './Form.css'
 import {Link, useLocation, useNavigate} from "react-router-dom";
 import Select from "react-select";
 import makeAnimated from 'react-select/animated'
-import * as icon from '../../assets/category-icons/category-icons'
-
+import * as icon from '../../assets/category-icons/category-icons';
 
 const Form = ({onSubmit, friends}) => {
 
@@ -21,7 +20,7 @@ const Form = ({onSubmit, friends}) => {
 
 
     const categoryOptions = [
-        {value: "moda", label: "moda"},
+        {value: "moda", label: "moda"} ,
         {value: "transporte", label:"transporte"},
         {value: "bar", label:"bar"},
         {value: "comida", label:"comida"},
@@ -67,7 +66,6 @@ const Form = ({onSubmit, friends}) => {
 
 
 
-
     return (
         <>
             <form className="container" onSubmit={enviarDatos}>
@@ -93,7 +91,7 @@ const Form = ({onSubmit, friends}) => {
                     </div>
                     <div>
                         <label htmlFor="category">CATEGORIA</label>
-                        <Select className="select" name="category"  onChange={handleEventChange} options={categoryOptions}
+                        <Select className="select" name="category"  options= {categoryOptions}
                         />
                     </div>
                     <div>

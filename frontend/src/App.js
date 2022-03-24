@@ -64,6 +64,8 @@ function App() {
     return (
     <div className="App">
         <Routes>
+            <Route path="/welcome" element={<Welcome/>}/>
+
             <Route path="/" exact
                    element={<MainPage deleteBill={deleteBill} eventsACobrar={eventsACobrar} eventsAPagar={eventsAPagar}
                                   totalACobrar={total(eventsACobrar)} totalAPagar={total(eventsAPagar)}    vistaACobrar={vistaACobrar} setVistaACobrar={setVistaACobrar}/>}/>

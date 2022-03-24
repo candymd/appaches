@@ -12,6 +12,8 @@ const Welcome = () => {
                 <h1 className="slogan"> CUANDO CADA CÉNTIMO CUENTA </h1>
 
             </div>
+
+
         )
 };
 
