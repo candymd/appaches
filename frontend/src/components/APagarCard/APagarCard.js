@@ -1,10 +1,17 @@
 import React from 'react';
 import './APagarCard.css';
-import avatar from '../../assets/avatar.jpg'
+import * as avatar from '../../assets/avatars/avatars'
 
 
 
 const APagarCard = ({event, bill}) => {
+
+    const getAvatarName = (avatarName) => {
+      return  avatarName.replace(/\s/g, "")
+
+      }
+
+    let avatarName = (bill.paidBy.name)
 
     return (
         <div className="aPagar-card" >
@@ -14,7 +21,7 @@ const APagarCard = ({event, bill}) => {
             </div>
                 <div className="info">
                     <div>
-                        <img src={avatar} className="avatar" alt={'icono de ' + event.category} />
+                        <img src={avatar[getAvatarName(avatarName)]} className="avatar" alt={'icono de ' + bill.paidBy.name} />
                         <span>{bill.paidBy.name}</span>
                     </div>
                    <div>
