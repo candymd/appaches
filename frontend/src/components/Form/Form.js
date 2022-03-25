@@ -4,6 +4,7 @@ import {Link, useLocation, useNavigate} from "react-router-dom";
 import Select from "react-select";
 import makeAnimated from 'react-select/animated'
 import * as icon from '../../assets/category-icons/category-icons';
+import CustomSelector from "../CustomSelector/selector";
 
 
 
@@ -67,8 +68,6 @@ const Form = ({onSubmit, friends}) => {
 
     }
 
-   
-
     return (
         <>
             <form className="container" onSubmit={enviarDatos}>
@@ -104,7 +103,8 @@ const Form = ({onSubmit, friends}) => {
                     </div>
                     <div>
                         <label htmlFor="category">CATEGORIA</label>
-                        <Select className="select" name="category"  options= {categoryOptions}
+                        <CustomSelector className="select" name="category"  options= {categoryOptions}
+                                        onSelection={handleEventChange}
                         />
                     </div>
                     <div>
