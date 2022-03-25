@@ -3,12 +3,8 @@ import './Form.css'
 import {Link, useLocation, useNavigate} from "react-router-dom";
 import Select from "react-select";
 import makeAnimated from 'react-select/animated'
-<<<<<<< HEAD
 import * as icon from '../../assets/category-icons/category-icons';
-=======
 import * as icon from '../../assets/category-icons/category-icons'
->>>>>>> 9af271fdbfd58086a5632b5a1cddf91b7543459c
-
 const Form = ({onSubmit, friends}) => {
 
     const [booleanPaidByMe, setBoolanPaidByMe] = useState(true)
