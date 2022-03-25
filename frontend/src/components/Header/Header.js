@@ -21,7 +21,7 @@ const Header = ({setVistaACobrar, totalACobrar, totalAPagar}) => {
 
     return (
 
-        <div className="Container">
+        <div className="Container centered">
             <div className="TextoBienvenida">
                 <div className="texto">
                     <h1 className="hola">Hola, María</h1>
