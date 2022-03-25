@@ -10,6 +10,12 @@
 
 ![welcome](https://i.ibb.co/0QWc00Y/Welcome.png)
 
+- - -
+```
+¡¡¡ CADA CÉNTIMO CUENTA !!!
+
+```
+---
 
 # Información General 
 
