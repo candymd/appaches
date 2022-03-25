@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import './Header.css'
+import {maria} from '../../assets/avatars/avatars'
 
 
 const Header = ({setVistaACobrar, totalACobrar, totalAPagar}) => {
@@ -26,7 +27,7 @@ const Header = ({setVistaACobrar, totalACobrar, totalAPagar}) => {
                     <h1 className="hola">Hola, María</h1>
                     <p>Bienvenida a Appaches</p>
                 </div>
-                <i className="fa-solid fa-user-astronaut"/>
+               <img className="avatar" src={maria} alt="" />
             </div>
             <div className="Button">
 
