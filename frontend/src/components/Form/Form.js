@@ -5,6 +5,8 @@ import Select from "react-select";
 import makeAnimated from 'react-select/animated'
 import * as icon from '../../assets/category-icons/category-icons';
 
+
+
 const Form = ({onSubmit, friends}) => {
 
     const [booleanPaidByMe, setBoolanPaidByMe] = useState(true)
