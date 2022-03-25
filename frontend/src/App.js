@@ -4,6 +4,7 @@ import './components/Header/Header'
 import './components/Welcome/Welcome'
 import {useEffect, useState} from "react";
 import Form from "./components/Form/Form";
+import Formulario2 from "./components/Formulario2/Formulario2";
 import {Route, Routes} from "react-router-dom";
 import {MainPage} from "./components/MainPage/MainPage";
 import Welcome from "./components/Welcome/Welcome"
@@ -24,7 +25,7 @@ function App() {
 
     useEffect(() => {
         if (requiresUpdate) {
-            fetch("http://localhost:8080/friends")
+            fetch("/friends")
                 .then(r => r.json())
                 .then(setFriends)
                 .then(_ => setRequiresUpdate(false));
@@ -34,7 +35,7 @@ function App() {
 
     useEffect(() => {
         if (requiresUpdate) {
-            fetch("http://localhost:8080/bills")
+            fetch("/bills")
                 .then(r => r.json())
                 .then(setBills)
                 .then(_ => setRequiresUpdate(false));
@@ -42,7 +43,7 @@ function App() {
     }, [requiresUpdate])
 
     const addBill = (newBill) => {
-        fetch("http://localhost:8080/bills",
+        fetch("/bills",
             {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
@@ -53,7 +54,7 @@ function App() {
     }
 
     const deleteBill = (id) => {
-        fetch(`http://localhost:8080/bills/delete/${id}`,
+        fetch(`/bills/delete/${id}`,
             {
                 method: 'GET'
             }
@@ -68,9 +69,12 @@ function App() {
                    element={<MainPage deleteBill={deleteBill} eventsACobrar={eventsACobrar} eventsAPagar={eventsAPagar}
                                   totalACobrar={total(eventsACobrar)} totalAPagar={total(eventsAPagar)}    vistaACobrar={vistaACobrar} setVistaACobrar={setVistaACobrar}/>}/>
             <Route path="/form" element={<Form friends={friends} eventsACobrar={eventsACobrar} eventsAPagar={eventsAPagar}
-                                               onSubmit={e => addBill(e)}/>}/>
+                                               onSubmit={e => addBill(e)}/>}/>element
             <Route path="/welcome" element={<Welcome/>}/>
-        </Routes>
+
+            <Route path="/formulario2"element={<Formulario2 friends={friends}
+                                               onSubmit={e => addBill(e)}/>}/>element
+            </Routes>
     </div>
   );
 }

@@ -10,6 +10,14 @@
 
 ![welcome](https://i.ibb.co/0QWc00Y/Welcome.png)
 
+- - -
+```
+¡¡¡ CADA CÉNTIMO CUENTA !!!
+
+Lleva un registro de los gastos compartidos con amigos,compañeros de piso, de viaje, salidas y familia.
+
+```
+---
 
 # Información General 
 

@@ -1,9 +1,9 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import './Form.css'
-import {Link, useLocation, useNavigate} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import Select from "react-select";
-import makeAnimated from 'react-select/animated'
-import * as icon from '../../assets/category-icons/category-icons'
+import CustomSelector from "../CustomSelector/selector";
+
 
 
 const Form = ({onSubmit, friends}) => {
@@ -12,16 +12,14 @@ const Form = ({onSubmit, friends}) => {
 
     const friendsSelectOptions = friends.map(friend => {
         return {
-            value: friend.name,
-            label: friend.name
+            id: friend.id,
+            name: friend.name
         }
     });
 
-    const animatedComponents = makeAnimated();
-
 
     const categoryOptions = [
-        {value: "moda", label: "moda"},
+        {value: "moda", label: "moda"} ,
         {value: "transporte", label:"transporte"},
         {value: "bar", label:"bar"},
         {value: "comida", label:"comida"},
@@ -32,7 +30,6 @@ const Form = ({onSubmit, friends}) => {
 
 
     const navigate = useNavigate();
-    const [isGreenActiveForm, setIsGreenActiveForm] = useState(true);
     const [input, setInput] = useState({
 
         paidBy: {
@@ -40,7 +37,10 @@ const Form = ({onSubmit, friends}) => {
             name: "",
             email: ""
         },
-        friends: [],
+        friends: [{
+            id: '',
+            name: ''
+        }],
         event: {
             name: "",
             date: "",
@@ -58,6 +58,10 @@ const Form = ({onSubmit, friends}) => {
         })
     }
 
+    const updateFriends = (friends) => {
+        setInput({...input, friends})
+    }
+
     const enviarDatos = (event) => {
         event.preventDefault();
         onSubmit(input)
@@ -65,16 +69,23 @@ const Form = ({onSubmit, friends}) => {
 
     }
 
-
-
-
     return (
         <>
             <form className="container" onSubmit={enviarDatos}>
-                <button className="button-icon"><i className="fa-solid fa-arrow-left"></i></button>
+                <button className="button-icon"><i className="fa-solid fa-arrow-left"/></button>
                 <div className="tittle">
                     <h1>AÑADIR </h1>
                 </div>
+                <div>
+                        <label htmlFor="paidByMe"/>
+                        <div className="botonForm">
+                            <Link to="/form"> <button>POR MI</button></Link>
+                            <Link to="/formulario2"><button>POR OTRO</button></Link>
+
+                        </div>
+                    </div>
+
+
                 <div className="form">
                     <div>
                         <label htmlFor="date">FECHA</label>
@@ -93,21 +104,27 @@ const Form = ({onSubmit, friends}) => {
                     </div>
                     <div>
                         <label htmlFor="category">CATEGORIA</label>
-                        <Select className="select" name="category"  onChange={handleEventChange} options={categoryOptions}
+                        <CustomSelector className="select" name="category"  options= {categoryOptions}
+                                        onSelection={handleEventChange}
                         />
                     </div>
                     <div>
                         <label htmlFor="friends" >NOMBRE DE AMIGXS</label>
                     </div>
+
+
                         <div>
-                            <Select className="select" name="friends" isMulti options={friendsSelectOptions}/>
+                            <Select className="select" name="friends" isMulti options={friendsSelectOptions}
+                                    getOptionValue={(option) => `${option['id']}`}  getOptionLabel={(option) => `${option['name']}`}  onChange={updateFriends}/>
                         </div>
+
+
                     <div>
                         <p className="input">CANTIDAD DE AMIGOS: 7{input.numberFriends}</p>
                         <p className="input">TOTAL APACHAS= 5 €/cada uno</p>
                     </div>
                     <div>
-                        <label htmlFor="paidByMe">PAGADO POR </label>
+                        <label htmlFor="paidByMe"/>
                         <div className="botonForm">
                         <button className="input" type="submit"
                                 onChange={handleEventChange}
@@ -115,17 +132,11 @@ const Form = ({onSubmit, friends}) => {
                                 name="paidByMe"
                                 checked={booleanPaidByMe}
                                 onClick={() => setBoolanPaidByMe(true)}
-                        >POR MI</button>
-                        <button className="input" type="submit"
-                                onChange={handleEventChange}
-                                value={input.event.paidByMe = booleanPaidByMe}
-                                name="paidByMe"
-                                checked={!booleanPaidByMe}
-                                onClick={() => setBoolanPaidByMe(false)}>POR OTRO
-                        </button>
-
+                        >GUARDAR</button>
+                        
                         </div>
                     </div>
+                    
                 </div>
 
             </form>

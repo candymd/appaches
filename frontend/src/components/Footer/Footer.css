@@ -1,10 +1,9 @@
 .footer {
     position: fixed ;
-    left: 0;
     bottom: 0 ;
-    width: 100vw;
-    margin: 0;
+    width: 100%;
     min-height: 5vh;
+    background-color: #891717;
 
 }
 
