@@ -1,7 +1,7 @@
 // include in `build.gradle`
 // using `apply from: 'frontend.gradle'`
 
-/*node {
+node {
     nodeProjectDir = file("../frontend")
 }
 
@@ -18,4 +18,4 @@ task copyFrontendApp(type: Copy) {
 buildFrontendApp.dependsOn npmInstall
 processResources.dependsOn copyFrontendApp
 copyFrontendApp.dependsOn buildFrontendApp
-build.d*/ependsOn copyFrontendApp
+build.dependsOn copyFrontendApp

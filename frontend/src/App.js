@@ -25,7 +25,7 @@ function App() {
 
     useEffect(() => {
         if (requiresUpdate) {
-            fetch("http://localhost:8080/friends")
+            fetch("/friends")
                 .then(r => r.json())
                 .then(setFriends)
                 .then(_ => setRequiresUpdate(false));
@@ -35,7 +35,7 @@ function App() {
 
     useEffect(() => {
         if (requiresUpdate) {
-            fetch("http://localhost:8080/bills")
+            fetch("/bills")
                 .then(r => r.json())
                 .then(setBills)
                 .then(_ => setRequiresUpdate(false));
@@ -43,7 +43,7 @@ function App() {
     }, [requiresUpdate])
 
     const addBill = (newBill) => {
-        fetch("http://localhost:8080/bills",
+        fetch("/bills",
             {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
@@ -54,7 +54,7 @@ function App() {
     }
 
     const deleteBill = (id) => {
-        fetch(`http://localhost:8080/bills/delete/${id}`,
+        fetch(`/bills/delete/${id}`,
             {
                 method: 'GET'
             }
