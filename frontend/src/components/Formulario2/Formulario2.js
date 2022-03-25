@@ -58,10 +58,10 @@ return (
         <div className="tittle">
             <h1>AÑADIR </h1>
             <div>
-                        <label htmlFor="paidByMe">GUARDAR </label>
+                        <label htmlFor="paidByMe"></label>
                         <div className="botonForm">
-                        <button>POR MI</button>
-                        <button >POR OTRO</button>
+                            <Link to="/form"><button>POR MI</button></Link>
+                            <Link to="/formulario2"><button>POR OTRO</button></Link>
 
                         </div>
                     </div>
@@ -84,7 +84,7 @@ return (
             </div>
            
             <div>
-                <label htmlFor="friends" >NOMBRE DE AMIGXS</label>
+                <label htmlFor="friends" >NOMBRE DE AMIGX</label>
             </div>
 
 

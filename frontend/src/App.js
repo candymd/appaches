@@ -65,8 +65,6 @@ function App() {
     return (
     <div className="App">
         <Routes>
-            <Route path="/welcome" element={<Welcome/>}/>
-
             <Route path="/" exact
                    element={<MainPage deleteBill={deleteBill} eventsACobrar={eventsACobrar} eventsAPagar={eventsAPagar}
                                   totalACobrar={total(eventsACobrar)} totalAPagar={total(eventsAPagar)}    vistaACobrar={vistaACobrar} setVistaACobrar={setVistaACobrar}/>}/>
@@ -74,7 +72,7 @@ function App() {
                                                onSubmit={e => addBill(e)}/>}/>element
             <Route path="/welcome" element={<Welcome/>}/>
 
-            <Route path="/formulario2"element={<Formulario2 friends={friends} 
+            <Route path="/formulario2"element={<Formulario2 friends={friends}
                                                onSubmit={e => addBill(e)}/>}/>element
             </Routes>
     </div>

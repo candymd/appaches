@@ -76,10 +76,10 @@ const Form = ({onSubmit, friends}) => {
                     <h1>AÑADIR </h1>
                 </div>
                 <div>
-                        <label htmlFor="paidByMe">GUARDAR </label>
+                        <label htmlFor="paidByMe"></label>
                         <div className="botonForm">
-                        <button>POR MI</button>
-                        <button >POR OTRO</button>
+                            <Link to="/form"> <button>POR MI</button></Link>
+                            <Link to="/formulario2"><button>POR OTRO</button></Link>
 
                         </div>
                     </div>
@@ -122,7 +122,7 @@ const Form = ({onSubmit, friends}) => {
                         <p className="input">TOTAL APACHAS= 5 €/cada uno</p>
                     </div>
                     <div>
-                        <label htmlFor="paidByMe">GUARDAR </label>
+                        <label htmlFor="paidByMe"></label>
                         <div className="botonForm">
                         <button className="input" type="submit"
                                 onChange={handleEventChange}
