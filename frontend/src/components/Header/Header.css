@@ -76,10 +76,12 @@ button > span.total {
 
 button.red.active{
     background-color: #FE7373;
+
 }
 
 button.red.active:hover {
     background-color: #e66767;
+
 }
 
 
