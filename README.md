@@ -14,6 +14,8 @@
 ```
 ¡¡¡ CADA CÉNTIMO CUENTA !!!
 
+Lleva un registro de los gastos compartidos con amigos,compañeros de piso, de viaje, salidas y familia.
+
 ```
 ---
 
