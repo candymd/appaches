@@ -23,10 +23,17 @@ dependencies {
 
 }
 
+task prepareKotlinBuildScriptModel {
+
+}
+
 tasks.named('test') {
     useJUnitPlatform()
 }
 
+jar {
+    enabled = false
+}
 
 apply from: "frontend.gradle"
 
