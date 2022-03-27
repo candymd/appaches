@@ -56,15 +56,18 @@ return (
     <form className="container" onSubmit={enviarDatos}>
         <button className="button-icon"><i className="fa-solid fa-arrow-left"></i></button>
         <div className="tittle">
-            <h1>AÑADIR </h1>
+            <h1>AÑADIR</h1>
             <div>
-                        <label htmlFor="paidByMe"></label>
-                        <div className="botonForm">
-                            <Link to="/form"><button>POR MI</button></Link>
-                            <Link to="/formulario2"><button>POR OTRO</button></Link>
-
-                        </div>
-                    </div>
+                <label htmlFor="paidByMe"></label>
+                <div className="botonForm">
+                    <Link to="/form">
+                        <button>POR MI</button>
+                    </Link>
+                    <Link to="/formulario2">
+                        <button>POR OTRO</button>
+                    </Link>
+                </div>
+            </div>
         </div>
         <div className="form">
             <div>
