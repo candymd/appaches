@@ -1,10 +1,11 @@
 {
   "files": {
-    "main.css": "/static/css/main.c645e0e2.css",
-    "main.js": "/static/js/main.52a15dec.js",
+    "main.css": "/static/css/main.a1ad5908.css",
+    "main.js": "/static/js/main.a7fb6463.js",
     "static/js/787.cda612ba.chunk.js": "/static/js/787.cda612ba.chunk.js",
     "static/media/joseManuel.jpg": "/static/media/joseManuel.869356b874d9c233a0d1.jpg",
     "static/media/valentina.jpg": "/static/media/valentina.78d8d8be566756a4938c.jpg",
+    "static/media/evaMaria.jpg": "/static/media/evaMaria.0436681ca627890da1f5.jpg",
     "static/media/sonia.jpg": "/static/media/sonia.d367adf3a6165c1e8218.jpg",
     "static/media/sandra.jpg": "/static/media/sandra.9e6cd1c2d46ccc8f17b8.jpg",
     "static/media/candy.jpg": "/static/media/candy.8a8320219f63cf538906.jpg",
@@ -19,12 +20,12 @@
     "static/media/hogar.svg": "/static/media/hogar.711acc7e8c18bc1c05872eae8d378412.svg",
     "static/media/moda.svg": "/static/media/moda.05357cdc1b1004f7fe02768b1c38f81d.svg",
     "static/media/compras.svg": "/static/media/compras.e440cb06a8ddb505dc1d5e473f1284b4.svg",
-    "main.c645e0e2.css.map": "/static/css/main.c645e0e2.css.map",
-    "main.52a15dec.js.map": "/static/js/main.52a15dec.js.map",
+    "main.a1ad5908.css.map": "/static/css/main.a1ad5908.css.map",
+    "main.a7fb6463.js.map": "/static/js/main.a7fb6463.js.map",
     "787.cda612ba.chunk.js.map": "/static/js/787.cda612ba.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c645e0e2.css",
-    "static/js/main.52a15dec.js"
+    "static/css/main.a1ad5908.css",
+    "static/js/main.a7fb6463.js"
   ]
 }
