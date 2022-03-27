@@ -7,17 +7,6 @@
     flex-direction: column;
 }
 
-.cardList {
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-div.cardList > div{
-    border-radius: 20px;
-}
-
 .card {
     padding: 0 0.5rem 0.5rem;
 }
