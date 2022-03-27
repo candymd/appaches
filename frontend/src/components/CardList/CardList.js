@@ -2,6 +2,7 @@ import React from 'react';
 import '../ACobrarCard/ACobrarCard'
 import ACobrarCard from "../ACobrarCard/ACobrarCard";
 import APagarCard from "../APagarCard/APagarCard";
+import './CardListStyle.css'
 
 const CardList = ({eventsACobrar, eventsAPagar, vistaACobrar, deleteBill}) => {
 
