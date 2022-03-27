@@ -74,18 +74,19 @@ const Form = ({onSubmit, friends}) => {
             <form className="container" onSubmit={enviarDatos}>
                 <button className="button-icon"><i className="fa-solid fa-arrow-left"/></button>
                 <div className="tittle">
-                    <h1>AÑADIR </h1>
+                    <h1>AÑADIR</h1>
                 </div>
                 <div>
-                        <label htmlFor="paidByMe"/>
-                        <div className="botonForm">
-                            <Link to="/form"> <button>POR MI</button></Link>
-                            <Link to="/formulario2"><button>POR OTRO</button></Link>
-
-                        </div>
+                    <label htmlFor="paidByMe"/>
+                    <div className="botonForm">
+                        <Link to="/form">
+                            <button>POR MI</button>
+                        </Link>
+                        <Link to="/formulario2">
+                            <button>POR OTRO</button>
+                        </Link>
                     </div>
-
-
+                </div>
                 <div className="form">
                     <div>
                         <label htmlFor="date">FECHA</label>
@@ -126,7 +127,7 @@ const Form = ({onSubmit, friends}) => {
                     <div>
                         <label htmlFor="paidByMe"/>
                         <div className="botonForm">
-                        <button className="input" type="submit"
+                        <button className="boton-guardar" type="submit"
                                 onChange={handleEventChange}
                                 value={input.event.paidByMe = booleanPaidByMe}
                                 name="paidByMe"
