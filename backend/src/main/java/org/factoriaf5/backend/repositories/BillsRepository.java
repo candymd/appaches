@@ -9,7 +9,6 @@ import javax.transaction.Transactional;
 import java.util.List;
 
 @Repository
-@Transactional
 public interface BillsRepository extends JpaRepository<Bills, Long> {
     List<Bills> findAllByFriendsId(Long id);
     List<Bills> findAllByEventId(Long id);
