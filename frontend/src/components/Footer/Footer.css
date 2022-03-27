@@ -1,15 +1,24 @@
 .footer {
     position: fixed ;
     bottom: 0 ;
-    width: 100%;
-    min-height: 5vh;
+    width: 40%;
+    min-height: 3vh;
+    border-radius: 70px;
+    background: rgba(231,72,234,1);
+    background: -moz-linear-gradient(45deg, rgba(231,72,234,1) 0%, rgba(75,26,188,1) 100%);
+    background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(231,72,234,1)), color-stop(100%, rgba(75,26,188,1)));
+    background: -webkit-linear-gradient(45deg, rgba(231,72,234,1) 0%, rgba(75,26,188,1) 100%);
+    background: -o-linear-gradient(45deg, rgba(231,72,234,1) 0%, rgba(75,26,188,1) 100%);
+    background: -ms-linear-gradient(45deg, rgba(231,72,234,1) 0%, rgba(75,26,188,1) 100%);
+    background: linear-gradient(45deg, rgba(231,72,234,1) 0%, rgba(75,26,188,1) 100%);
 }
 
 .fa-circle-plus {
-    color: #346ea8;
+    color:#FFFFFF;
     font-size: 40px;
     padding: 5px;
     border-radius: 50px;
-    background: rgb(131,58,180);
-    background: linear-gradient(180deg, rgba(131,58,180,1) 0%, rgba(253,29,29,0.7) 50%, rgba(252,176,69,1) 100%);
+}
+h6{
+    color: #FFFFFF;
 }
