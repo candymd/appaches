@@ -72,7 +72,10 @@ const Form = ({onSubmit, friends}) => {
     return (
         <>
             <form className="container" onSubmit={enviarDatos}>
-                <button className="button-icon"><i className="fa-solid fa-arrow-left"/></button>
+                <Link to="/home">
+                    <button className="button-icon"><i className="fa-solid fa-arrow-left"/></button>
+                </Link>
+
                 <div className="tittle">
                     <h1>AÑADIR</h1>
                 </div>

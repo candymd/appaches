@@ -21,7 +21,7 @@ const Welcome = () => {
             </div>
             <div>
                 <Link to="/home">
-                    <button className="button-next">Siguiente</button>
+                    <button className="button-next">Entra</button>
                 </Link>
             </div>
             <div className="texto-intro">
