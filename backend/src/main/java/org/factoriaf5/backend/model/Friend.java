@@ -9,7 +9,7 @@ import java.util.Objects;
 
 
 @Entity
-@Table(name="friends")
+@Table(name="friends", schema = "friends_details")
 public class Friend {
 
     @Id
