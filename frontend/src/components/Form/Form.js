@@ -45,7 +45,7 @@ const Form = ({onSubmit, friends}) => {
             name: "",
             date: "",
             amount: '',
-            category: '',
+            category: 'moda',
             numberFriends: '',
             paidByMe: false
         }
@@ -68,6 +68,8 @@ const Form = ({onSubmit, friends}) => {
         navigate("/home")
 
     }
+
+    const amountPerParticipant = (input.event.amount / (input.friends.length + 1)).toFixed(2)
 
     return (
         <>
@@ -124,8 +126,8 @@ const Form = ({onSubmit, friends}) => {
 
 
                     <div>
-                        <p className="input">CANTIDAD DE AMIGOS: 7{input.numberFriends}</p>
-                        <p className="input">TOTAL APACHAS= 5 €/cada uno</p>
+                        <p className="input">CANTIDAD DE AMIGOS: {input.friends.length}</p>
+                        <p className="input">TOTAL APACHAS = {amountPerParticipant} €/cada uno</p>
                     </div>
                     <div>
                         <label htmlFor="paidByMe"/>
