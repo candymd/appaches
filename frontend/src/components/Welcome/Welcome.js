@@ -1,14 +1,16 @@
 import React  from "react";
 import './Welcome.css'
 import logo from './assets/logo.png'
+import logolila from './assets/logolila.png'
 import {bar, comida, compras, hogar} from "../../assets/category-icons/category-icons";
 
 const Welcome = () => {
-
     return (
 
         <div className="WelcomeHello">
             <img className="logo-Welcome" src={logo}/>
+
+            <img className="logo-Welcome" src={logolila}/>
             <div className="slogan">
                 <h3> PORQUE CADA CÉNTIMO CUENTA </h3>
             </div>
@@ -26,9 +28,8 @@ const Welcome = () => {
                     piso y familia.</h4>
             </div>
         </div>
-
-
-        )
+        
+    )
 };
 
 export default Welcome;
