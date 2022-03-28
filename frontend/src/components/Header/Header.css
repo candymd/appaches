@@ -2,7 +2,15 @@
     padding: 0;
     margin: 0;
     text-shadow: none;
-
+}
+.centered{
+    background: rgba(231,72,234,1);
+    background: -moz-linear-gradient(45deg, rgba(231,72,234,1) 0%, rgba(75,26,188,1) 100%);
+    background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(231,72,234,1)), color-stop(100%, rgba(75,26,188,1)));
+    background: -webkit-linear-gradient(45deg, rgba(231,72,234,1) 0%, rgba(75,26,188,1) 100%);
+    background: -o-linear-gradient(45deg, rgba(231,72,234,1) 0%, rgba(75,26,188,1) 100%);
+    background: -ms-linear-gradient(45deg, rgba(231,72,234,1) 0%, rgba(75,26,188,1) 100%);
+    background: linear-gradient(45deg, rgba(231,72,234,1) 0%, rgba(75,26,188,1) 100%);
 }
 .TextoBienvenida{
     text-align: left;
@@ -11,7 +19,7 @@
     display: flex;
     justify-content: space-between;
     padding: 20px;
-    color:#2C5725;
+    color: #FFFFFF;
 }
 
 .texto {
@@ -23,7 +31,7 @@ h1.hola {
     font-weight: 600;
     font-size: 26px;
     text-align: left;
-    color: #000000;
+    color: #FFFFFF;
     margin: 0;
 }
 
@@ -43,7 +51,6 @@ div.Container > div > button {
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-
 }
 
 button > span.numbers {
