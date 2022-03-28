@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.31b40013.css",
-    "main.js": "/static/js/main.70769ac4.js",
+    "main.css": "/static/css/main.0c520854.css",
+    "main.js": "/static/js/main.958045f3.js",
     "static/js/787.cda612ba.chunk.js": "/static/js/787.cda612ba.chunk.js",
     "static/media/joseManuel.jpg": "/static/media/joseManuel.869356b874d9c233a0d1.jpg",
     "static/media/valentina.jpg": "/static/media/valentina.78d8d8be566756a4938c.jpg",
@@ -10,7 +10,7 @@
     "static/media/candy.jpg": "/static/media/candy.8a8320219f63cf538906.jpg",
     "static/media/faby.jpg": "/static/media/faby.1fd5adc634cd56c0ab64.jpg",
     "static/media/maria.jpg": "/static/media/maria.e16587951d4537425192.jpg",
-    "static/media/logo.png": "/static/media/logo.38d0e6ec5b4ba1c07bfd.png",
+    "static/media/logolila.png": "/static/media/logolila.2a09340440adef931a9f.png",
     "static/media/entretenimiento.svg": "/static/media/entretenimiento.58b2380aa0c1cea35a7c0f1ff3ef33f9.svg",
     "static/media/comida.svg": "/static/media/comida.4da43998c83b2f8359680f892c9234e0.svg",
     "static/media/bar.svg": "/static/media/bar.7306f301504e9645d688f685a17f9d67.svg",
@@ -19,12 +19,12 @@
     "static/media/hogar.svg": "/static/media/hogar.711acc7e8c18bc1c05872eae8d378412.svg",
     "static/media/moda.svg": "/static/media/moda.05357cdc1b1004f7fe02768b1c38f81d.svg",
     "static/media/compras.svg": "/static/media/compras.e440cb06a8ddb505dc1d5e473f1284b4.svg",
-    "main.31b40013.css.map": "/static/css/main.31b40013.css.map",
-    "main.70769ac4.js.map": "/static/js/main.70769ac4.js.map",
+    "main.0c520854.css.map": "/static/css/main.0c520854.css.map",
+    "main.958045f3.js.map": "/static/js/main.958045f3.js.map",
     "787.cda612ba.chunk.js.map": "/static/js/787.cda612ba.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.31b40013.css",
-    "static/js/main.70769ac4.js"
+    "static/css/main.0c520854.css",
+    "static/js/main.958045f3.js"
   ]
 }

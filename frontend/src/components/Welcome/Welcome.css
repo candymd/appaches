@@ -1,18 +1,54 @@
-.logo-Welcome{
-    width: 100%;
-    margin-top: 200px;
-
-}
-
-.slogan{
-    font-size: 20px;
-    text-align: center;
-    margin: 20px;
-    padding: 20px;
-}
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
 
 .WelcomeHello{
     padding: 0;
     margin: 0;
+}
 
+.logo-Welcome{
+    width: 35%;
+    margin-top: 5px;
+    margin-right: 300px;
+}
+
+.slogan{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 40px;
+    text-align: center;
+    margin: 10px;
+    margin-left: 50px;
+    padding: 40px 10px;
+}
+.imagenes-categorias{
+    display: flex;
+    justify-content: space-between;
+    margin: 2px 140px;
+    height: 40px;
+    width: 30px;
+}
+.button-next{
+    margin-top: 60px;
+    margin-left: 50px;
+    font-family: 'Montserrat', sans-serif;
+    border-radius: 20px;
+    color: #FFFFFF;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 15px 75px;
+    letter-spacing: 1px;
+    border: 1px solid #FFFFFF;
+    background: rgba(231,72,234,1);
+    background: -moz-linear-gradient(45deg, rgba(231,72,234,1) 0%, rgba(75,26,188,1) 100%);
+    background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(231,72,234,1)), color-stop(100%, rgba(75,26,188,1)));
+    background: -webkit-linear-gradient(45deg, rgba(231,72,234,1) 0%, rgba(75,26,188,1) 100%);
+    background: -o-linear-gradient(45deg, rgba(231,72,234,1) 0%, rgba(75,26,188,1) 100%);
+    background: -ms-linear-gradient(45deg, rgba(231,72,234,1) 0%, rgba(75,26,188,1) 100%);
+    background: linear-gradient(45deg, rgba(231,72,234,1) 0%, rgba(75,26,188,1) 100%);
+}
+
+.texto-intro{
+    margin-top: 20px;
+    margin-left: 45px;
+    font-family: Candara;
+    font-size: 20px;
 }
