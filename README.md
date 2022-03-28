@@ -49,7 +49,9 @@ Nuestras ideas las representamos en [Figma](https://www.figma.com/file/V1cnUjU0v
 * React
 * Java
 * Mui
+* React Select
 * SprintBoot 
+* Metodologías Agiles
 
 # Como lanzar el proyecto en local
 
