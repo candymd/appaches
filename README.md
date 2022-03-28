@@ -8,7 +8,8 @@
 * [Inspiración](#Inspiración)
 * [Tecnologías](#Tecnologías)
 
-![welcome](https://i.ibb.co/0QWc00Y/Welcome.png)
+![welcome](![2022-03-28 (5)](https://user-images.githubusercontent.com/92289144/160378391-81275d2a-0f3f-4b5c-b23a-637b3148e2e2.png)
+
 
 - - -
 ```
