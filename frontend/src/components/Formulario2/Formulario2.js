@@ -10,14 +10,12 @@ const Formulario2 = ({onSubmit, friends}) => {
 
     const friendsSelectOptions = friends.map(friend => {
         return {
-            value: friend.name,
-            label: friend.name
+            id: friend.id,
+            name: friend.name
         }
     });
 
-
     const navigate = useNavigate();
-    const [isGreenActiveForm, setIsGreenActiveForm] = useState(true);
     const [input, setInput] = useState({
 
         paidBy: {
@@ -46,8 +44,12 @@ const Formulario2 = ({onSubmit, friends}) => {
     const enviarDatos = (event) => {
         event.preventDefault();
         onSubmit(input)
-        navigate("/")
+        navigate("/home")
 
+    }
+
+    const updatePaidBy = (paidBy) => {
+        setInput({...input, paidBy})
     }
 
 return (
@@ -72,17 +74,17 @@ return (
         <div className="form">
             <div>
                 <label htmlFor="date">FECHA</label>
-                <input value={input.event.date} onChange={handleEventChange} type="date" id="date"
+                <input value={input.event.date} onChange={handleEventChange} type="date" id="date" required
                        name="date" className="input"/>
             </div>
             <div>
                 <label htmlFor="name">NOMBRE DEL GASTO</label>
-                <input value={input.event.name} onChange={handleEventChange} type="text" className="input"
+                <input value={input.event.name} onChange={handleEventChange} type="text" className="input" required
                        name="name" id="name"/>
             </div>
             <div>
                 <label htmlFor="price">IMPORTE</label>
-                <input value={input.event.amount} onChange={handleEventChange} type="text"
+                <input value={input.event.amount} onChange={handleEventChange} type="text" required
                        name="amount" className="input" id="price"/>
             </div>
            
@@ -92,9 +94,9 @@ return (
 
 
                 <div>
-                    <Select className="select" name="friends" options={friendsSelectOptions}/>
+                    <Select className="select" name="paidBy" options={friendsSelectOptions} onChange={updatePaidBy}
+                            getOptionValue={(option) => `${option['id']}`}  getOptionLabel={(option) => `${option['name']}`} />
                 </div>
-
 
             
             <div>

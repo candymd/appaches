@@ -35,7 +35,6 @@ const ACobrarCard = ({bill, deleteBill, friends, event}) => {
                               id="panel1bh-header">
                 {menuIsOpen && <div className="menu">
                     <ul>
-                        <li onClick={toggleMenu}>Editar</li>
                         <li onClick={onDeleteBill}>Borrar</li>
                     </ul>
                 </div>}
