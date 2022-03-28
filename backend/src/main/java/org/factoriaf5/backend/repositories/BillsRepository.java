@@ -10,6 +10,6 @@ import java.util.List;
 
 @Repository
 public interface BillsRepository extends JpaRepository<Bills, Long> {
-    List<Bills> findAllByFriendsId(Long id);
+    List<Bills> findAllByFriendId(Long id);
     List<Bills> findAllByEventId(Long id);
 }

@@ -43,7 +43,7 @@ public class FriendController {
 
     @GetMapping("/friends/{id}/events")
     public List<Event> eventByFriend(@PathVariable Long id) {
-        return billsRepository.findAllByFriendsId(id)
+        return billsRepository.findAllByFriendId(id)
                 .stream()
                 .map(Bills::getEvent)
                 .collect(Collectors.toList());
