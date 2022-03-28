@@ -65,14 +65,14 @@ function App() {
     return (
     <div className="App">
         <Routes>
-            <Route path="/" exact
+            <Route path="/home" exact
                    element={<MainPage deleteBill={deleteBill} eventsACobrar={eventsACobrar} eventsAPagar={eventsAPagar}
                                   totalACobrar={total(eventsACobrar)} totalAPagar={total(eventsAPagar)}    vistaACobrar={vistaACobrar} setVistaACobrar={setVistaACobrar}/>}/>
             <Route path="/form" element={<Form friends={friends} eventsACobrar={eventsACobrar} eventsAPagar={eventsAPagar}
                                                onSubmit={e => addBill(e)}/>}/>element
-            <Route path="/welcome" element={<Welcome/>}/>
+            <Route path="/" default exact element={<Welcome />}/>
 
-            <Route path="/formulario2"element={<Formulario2 friends={friends}
+            <Route path="/formulario2" element={<Formulario2 friends={friends}
                                                onSubmit={e => addBill(e)}/>}/>element
             </Routes>
     </div>

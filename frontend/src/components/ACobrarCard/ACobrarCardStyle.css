@@ -122,3 +122,8 @@
 .menu > ul > li:active {
     background-color: #e8e6e6;
 }
+
+div.MuiAccordionSummary-content.MuiAccordionSummary-contentGutters.css-17o5nyn > div:nth-child(1) > div {
+    display: flex;
+    gap: 15px;
+}

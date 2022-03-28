@@ -101,7 +101,7 @@ return (
                 
                 <div className="botonForm">
                 
-                <button className="input" type="submit"
+                <button className="boton-guardar" type="submit"
                         onChange={handleEventChange}
                         value={input.event.paidByMe = booleanPaidByMe}
                         name="paidByMe"

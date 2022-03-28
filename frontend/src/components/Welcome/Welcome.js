@@ -3,13 +3,12 @@ import './Welcome.css'
 import logo from './assets/logo.png'
 import logolila from './assets/logolila.png'
 import {bar, comida, compras, hogar} from "../../assets/category-icons/category-icons";
+import {Link} from "react-router-dom";
 
 const Welcome = () => {
     return (
 
         <div className="WelcomeHello">
-            <img className="logo-Welcome" src={logo}/>
-
             <img className="logo-Welcome" src={logolila}/>
             <div className="slogan">
                 <h3> PORQUE CADA CÉNTIMO CUENTA </h3>
@@ -21,7 +20,9 @@ const Welcome = () => {
                 <img  src={bar}/>
             </div>
             <div>
-                <button className="button-next">Siguiente</button>
+                <Link to="/home">
+                    <button className="button-next">Siguiente</button>
+                </Link>
             </div>
             <div className="texto-intro">
                 <h4>Lleva un registro de todos tus gastos compartidos con amigos, compañeros de salidas, viajes, de

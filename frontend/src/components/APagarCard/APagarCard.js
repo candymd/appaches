@@ -26,7 +26,6 @@ const APagarCard = ({event, bill}) => {
                     </div>
                    <div>
                        <span>5€</span>
-                       <button className="pagar">PAGAR</button>
                    </div>
                 </div>
 

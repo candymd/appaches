@@ -65,7 +65,7 @@ const Form = ({onSubmit, friends}) => {
     const enviarDatos = (event) => {
         event.preventDefault();
         onSubmit(input)
-        navigate("/")
+        navigate("/home")
 
     }
 
@@ -129,10 +129,6 @@ const Form = ({onSubmit, friends}) => {
                         <div className="botonForm">
                         <button className="boton-guardar" type="submit"
                                 onChange={handleEventChange}
-                                value={input.event.paidByMe = booleanPaidByMe}
-                                name="paidByMe"
-                                checked={booleanPaidByMe}
-                                onClick={() => setBoolanPaidByMe(true)}
                         >GUARDAR</button>
                         
                         </div>
